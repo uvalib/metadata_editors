@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This displays the druid and generates a barcode --> 
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!-- BEGIN DRUID -->
+    <fr:section id="druid-section" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/druid"/>
+        <xforms:help ref="$form-resources/detail/help/druid"/>
+        <xforms:group ref="mods:identifier[@displayLabel = 'SU DRUID']">
+            <fr:grid columns="3">
+                <fr:tr>
+                    <fr:td>
+                        <xforms:output value="."/>
+                    </fr:td>
+                    
+                    <fr:td>
+                        <xforms:output mediatype="text/html"
+                            value="concat('&lt;img', ' class=&#34;mods-barcode&#34;', ' src=&#34;/barcode/', replace(., 'druid:', '') ,'&#34; /&gt;')"/>
+                    </fr:td>
+
+                </fr:tr>
+            </fr:grid>
+        </xforms:group>
+
+
+    </fr:section>
+    <!-- END DRUID -->
+
+</html>

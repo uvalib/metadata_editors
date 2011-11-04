@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <!-- START GENRE -->
+    <fr:section id="genre" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/genre"/>
+        <xforms:help ref="$form-resources/detail/help/genre"/>
+
+        <fr:repeat nodeset="mods:genre[position()]" id="genre-repeat[position()]"
+            origin="xxforms:instance('mods-insert')/insert[@name = 'genre']/child::*">
+            <fr:body>
+
+                <fr:tr>
+                    <fr:td>
+                        <xforms:select1 ref="." class="drop-down">
+                            <xforms:label ref="$form-resources/detail/titles/genre"/>
+                            <xforms:alert ref="$form-resources/detail/alerts/genre"/>
+                            <xforms:help ref="$form-resources/detail/help/genre"/>
+                            <xforms:itemset
+                                nodeset="$form-resources/lists/genre/instance//(section|item)">
+                                <xforms:label ref="label"/>
+                                <xforms:value ref="value"/>
+                            </xforms:itemset>
+                        </xforms:select1>
+                    </fr:td>
+                </fr:tr>
+            </fr:body>
+        </fr:repeat>
+    </fr:section>
+    <!-- END GENRE -->
+
+
+</html>

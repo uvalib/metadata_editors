@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!-- START NOTES -->
+    <fr:section id="note" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/note"/>
+        <xforms:help ref="$form-resources/detail/help/note"/>
+
+
+
+        <fr:repeat nodeset="mods:note[position()]" id="note-repeat[position()]"
+            origin="xxforms:instance('mods-insert')/insert[@name = 'note']/child::*">
+            <fr:body>
+
+                <fr:tr>
+                    <fr:td>
+                        <div class="item-row show-title">
+                            <div class="item-cell">
+                                <fr:optional-element id="note-label" ref="@displayLabel"
+                                    nodeset="mods:note"
+                                    origin="xxforms:instance('mods-insert')/insert[@name = 'note']/mods:note/@displayLabel">
+                                    <xforms:output ref="$form-resources/detail/labels/label"/>
+                                    <xforms:input ref="@displayLabel">
+                                        <xforms:label ref="$form-resources/detail/labels/label"/>
+                                        <xforms:alert ref="$form-resources/detail/alerts/label"/>
+                                        <xforms:help ref="$form-resources/detail/help/label"/>
+                                    </xforms:input>
+                                </fr:optional-element>
+                            </div>
+                            <div class="item-cell">
+                                <fr:optional-element id="note-type" ref="@type" nodeset="mods:note"
+                                    origin="xxforms:instance('mods-insert')/insert[@name = 'note']/mods:note/@type">
+                                    <xforms:output ref="$form-resources/detail/labels/notetype"
+                                        class="forms-hidden"/>
+                                    <xforms:select1 ref="." incremental="false" class="drop-down"
+                                        id="note-type">
+                                        <xforms:label ref="$form-resources/detail/labels/notetype"/>
+                                        <xforms:alert ref="$form-resources/detail/alerts/notetype"/>
+                                        <xforms:help ref="$form-resources/detail/help/notetype"/>
+                                        <xforms:itemset
+                                            nodeset="$form-resources/lists/notetype/instance//(section|item)">
+                                            <xforms:label ref="label"/>
+                                            <xforms:value ref="value"/>
+                                        </xforms:itemset>
+                                    </xforms:select1>
+                                </fr:optional-element>
+                            </div>
+                        </div>
+                        <div class="item-row show-title">
+                            <xforms:textarea ref=".">
+                                <xforms:label ref="$form-resources/detail/titles/note"/>
+                                <xforms:alert ref="$form-resources/detail/alerts/note"/>
+                                <xforms:help ref="$form-resources/detail/help/note"/>
+                            </xforms:textarea>
+                        </div>
+                        <div class="repeat-border"/>
+                    </fr:td>
+                </fr:tr>
+            </fr:body>
+        </fr:repeat>
+
+
+
+    </fr:section>
+    <!-- END NOTES -->
+
+</html>

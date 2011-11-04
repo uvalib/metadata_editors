@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <!-- START LOCATION -->
+    <fr:section id="location" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/location"/>
+        <xforms:help ref="$form-resources/detail/help/location"/>
+
+        <fr:repeat nodeset="mods:location[position()]" id="mods-location-repeat[position()]"
+            origin="xxforms:instance('mods-insert')/insert[@name = 'location']/child::*">
+            <fr:body>
+               
+                <fr:tr>
+                    <fr:td>
+                        <div class="button-row">
+                            <!-- ADD FORM -->
+                            <div class="item-cell">
+                                <xforms:group ref=".">
+                                    <xforms:insert ev:event="DOMActivate" context="."
+                                        position="after" at="url-repeat"
+                                        origin="instance('mods-insert')/insert[@name = 'url']/child::*"/>
+                                    <fr:button bind="buttons-triggers">
+                                        <xforms:label>
+                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <span class="label">URL</span>
+                                        </xforms:label>
+                                    </fr:button>
+                                </xforms:group>
+                            </div>
+                            <!--ADD physical location-->
+                            <div class="item-cell">
+                                <xforms:group ref=".">
+                                    <xforms:insert ev:event="DOMActivate" context="."
+                                        position="after" at="phyiscallocation-repeat"
+                                        origin="instance('mods-insert')/insert[@name = 'physicalLocation']/child::*"/>
+                                    <fr:button bind="buttons-triggers">
+                                        <xforms:label>
+                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <span class="label">Physical Location</span>
+                                        </xforms:label>
+                                    </fr:button>
+                                </xforms:group>
+                            </div>
+                            <!-- END BUTTON -->
+                            <!-- URL -->
+                            <xforms:repeat nodeset="mods:url[position()]" id="url-repeat">
+                                <div class="item-row show-title">
+                                    <div class="repeat-container">
+                                        <div class="repeat-container-item">
+                                            <div class="item-row">
+                                                <div class="repeat-remove">
+                                                  <xforms:group ref=".">
+                                                  <xforms:delete ev:event="DOMActivate" context="."
+                                                  nodeset=".[position()]"/>
+                                                  <xforms:trigger appearance="minimal" ref=".">
+                                                  <xforms:label>
+                                                  <img src="/apps/fr/style/remove.gif"
+                                                  alt="Remove URL"/>
+                                                  </xforms:label>
+                                                  </xforms:trigger>
+                                                  </xforms:group>
+                                                </div>
+                                                <div class="item-cell">
+                                                  <xforms:input incremental="true" ref=".">
+                                                  <xforms:label
+                                                  ref="$form-resources/detail/labels/url"/>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/url"/>
+                                                  <xforms:help ref="$form-resources/detail/help/url"
+                                                  />
+                                                  </xforms:input>
+                                                </div>
+                                                <!--<div class="item-cell">
+                                                            <a
+                                                            href="{instance('fr-form-instance')/mods:location/mods:url}"
+                                                            rel="lightbox"><img
+                                                            src="/apps/fr/style/images/silk/eye.png"/></a> 
+                                                            </div>-->
+                                                <xforms:group ref="@usage">
+                                                  <div class="item-cell">
+                                                  <xforms:output ref="@usage" mediatype="text/html"
+                                                  />
+                                                  </div>
+                                                </xforms:group>
+                                                <div class="item-cell">
+                                                  <xforms:select1 ref="@access" incremental="false"
+                                                  class="drop-down" id="additional-urlaccess">
+                                                  <xforms:label
+                                                  ref="$form-resources/detail/labels/urlaccess"/>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/urlaccess"/>
+                                                  <xforms:help
+                                                  ref="$form-resources/detail/help/urlaccess"/>
+                                                  <xforms:itemset
+                                                  nodeset="$form-resources/lists/urlaccess/instance//(section|item)">
+                                                  <xforms:label ref="label"/>
+                                                  <xforms:value ref="value"/>
+                                                  </xforms:itemset>
+                                                  </xforms:select1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </xforms:repeat>
+                            <!-- END URL -->
+                            <!-- START PHYSICAL LOC -->
+                            <xforms:repeat nodeset="mods:physicalLocation[position()]"
+                                id="physicalLocation-repeat">
+                                <div class="item-row show-title">
+                                    <div class="repeat-container">
+                                        <div class="repeat-container-item">
+                                            <div class="item-row">
+                                                <div class="repeat-remove">
+                                                  <xforms:group ref=".">
+                                                  <xforms:delete ev:event="DOMActivate" context="."
+                                                  nodeset=".[position()]"/>
+                                                  <xforms:trigger appearance="minimal" ref=".">
+                                                  <xforms:label>
+                                                  <img src="/apps/fr/style/remove.gif"
+                                                  alt="Remove Physical Location"/>
+                                                  </xforms:label>
+                                                  </xforms:trigger>
+                                                  </xforms:group>
+                                                </div>
+                                                <div class="item-cell">
+                                                  <xforms:input incremental="true" ref="."
+                                                  class="dmv-last-name">
+                                                  <xforms:label
+                                                  ref="$form-resources/detail/labels/physicallocation"/>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/physicallocation"/>
+                                                  <xforms:help
+                                                  ref="$form-resources/detail/help/physicallocation"
+                                                  />
+                                                  </xforms:input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </xforms:repeat>
+                        </div>
+                        <!-- END EXTENT -->
+                    </fr:td>
+                </fr:tr>
+            </fr:body>
+        </fr:repeat>
+
+
+
+    </fr:section>
+    <!-- END LOCATION -->
+
+</html>

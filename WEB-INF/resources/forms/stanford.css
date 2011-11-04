@@ -1,0 +1,121 @@
+
+
+.item-row {
+  padding: .5em;
+}
+
+
+
+.item-cell {
+    border-width:1px;
+    padding: .25em;
+	display: inline-block;
+}
+
+
+.repeat-border  { border: 1px solid #7F7F7F; }
+
+.fr-repeat-table td div.show-title label { display: inline }
+
+/* Stylize the buttons. We want them more compact. */
+
+button.xforms-trigger img, .xforms-trigger button img {
+    margin: 0px 0px;
+}
+
+.yui-skin-sam .yui-button button, .yui-skin-sam .yui-button a, .yui-skin-sam .yui-button a:visited {
+    padding: 0 3px;
+}
+
+
+.button-row {
+    padding: 10px 0px;
+	width:100%;	
+}
+
+
+
+.fr-grid-content .xforms-control, .fr-grid-content .fr-component-group {
+  display: inline; }
+
+/* Below styles the repeats within repeats */
+.nested-repeatable-header-cell {	margin: .25em .5em; }
+
+
+.repeat-container { 
+/* border-color:#243356 #808080 #808080;
+border-right:1px solid #808080;
+border-style:solid;
+border-width:1px; */
+margin: .5em 0;
+}
+
+
+.repeat-container-header { 
+  background:none repeat scroll 0 0  #C0C0C0; 
+  padding: 1em;
+ 
+  }
+  
+.repeat-container-header span#label { font-size: 110%; color:white; } 
+
+
+  
+ .repeat-container-body {
+    background:none repeat scroll 0 0 #EDF5FF;
+ }
+ 
+ .repeat-container-item {
+/*	display: block;
+ */ border-style:solid;
+border-width:1px;
+padding-bottom: .25em;
+padding-top:.25em;
+ }
+
+.repeat-container .item-row {
+/*display: block; */
+  padding: .5em;
+}
+
+
+.repeat-container .item-row label { 
+padding-left: 5px;
+}
+
+.repeat-container .item-row input {
+padding-right: 5px
+}
+
+
+.repeat-container  .item-cell {
+
+	display: inline-block;
+	/*width: 33.3%;*/	
+}
+
+.repeat-container .item-cell .bordered {
+	border-style:solid;
+	border-color:gray;
+	border-width:.5px;
+}
+
+.repeat-container .item-cell label { 
+padding: 5px;
+}
+
+.repeat-container .item-cell input {
+padding: 5px
+}
+
+
+.repeat-container .item-row .xforms-select-appearance-full span { 
+  /* display: inherit;
+  */ margin-left: 80px;
+}
+
+.repeat-remove {
+	margin: 0 0.5em;
+     display: inline-block;	
+}
+

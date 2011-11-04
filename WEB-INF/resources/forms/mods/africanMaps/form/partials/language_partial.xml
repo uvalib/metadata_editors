@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <!-- START LANGUAGE -->
+    <fr:section id="language" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/language"/>
+        <xforms:help ref="$form-resources/detail/help/language"/>
+
+
+
+        <fr:repeat nodeset="mods:language[position()]" id="language-repeat[position()]"
+            origin="xxforms:instance('mods-insert')/insert[@name = 'language']/child::*">
+            <fr:body>
+                
+                <fr:tr>
+                    <fr:td>
+                        <xforms:switch>
+                            <xforms:case id="code" selected="true">
+                                <div class="item-row">
+                                    <div class="item-cell">
+                                        <xforms:select1 ref="mods:languageTerm[@type = 'code']"
+                                            class="drop-down">
+                                            <xforms:label
+                                                ref="$form-resources/detail/titles/language"
+                                                class="forms-hidden"/>
+                                            <xforms:alert
+                                                ref="$form-resources/detail/alerts/language"/>
+                                            <xforms:help ref="$form-resources/detail/help/language"/>
+                                            <xforms:itemset
+                                                nodeset="$form-resources/lists/language/instance//(section|item)">
+                                                <xforms:label ref="label"/>
+                                                <xforms:value ref="value"/>
+                                            </xforms:itemset>
+                                        </xforms:select1>
+                                    </div>
+                                    <div class="item-cell">
+                                        <xforms:trigger>
+                                            <xforms:label>Enter A Language Not Found On The
+                                                List</xforms:label>
+                                            <xforms:delete ev:event="DOMActivate"
+                                                nodeset="mods:languageTerm[@type = 'code']"/>
+                                            <xforms:insert ev:event="DOMActivate" context="."
+                                                position="after"
+                                                origin="instance('mods-insert')/insert[@name = 'language']/mods:language/mods:languageTerm[@type = 'text']"/>
+                                            <xforms:toggle ev:event="DOMActivate" case="text"/>
+                                        </xforms:trigger>
+                                    </div>
+                                </div>
+                            </xforms:case>
+                            <xforms:case id="text">
+                                <div class="item-row">
+                                    <div class="item-cell">
+                                        <xforms:input incremental="true"
+                                            ref="mods:languageTerm[ @type = 'text' ]">
+                                            <xforms:label
+                                                ref="$form-resources/detail/titles/language"
+                                                class="forms-hidden"/>
+                                            <xforms:alert
+                                                ref="$form-resources/detail/alerts/language"/>
+                                            <xforms:help ref="$form-resources/detail/help/language"
+                                            />
+                                        </xforms:input>
+                                    </div>
+                                    <div class="item-cell">
+                                        <xforms:trigger>
+                                            <xforms:label>Go Back To List</xforms:label>
+                                            <xforms:delete ev:event="DOMActivate"
+                                                nodeset="mods:languageTerm[@type = 'text']"/>
+                                            <xforms:insert ev:event="DOMActivate" context="."
+                                                position="after"
+                                                origin="instance('mods-insert')/insert[@name = 'language']/mods:language/mods:languageTerm[@type = 'code']"/>
+                                            <xforms:toggle ev:event="DOMActivate" case="code"/>
+                                        </xforms:trigger>
+                                    </div>
+                                </div>
+                            </xforms:case>
+                        </xforms:switch>
+                    </fr:td>
+                </fr:tr>
+            </fr:body>
+        </fr:repeat>
+
+
+
+    </fr:section>
+    <!-- END LANGUAGE -->
+
+</html>

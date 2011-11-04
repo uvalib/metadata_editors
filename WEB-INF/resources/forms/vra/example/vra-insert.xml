@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<instance xmlns:vra="http://www.vraweb.org/vracore4.htm" point=" " type=" ">
+ 
+ <insert name="title">
+  <vra:title type=""/>
+ </insert>
+ 
+</instance>

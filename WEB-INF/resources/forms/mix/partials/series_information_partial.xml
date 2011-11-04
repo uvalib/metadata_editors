@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl">
+
+
+    <!--  SERIES INFORMATION -->
+    <fr:section id="relatedItem" bind="fr-form-binds">
+
+        <xforms:label ref="$form-resources/detail/titles/seriesInfo"/>
+        <xforms:help ref="$form-resources/detail/help/seriesInfo"/>
+
+
+
+
+        <fr:repeat nodeset="mods:relatedItem[2]" id="relatedItem-repeat[position()]"
+            origin="xxforms:instance('mods-insert')/insert[@name = 'relatedItem']/child::*">
+            <fr:body>
+
+                <fr:tr>
+                    <fr:td>
+
+
+                        <xforms:select1 ref="./mods:titleInfo/mods:title" class="drop-down">
+                            <xforms:label ref="$form-resources/detail/labels/relatedItemTitle"/>
+                            <xforms:alert ref="$form-resources/detail/alerts/relatedItemTitle"/>
+                            <xforms:help ref="$form-resources/detail/help/relatedItemTitle"/>
+                            <xforms:itemset
+                                nodeset="$form-resources/lists/relatedItemTitle/instance//(section|item)">
+                                <xforms:label ref="label"/>
+                                <xforms:value ref="value"/>
+                            </xforms:itemset>
+                        </xforms:select1>
+                    </fr:td>
+                    <fr:td>
+
+
+                        <xforms:input ref="./mods:titleInfo/mods:subTitle">
+                            <xforms:label value="$form-resources/detail/titles/relatedItemSubtitle"/>
+                            <xforms:alert ref="$form-resources/detail/alerts/relatedItemSubtitle"/>
+                            <xforms:help ref="$form-resources/detail/help/relatedItemSubtitle"/>
+                        </xforms:input>
+                    </fr:td>
+                    <fr:td>
+
+                        <xforms:input ref="./mods:titleInfo/mods:partNumber">
+                            <xforms:label ref="$form-resources/detail/labels/relatedItemPartNumber"
+                                class="forms-hidden"/>
+                            <xforms:alert ref="$form-resources/detail/alerts/relatedItemPartNumber"/>
+                            <xforms:help ref="$form-resources/detail/help/relatedItemPartNumber"/>
+                        </xforms:input>
+                    </fr:td>
+                    <fr:td>
+                        <xforms:input ref="./mods:titleInfo/mods:partName">
+                            <xforms:label ref="$form-resources/detail/labels/relatedItemPartName"
+                                class="forms-hidden"/>
+                            <xforms:alert ref="$form-resources/detail/alerts/relatedItemPartName"/>
+                            <xforms:help ref="$form-resources/detail/help/elatedItemPartName"/>
+                        </xforms:input>
+
+                    </fr:td>
+                </fr:tr>
+            </fr:body>
+        </fr:repeat>
+
+    </fr:section>
+
+    <!-- END RELATED ITEM -->
+</html>

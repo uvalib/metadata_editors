@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- partial for mods:identifier. This includes two pull-downs for the @displayLabel and @type attributes
+     Sorry about mixing up the camel-case and underscores. 
+--> 
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!-- BEGIN IDENTIFIER -->
+    <!-- MODS:IDENTIFIER  -->
+    <fr:section id="identifier-section" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/identifier"/>
+        <xforms:help ref="$form-resources/detail/help/identifier"/>
+        <fr:repeat nodeset="mods:identifier" id="identifier-repeat"
+            origin="xxforms:instance('mods-insert')/insert[@name = 'identifier']/mods:identifier">
+            <fr:body>
+
+                <fr:tr>
+                    <fr:td>
+
+                        <xforms:select1 ref="@displayLabel"
+                            incremental="false" class="drop-down">
+                            <xforms:label
+                                ref="$form-resources/detail/labels/displayLabel"/>
+                            <xforms:alert
+                                ref="$form-resources/detail/alerts/displayLabel"/>
+                            <xforms:help
+                                ref="$form-resources/detail/help/displayLabel"/>
+                            <xforms:itemset
+                                nodeset="$form-resources/lists/displayLabel/instance//(section|item)">
+                                <xforms:label ref="label"/>
+                                <xforms:value ref="value"/>
+                            </xforms:itemset>
+                        </xforms:select1>
+
+                    </fr:td>
+                    <fr:td>
+                        
+                        <xforms:select1 ref="@type" incremental="false"
+                            class="drop-down">
+                            <xforms:label
+                                ref="$form-resources/detail/labels/identifiertype"/>
+                            <xforms:alert
+                                ref="$form-resources/detail/alerts/identifiertype"/>
+                            <xforms:help
+                                ref="$form-resources/detail/help/identifiertype"/>
+                            <xforms:itemset
+                                nodeset="$form-resources/lists/identifiertype/instance//(section|item)">
+                                <xforms:label ref="label"/>
+                                <xforms:value ref="value"/>
+                            </xforms:itemset>
+                        </xforms:select1>
+                        
+                    </fr:td>
+                    <fr:td>
+                        <xforms:input incremental="true" ref=".">
+                            <xforms:label ref="$form-resources/detail/labels/identifier"/>
+                            <xforms:alert ref="$form-resources/detail/alerts/identifier"/>
+                        </xforms:input>
+                    </fr:td>
+                </fr:tr>
+            </fr:body>
+        </fr:repeat>
+    </fr:section>
+    <!-- END IDENTIFIER -->
+</html>

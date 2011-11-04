@@ -1,0 +1,53 @@
+<!-- 
+    Copyright (C) 2008 Brown University
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.    
+-->
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://dl.lib.brown.edu/editor/mods/dl" 
+    elementFormDefault="qualified" 
+    attributeFormDefault="unqualified" 
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl"> 
+       
+    <xs:simpleType name="string">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>                
+        </xs:restriction>
+    </xs:simpleType>
+    
+       <xs:simpleType name="link">
+                    <xs:restriction base="xs:string">
+                        <!-- Approximative regexp for HTTP URLs -->
+                        <xs:pattern value="(https?\://([^/?#]+)(/([^?#]*)(\?([^?#]+))?(#(.*))?)?)?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+                
+                
+    
+    <xs:simpleType name="date">
+ 	<xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Unknown Date"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="\d{4}-\d{2}-\d{2}|\d{4}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>  
+</xs:schema>

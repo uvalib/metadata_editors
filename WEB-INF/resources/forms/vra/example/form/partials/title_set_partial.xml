@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <!-- START TITLEINFO -->
+    <fr:section id="titleSet-section" bind="titleSet-bind">
+        <xforms:label ref="$form-resources/detail/titles/titleSet"></xforms:label>
+        <xforms:help ref="$form-resources/detail/help/titleSet"></xforms:help>
+        <xforms:alert ref="$form-resources/detail/alert/titleSet"></xforms:alert>
+        <fr:grid>
+            <fr:tr>
+                <fr:td>
+
+                    <fr:repeat nodeset="vra:title" id="title-repeat"
+                        origin="xxforms:instance('vra-insert')/insert[@name = 'title']/vra:title">                       
+                            <fr:tr>
+                                <fr:td>
+                                    <div class="item-row show-title">
+                                        <xforms:input incremental="true" ref="."
+                                            appearance="xxforms:autosize">
+                                            <xforms:label ref="$form-resources/detail/titles/title"></xforms:label>
+                                            <xforms:help ref="$form-resources/detail/help/title"></xforms:help>
+                                            <xforms:alert ref="$form-resources/detail/alerts/title"
+                                            ></xforms:alert>
+                                        </xforms:input>
+                                    </div>
+                                    <div class="item-row show-title">
+                                        <div class="item-cell">
+                                            <!-- TitleInfo @type -->
+                                            <xforms:input ref="@type">
+                                                <xforms:label
+                                                  ref="$form-resources/detail/titles/titletype"></xforms:label>
+                                                <xforms:alert
+                                                  ref="$form-resources/detail/alerts/titletype"></xforms:alert>
+                                                <xforms:help
+                                                  ref="$form-resources/detail/help/titletype"
+                                                ></xforms:help> <xforms:label ref="label"></xforms:label>
+                                                <xforms:value ref="value"></xforms:value>
+                                            </xforms:input>
+                                        </div>
+                                    </div>
+                                    <div class="repeat-border"></div>
+                                </fr:td>
+                            </fr:tr>        
+                    </fr:repeat>
+                </fr:td>
+            </fr:tr>
+        </fr:grid>
+    </fr:section>
+    <!-- END TITLEINFO -->
+</html>

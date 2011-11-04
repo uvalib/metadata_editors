@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- This displays the related item in the mapSimple project --> 
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <!-- START RELATED ITEM -->
+    <fr:section id="relatedItem" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/relatedItem"/>
+        <xforms:help ref="$form-resources/detail/help/relatedItem"/>
+
+
+
+        <fr:repeat nodeset="mods:relatedItem" id="relatedItem-repeat"
+            origin="xxforms:instance('mods-insert')/insert[@name = 'relatedItem']/mods:relatedItem">
+            <fr:body>
+
+                <fr:tr>
+                    <fr:td>
+                        <xforms:input incremental="true" ref="@displayLabel"  class="forms-hidden">
+                            <xforms:label ref="$form-resources/detail/titles/viewrecord"/>
+                            </xforms:input>
+                        <a
+                            href="https://mdtoolkit.stanford.edu/ops/fr/mods/mapSimple/edit/{replace(mods:identifier[@displayLabel = 'SU DRUID'], 'druid:', '')}"
+                            target="_blank"><img src="/apps/fr/style/images/silk/eye.png"/></a>
+
+                    </fr:td>
+                    <fr:td>
+                        <xforms:select1 ref="@type" class="drop-down">
+                            <xforms:label ref="$form-resources/detail/titles/relatedItemType"
+                                class="forms-hidden"/>
+                            <xforms:alert ref="$form-resources/detail/alerts/relatedItemType"/>
+                            <xforms:help ref="$form-resources/detail/help/relatedItemType"/>
+                            <xforms:itemset
+                                nodeset="$form-resources/lists/typeOfRelatedItem/instance//(section|item)">
+                                <xforms:label ref="label"/>
+                                <xforms:value ref="value"/>
+                            </xforms:itemset>
+                        </xforms:select1>
+                    </fr:td>
+                    <fr:td>
+                        <xforms:input incremental="true" ref="@displayLabel">
+                            <xforms:label ref="$form-resources/detail/labels/label"/>
+                            <xforms:alert ref="$form-resources/detail/alerts/label"/>
+                            <xforms:help ref="$form-resources/detail/help/label"/>
+                        </xforms:input>
+                    </fr:td>
+
+                    <xforms:group ref="mods:identifier[@displayLabel = 'SU DRUID']">
+                        <fr:td>
+                            <xforms:input incremental="true" ref=".">
+                                <xforms:label ref="@displayLabel"/>
+                                <xforms:alert ref="$form-resources/detail/alerts/identifier"/>
+                            </xforms:input>
+                        </fr:td>
+                    </xforms:group>
+                    <xforms:group ref="mods:identifier[@displayLabel = 'entry_number']">
+                        <fr:td/>
+                        <fr:td>
+                            <xforms:input incremental="true" ref=".">
+                                <xforms:label ref="@displayLabel"/>
+                                <xforms:alert ref="$form-resources/detail/alerts/identifier"/>
+                            </xforms:input>
+                        </fr:td>
+                    </xforms:group>
+
+
+                </fr:tr>
+            </fr:body>
+        </fr:repeat>
+
+
+
+    </fr:section>
+    <!-- END RELATED ITEM -->
+
+</html>

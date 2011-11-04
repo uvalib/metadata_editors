@@ -1,0 +1,1777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (C) 2006 Orbeon, Inc.
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<resources xmlns="" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xxi="http://orbeon.org/oxf/xml/xinclude" xmlns:mods="http://www.loc.gov/mods/v3">
+    <resource xml:lang="en">
+
+        <!--  Hack for summary table headers -->
+        <identifier>
+            <label>Identifier</label>
+        </identifier>
+        <title>
+            <label>Title</label>
+        </title>
+        <name>
+            <label>Name</label>
+        </name>
+        <summary>
+            <titles>
+                <title>Title</title>
+                <resourcetype>Resource Type</resourcetype>
+                <idNumber>Identifcation Number</idNumber>
+                <genre>Genre</genre>
+            </titles>
+        </summary>
+
+
+        <!-- Resources that appear on the form -->
+        <detail>
+            <titles>
+                <detail-title>MODS Demo</detail-title>
+                <titleInfo>Title Information</titleInfo>
+                <originInfo>Origin Information</originInfo>
+                <date-type>Date Type</date-type>
+                <qualifier>Qualifier</qualifier>
+                <datestart>Date Start</datestart>
+                <dateend>Date End</dateend>
+                <keydate>Key Date</keydate>
+                <dateIssued>Date Issued</dateIssued>
+                <dateOther>Acquisition Date</dateOther>
+                <copyrightDate>Copyright Date</copyrightDate>
+                <dateCreated>Creation Date </dateCreated>
+                <place>Place</place>
+                <placetype>Place Term Type</placetype>
+                <publisher>Publisher</publisher>
+                <edition>Edition</edition>
+                <identifier>Identifier</identifier>
+                <typeofresource>Resource Type</typeofresource>
+                <name>Name</name>
+                <nameParts>Person or Organization Name Parts</nameParts>
+                <namePart/>
+                <nametype>Name Type</nametype>
+                <authority>Authority</authority>
+                <nameauthority>Name Authority</nameauthority>
+                <namerole>Name Role</namerole>
+                <roleTerm>Role Term</roleTerm>
+                <genre>Genre</genre>
+                <physicaldescription>Physical Description</physicaldescription>
+                <internetmediatype>Internet Media Type</internetmediatype>
+                <extent>Extent</extent>
+                <digitalorigin>Digital Origin</digitalorigin>
+                <location>Location</location>
+                <url>URL</url>
+                <physicallocation>Physical Location</physicallocation>
+                <accesscondition>Access Condition</accesscondition>
+                <abstract>Abstract</abstract>
+                <subject>Subject</subject>
+                <subjectDate>Subject - Temporal</subjectDate>
+                <subjectTopic>Subject - Topic</subjectTopic>
+                <subjectGenre>Subject - Genre</subjectGenre>
+                <subjectName>Subject - Name</subjectName>
+                <subjectNameType>Subject - Name Type</subjectNameType>
+                <subjectTitleInfo>Subject - Title</subjectTitleInfo>
+                <subjectGeographic>Subject - Geographic</subjectGeographic>
+                <subjectCartographics>Subject - Cartographics</subjectCartographics>
+                <coordinates>Coordinates</coordinates>
+                <coordinatesnorth>Top</coordinatesnorth>
+                <coordinateseast>Right</coordinateseast>
+                <coordinateswest>Left</coordinateswest>
+                <coordinatessouth>Bottom</coordinatessouth>
+                <scale>Scale</scale>
+                <projection>Projection</projection>
+                <note>Note</note>
+                <namePart>Name Parts</namePart>
+                <namePartType>Type</namePartType>
+                <seriesInfo>Series Information</seriesInfo>
+                <relatedItemType>Type</relatedItemType>
+                <relatedItemSubtitle>Box or Drawer Name</relatedItemSubtitle>
+                <relatedItemPartName>Folder Name</relatedItemPartName>
+                <relatedItemPartNumber>Folder Number</relatedItemPartNumber>
+                <point>Range Point</point>
+                <title>Document Title</title>
+                <titletype>Title Type</titletype>
+                <notetype>Note Type</notetype>
+                <subtitle>Subtitle</subtitle>
+                <nonSort>Non-Sorting Characters</nonSort>
+                <partnumber>Item Part Number</partnumber>
+                <partname>Name Of Part</partname>
+                <removeidentifier>Remove Identifier</removeidentifier>
+                <identifiertype>Type Of Identifier</identifiertype>
+                <namePart>Name Part</namePart>
+                <nametype>Name Type</nametype>
+                <roleTerm>Role Term</roleTerm>
+                <seriesInfo>Series Information</seriesInfo>
+                <relatedItem>Related Item</relatedItem>
+                <relatedItemSubtitle>Series Type</relatedItemSubtitle>
+                <relatedItemSubtitle>Box or Drawer Name</relatedItemSubtitle>
+                <relatedItemPartName>Folder Name</relatedItemPartName>
+                <relatedItemPartNumber>Folder Number</relatedItemPartNumber>
+                <import>Import</import>
+                <language>Language</language>
+                <languageSuggest>LC Language Lookup</languageSuggest>
+                <label>Label</label>
+                <manuscript>Manuscript</manuscript>
+                <druid>Druid</druid>
+                <viewrecord>View Record</viewrecord>
+            </titles>
+
+            <!-- Triggers labels -->
+            <labels>
+                <type>Type</type>
+                <yes>Yes</yes>
+                <no>No</no>
+                <remove-titleInfo>Remove Title Info</remove-titleInfo>
+                <removeoriginInfo>Remove Origin Info</removeoriginInfo>
+                <remove-place>Remove Place</remove-place>
+                <originInfosave>Save</originInfosave>
+                <addcreationDate>Creation Date</addcreationDate>
+                <addcopyrightDate>Copyright Date</addcopyrightDate>
+                <adddateIssued>Date Issued</adddateIssued>
+                <adddateOther>Acquisition Date</adddateOther>
+                <keydate>KeyDate</keydate>
+                <addplace>Place</addplace>
+                <addpublisher>Publisher</addpublisher>
+                <addedition>Edition</addedition>
+                <typeofresource>Resource Type</typeofresource>
+                <identifier>Identifier</identifier>
+                <removetypeofresouce>Remove Resource</removetypeofresouce>
+                <removegenre>Remove Genre</removegenre>
+                <form>Form</form>
+                <internetmediatype>Internet Media Type</internetmediatype>
+                <extent>Extent</extent>
+                <digitalorigin>Digital Origin</digitalorigin>
+                <location>Location</location>
+                <url>URL</url>
+                <physicallocation>Physical Location</physicallocation>
+                <urlaccess>URL Access</urlaccess>
+                <physicallocation>Physical Location</physicallocation>
+                <accesscondition>Access Condition</accesscondition>
+                <abstract>Abstract</abstract>
+                <subject>Subject</subject>
+                <addSubjectDate>Date</addSubjectDate>
+                <addSubjectTopic>Topic</addSubjectTopic>
+                <addSubjectGenre>Genre</addSubjectGenre>
+                <addSubjectName>Name</addSubjectName>
+                <addSubjectTitleInfo>Title</addSubjectTitleInfo>
+                <addGeographic>Geographic</addGeographic>
+                <addCartographics>Cartographics</addCartographics>
+                <notetype>Note Type</notetype>
+                <!-- Other controls labels -->
+                <origintype>
+                    <copyright state="copyright">Copyright</copyright>
+                    <creation>Creation</creation>
+                    <publication>Publication</publication>
+                </origintype>
+                <import>From Catalog Key</import>
+                <import-barcode>From Barcode</import-barcode>
+                <language>Language</language>
+                <languageSuggest>LC Language Lookup</languageSuggest>
+                <manuscript>Manuscript</manuscript>
+                <label>Label</label>
+                <druid>Druid</druid>
+            </labels>
+
+            <alerts>
+
+                <identifier>Identifier field cannot be empty.</identifier>
+                <identifiertype>Choose an identifier type.</identifiertype>
+                <title>All records must have at least one title</title>
+                <titletype>Please select a title type.</titletype>
+                <titleInfo>Title field cannot be empty.</titleInfo>
+                <typeofresource>Please select a type of resource.</typeofresource>
+                <date>Dates must be in YYYY-MM-DD format.</date>
+                <digitalorigin>Choose a digital origin</digitalorigin>
+                <physicaldescription>All records must contain one Physical Description
+                    element</physicaldescription>
+                <url>All records require one URL entry in http:// or https:// format</url>
+                <accesscondition>All records must contain an Access Condition
+                    entry.</accesscondition>
+                <nameauthority>All records must contain a authority for all name
+                    elements.</nameauthority>
+                <authority>All records must contain a authority for all name elements.</authority>
+                <seriesInfo>Series Information</seriesInfo>
+                <relatedItemTitle>Series Type</relatedItemTitle>
+                <relatedItemSubtitle>Box or Drawer</relatedItemSubtitle>
+            </alerts>
+
+            <help>
+                <identifier> At least one identifer is required. The DLF/Aquifer Implementation
+                    Guidelines for Shareable Metadata Records recommend the use of at least one
+                    identifier element with the type attribute containing appropriate values in each
+                    MODS record. This element is repeatable.</identifier>
+                <identifiertype>Required. All occurrences of the identifier element must contain the
+                    type attribute to indicate the type of the identifier. If a local identifier is
+                    used, it should be indicated as such using the local value.</identifiertype>
+                <title>Title Help Needed</title>
+                <titletype>All additional titles must designate a type.</titletype>
+                <titleInfo>The DLF/Aquifer Implementation Guidelines for Shareable MODS Records
+                    require the use in all records of at least one titleInfo element with one title
+                    subelement. Other subelements of titleInfo are recommended when they apply. This
+                    element is repeatable. </titleInfo>
+                <subtitle>The subtitle element is used to record a part of a title deemed secondary
+                    to the core portion. The guidelines recommend the use of this element when a
+                    subtitle is present, rather than including the subtitle in the text of the title
+                    element. When using the subTitle element, do not include punctuation at the end
+                    of the title element intended to delineate the title from the
+                    subtitle.</subtitle>
+                <nonSort>The nonSort element contains characters, including initial articles,
+                    punctuation, and spaces that appear at the beginning of a title that should be
+                    ignored for indexing of titles. The guidelines strongly recommend the use of
+                    this element when non-sorting characters are present, rather than including them
+                    in the text of the title element. Examples include : 'The' or 'A'. Do not
+                    include these character in the title field, but rather include them only in the
+                    nonSort field. </nonSort>
+                <partname>The partName element is used for a part or section name of a title. Use
+                    partName to describe the section or division titles of the digital object (for
+                    example, a chapter title, episode name, or an audio or video clip). The
+                    guidelines recommend the use of this subelement when a part name is present,
+                    rather than including the part name in the text of the title element. When using
+                    the partName element, do not include punctuation at the end of the preceding
+                    element intended to delineate the part name from previous parts of the
+                    title.</partname>
+                <partnumber>The partNumber element is used for a part or section number of a title.
+                    partNumber may describe the section of the digital object (for example, an
+                    episode number or an audio or video clip). partNumber may follow title or
+                    subTitle as appropriate. The guidelines recommend the use of this subelement
+                    when a part number is present, rather than including the part number in the text
+                    of the title element. When using the partNumber element, do not include
+                    punctuation at the end of the preceding element intended to delineate the part
+                    number from previous parts of the title.</partnumber>
+                <roleTerm>Need Role Term Help</roleTerm>
+                <typeofresource>For the purposes of records created according to these guidelines,
+                    information in typeOfResource is about the original item. For example, in the
+                    case of a digitized photograph, typeOfResource would apply to the analog
+                    original; in born-digital materials, it would apply to the original digital
+                    format.</typeofresource>
+                <date>The guidelines recommend recording each date in a structured form rather than
+                    a textual form. When a date is uncertain or cataloger-supplied, indicate this
+                    through the use of the qualifier field rather than inserting characters such as
+                    "ca.", brackets or a question mark as part of the date string. When only a
+                    decade is known, enter a date range for the entire decade and mark the date as
+                    questionable. When only a century is known, enter a date range for the entire
+                    century and mark the date as questionable.</date>
+                <qualifier>Best practice is to use this attribute with the appropriate value when a
+                    date is approximate, inferred, or questionable, rather than inserting characters
+                    such as "ca.", brackets or a question mark within the date string.</qualifier>
+                <place>Record in place names associated with the creation or issuance of a resource.
+                    Place should be omitted if no information about the originating place of the
+                    resource is known.</place>
+                <publisher>Publisher is a named entity determined to be the publisher or originator
+                    for a resource. Descriptive standards such as AACR2 may be used to format the
+                    name of the publisher. Information about an institution responsible for
+                    digitizing and delivering online a previously published resource should be
+                    included in note, rather than in publisher.</publisher>
+                <originInfo>OriginInfo Help Needed</originInfo>
+                <subject>Subject Help Needed</subject>
+                <edition>The edition element is used to provide an edition statement for a published
+                    work. Descriptive standards such as AACR2 and DACS may be used to determine if
+                    an edition statement should be recorded and in what format. If no edition
+                    statement applies to the resource, do not include the edition element.</edition>
+                <name>The DLF/Aquifer Implementation Guidelines for Shareable MODS Records recommend
+                    the use of at least one name element to describe the creator of the intellectual
+                    content of the resource, if available. Include as many name elements for
+                    contributors as are readily available. For textual materials, include the names
+                    of all known authors, translators, and/or editors. For images, include the name
+                    of the creator of the original intellectual content (photographer, painter,
+                    architect, etc.) and the name of anyone capturing that content in a new medium
+                    (for a photograph of a building, include both the architect and the
+                    photographer). If the creator is unknown or anonymous, do not include "unknown,"
+                    "anonymous," or a similar indication in the MODS records for aggregation.</name>
+                <nametype>Indicates the type of name.</nametype>
+                <authority>The indicates the authority for the name element. Use "local" if it is
+                    not a LCSH record</authority>
+                <nameauthority>The indicates the authority for the name element. Use "local" if it
+                    is not a LCSH record</nameauthority>
+                <namerole> Adapter Use for a person or organization who 1) reworks a musical
+                    composition, usually for a different medium, or 2) rewrites novels or stories
+                    for motion pictures or other audiovisual medium.<br/> Arranger Use for a person
+                    or organization who transcribes a musical composition, usually for a different
+                    medium from that of the original; in an arrangement the musical substance
+                    remains essentially unchanged. Attributed name Use for an author, artist, etc.,
+                    relating him/her to a work for which there is or once was substantial authority
+                    for designating that person as author, creator, etc. of the work. UF Supposed
+                    name Author Use for a person or organization chiefly responsible for the
+                    intellectual or artistic content of a work, usually printed text. This term may
+                    also be used when more than one person or body bears such responsibility. UF
+                    Joint author Compiler Use for a person or organization who produces a work or
+                    publication by selecting and putting together material from the works of various
+                    persons or bodies. Composer Use for a person or organization who creates a
+                    musical work, usually a piece of music in manuscript or printed form.
+                    Contributor Use for a person or organization one whose work has been contributed
+                    to a larger work, such as an anthology, serial publication, or other compilation
+                    of individual works. Do not use if the sole function in relation to a work is as
+                    author, editor, compiler or translator. Editor Use for a person or organization
+                    who prepares for publication a work not primarily his/her own, such as by
+                    elucidating text, adding introductory or other critical matter, or technically
+                    directing an editorial staff. Illustrator Use for a person or organization who
+                    conceives, and perhaps also implements, a design or illustration, usually to
+                    accompany a written text. Librettist Use for a person or organization who is a
+                    writer of the text of an opera, oratorio, etc. Use for a person or organization
+                    who prepares the stone or plate for lithographic printing, including a graphic
+                    artist creating a design directly on the surface from which printing will be
+                    done. Lyricist Use for a person or organization who is the a writer of the text
+                    of a song. Translator Use for a person or organization who renders a text from
+                    one language into another, or from an older form of a language into the modern
+                    form. These are additional possibilities, if you want to get very specific:
+                    Author of afterword, colophon, etc.[aft] Use for a person or organization
+                    responsible for an afterword, postface, colophon, etc. but who is not the chief
+                    author of a work. Author of introduction, etc.[aui] Use for a person or
+                    organization responsible for an introduction, preface, foreword, or other
+                    critical introductory matter, but who is not the chief author. Bibliographic
+                    antecedent[ant] Use for a person or organization responsible for a work upon
+                    which the work represented by the catalog record is based. This may be
+                    appropriate for adaptations, sequels, continuations, indexes, etc. Commentator
+                    for written text[cwt] Use for a person or organization responsible for the
+                    commentary or explanatory notes about a text. For the writer of manuscript
+                    annotations in a printed book, use Annotator [ann]. Dubious author[dub] Use for
+                    a person or organization to which authorship has been dubiously or incorrectly
+                    ascribed. Facsimilist[fac] Use for a person or organization that executed the
+                    facsimile. UFCopier Engraver[egr] Use for a person or organization who cuts
+                    letters, figures, etc. on a surface, such as a wooden or metal plate, for
+                    printing. Etcher[etr] Use for a person or organization who produces text or
+                    images for printing by subjecting metal, glass, or some other surface to acid or
+                    the corrosive action of some other substance. Actor[act Use for a person or
+                    organization who principally exhibits acting skills in a musical or dramatic
+                    presentation or entertainment. Annotator[ann] Use for a person who writes
+                    manuscript annotations on a printed item. Assignee[asg] Use for a person or
+                    organization to whom a license for printing or publishing has been transferred.
+                    Associated name[asn] Use for a person or organization associated with or found
+                    in an item or collection, which cannot be determined to be that of a Former
+                    owner [fmo] or other designated relator indicative of provenance. Binder[bnd]
+                    Use for a person or organization responsible for the binding of printed or
+                    manuscript materials. Binding designer[bdd] Use for a person or organization
+                    responsible for the binding design of a book, including the type of binding, the
+                    type of materials used, and any decorative aspects of the binding. UF Designer
+                    of binding Book designer[bkd] Use for a person or organization responsible for
+                    the entire graphic design of a book, including arrangement of type and
+                    illustration, choice of materials, and process used. UF Designer of book
+                    Bookjacket designer[bjd] Use for a person or organization responsible for the
+                    design of flexible covers designed for or published with a book, including the
+                    type of materials used, and any decorative aspects of the bookjacket. UF
+                    Designer of bookjacket Bookseller[bsl] Use for a person or organization who
+                    makes books and other bibliographic materials available for purchase. Interest
+                    in the materials is primarily lucrative. Censor[cns] Use for a censor,
+                    bowdlerizer, expurgator, etc., official or private. UF Bowdlerizer Expurgator
+                    Choreographer[chr] Use for a person or organization who composes or arranges
+                    dances or other movements (e.g., "master of swords") for a musical or dramatic
+                    presentation or entertainment. Collaborator[clb] Use for a person or
+                    organization that takes a limited part in the elaboration of a work of another
+                    person or organization that brings complements (e.g., appendices, notes) to the
+                    work. Copier USE Forger Copyright claimant[cpc] Use for a person or organization
+                    listed as a copyright owner at the time of registration. Copyright can be
+                    granted or later transferred to another person or organization, at which time
+                    the claimant becomes the copyright holder. Copyright holder[cph] Use for a
+                    person or organization to whom copy and legal rights have been granted or
+                    transferred for the intellectual content of a work. The copyright holder,
+                    although not necessarily the creator of the work, usually has the exclusive
+                    right to benefit financially from the sale and use of the work to which the
+                    associated copyright protection applies. Correspondent[crp] Use for a person or
+                    organization who was either the writer or recipient of a letter or other
+                    communication. Costume designer[cst] Use for a person or organization who
+                    designs or makes costumes, fixes hair, etc., for a musical or dramatic
+                    presentation or entertainment. Cover designer[cov] Use for a person or
+                    organization responsible for the graphic design of a book cover, album cover,
+                    slipcase, box, container, etc. For a person or organization responsible for the
+                    graphic design of an entire book, use Book designer; for book jackets, use
+                    Bookjacket designer. UFDesigner of cover Creator[cre] Use for a person or
+                    organization responsible for the intellectual or artistic content of a work.
+                    Curator of an exhibition[cur] Use for a person or organization responsible for
+                    conceiving and organizing an exhibition. Dancer[dnc] Use for a person or
+                    organization who principally exhibits dancing skills in a musical or dramatic
+                    presentation or entertainment. Dedicatee[dte] Use for a person or organization
+                    to whom a book, manuscript, etc., is dedicated (not the recipient of a gift).
+                    Dedicator[dto] Use for the author of a dedication, which may be a formal
+                    statement or in epistolary or verse form. Director[drt] Use for a person or
+                    organization who is responsible for the general management of a work or who
+                    supervises the production of a performance for stage, screen, or sound
+                    recording. Dissertant[dis] Use for a person who presents a thesis for a
+                    university or higher-level educational degree. Distributor[dst] Use for a person
+                    or organization that has exclusive or shared marketing rights for an item.
+                    Donor[dnr] Use for a person or organization who is the donor of a book,
+                    manuscript, etc., to its present owner. Donors to previous owners are designated
+                    as Former owner [fmo] or Inscriber [ins]. Forger[frg] Use for a person or
+                    organization who makes or imitates something of value or importance, especially
+                    with the intent to defraud. UF Copier Counterfeiter Former owner[fmo] Use for a
+                    person or organization who owned an item at any time in the past. Includes those
+                    to whom the material was once presented. A person or organization giving the
+                    item to the present owner is designated as Donor [dnr] Honoree[hnr] Use for a
+                    person or organization in memory or honor of whom a book, manuscript, etc. is
+                    donated. UF Memorial Inscriber[ins] Use for a person who signs a presentation
+                    statement. Instrumentalist[itr] Use for a person or organization who principally
+                    plays an instrument in a musical or dramatic presentation or entertainment.
+                    Music copyist[mcp] Use for a person who transcribes or copies musical notation
+                    Musical director[msd] Use for a person responsible for basic music decisions
+                    about a production, including coordinating the work of the composer, the sound
+                    editor, and sound mixers, selecting musicians, and organizing and/or conducting
+                    sound for rehearsals and performances. [use only after April 18, 2009]
+                    Musician[mus] Use for a person or organization who performs music or contributes
+                    to the musical content of a work when it is not possible or desirable to
+                    identify the function more precisely. Narrator[nrt] Use for a person who is a
+                    speaker relating the particulars of an act, occurrence, or course of events.
+                    Patron[pat] Use for a person or organization responsible for commissioning a
+                    work. Usually a patron uses his or her means or influence to support the work of
+                    artists, writers, etc. This includes those who commission and pay for individual
+                    works. Performer[prf] Use for a person or organization who exhibits musical or
+                    acting skills in a musical or dramatic presentation or entertainment, if
+                    specific codes for those functions ([act], [dnc], [itr], [voc], etc.) are not
+                    used. If specific codes are used, [prf] is used for a person whose principal
+                    skill is not known or specified. Printer[prt] Use for a person or organization
+                    who prints texts, whether from type or plates. Printer of plates[pop] Use for a
+                    person or organization who prints illustrations from plates. UFPlates, Printer
+                    of Printmaker[prm] Use for a person or organization who makes a relief,
+                    intaglio, or planographic printing surface. Producer[pro] Use for a person or
+                    organization responsible for the making of a motion picture, including business
+                    aspects, management of the productions, and the commercial success of the work.
+                    Publisher[pbl] Use for a person or organization that makes printed matter, often
+                    text, but also printed music, artwork, etc. available to the public. Publishing
+                    director[pbd] Use for a person or organization who presides over the elaboration
+                    of a collective work to ensure its coherence or continuity. This includes
+                    editors-in-chief, literary editors, editors of series, etc. Recipient[rcp] Use
+                    for a person or organization to whom correspondence is addressed. Reviewer[rev]
+                    Use for a person or organization responsible for the review of a book, motion
+                    picture, performance, etc. Scribe[scr] Use for a person who is an amanuensis and
+                    for a writer of manuscripts proper. For a person who makes pen-facsimiles, use
+                    Facsimilist [fac]. Singer[sng] Use for a person or organization who uses
+                    his/her/their voice with or without instrumental accompaniment to produce music.
+                    A performance may or may not include actual words. Speaker[spk] Use for a person
+                    who participates in a program (often broadcast) and makes a formalized
+                    contribution or presentation generally prepared in advance. Stage manager[stm]
+                    Use for a person who is in charge of everything that occurs on a performance
+                    stage, and who acts as chief of all crews and assistant to a director during
+                    rehearsals. [use only after April 18, 2009] Transcriber[trc] Use for a person
+                    who prepares a handwritten or typewritten copy from original material, including
+                    from dictated or orally recorded material. For makers of pen-facsimiles, use
+                    Facsimilist [fac]. Vocalist[voc] Use for a person or organization who
+                    principally exhibits singing skills in a musical or dramatic presentation or
+                    entertainment. </namerole>
+                <genre>The genre element is recommended in these guidelines and should be used to
+                    characterize the content of the digital resource rather than the digital
+                    resource itself. Currently, these values are from the Getty's Art and
+                    Architecture Thesaurus.</genre>
+                <form>This subelement specifies the physical form or medium of the material for a
+                    resource. This list include values from Source Codes for Forms (smd) maintained
+                    by the Library of Congress.</form>
+                <internetmediatype>This subelement records the electronic format type of the digital
+                    resource. Since it is expected that records shared for the Aquifer initiative
+                    describe resources existing in digital versions, at least one internetMediaType
+                    is required. This element has no attributes. The content value for this
+                    subelement should be taken from the MIME Media Types list and expressed in the
+                    format type/subtype. If a digital resource comprises multiple file types (for
+                    example, a diary that has been imaged and a text transcription made available),
+                    use a separate internetMediaType subelement for each. </internetmediatype>
+                <extent>This subelement includes a statement of the number and specific material of
+                    the units of the resource that express physical extent. It has no attributes.
+                    The use of your content standard of choice is strongly recommended if this
+                    subelement is used.</extent>
+                <digitalorigin>Record here the method by which a resource achieved digital form.
+                    Content values for this subelement are defined in the MODS schema. Resources
+                    incorporating pre-existing analog content with new digital content should be
+                    recorded as "born digital".</digitalorigin>
+                <url>This subelement contains the Uniform Resource Location (URL) for the resource.
+                    The URL provided should be persistent.</url>
+                <urlaccess>This attribute helps a metadata aggregator determine what a URL is likely
+                    to link to and can help determine which URL to use for specific
+                    purposes.</urlaccess>
+                <physicallocation>Use this subelement to identify the institution or repository
+                    holding the resource, or from which it is available. Within these guidelines, it
+                    identifies the physical, institutional home of an analog resource that has been
+                    digitized.</physicallocation>
+                <accesscondition>The audience for rights relating to possible uses of digital
+                    resources is the end user, so rights information should be as free of legalese
+                    and technical jargon as possible. State clearly any restrictions on use of the
+                    digital resource, including explicitly mentioning lack of copyright restrictions
+                    when the digital resource is in the public domain. Also provide contact
+                    information for use by end users who wish to pursue required permissions for
+                    publication, exhibit, or other types of dissemination. If you maintain rights
+                    information relating to specific digital resources on a web site, you may wish
+                    to provide a URL for that web site in lieu of a textual rights statement. When
+                    doing so, you should provide enough textual explanation, along with the URL, to
+                    make the purpose of the URL clear to end users. Whenever possible, consider
+                    using a standard license such as Creative Commons and/or a rights expression
+                    language such as the Open Digital Rights Language (ODRL) specification. In cases
+                    where access to a resource is unrestricted, a statement should appear that says
+                    so.</accesscondition>
+                <accessconditiontype>Use the type attribute to indicate restrictions (or lack
+                    thereof) on use of the resource and/or restrictions on access to the material.
+                    Use restrictionOnAccess only to indicate access restrictions (such as those
+                    based on institution affiliation or age) rather than restrictions on use. Other
+                    sorts of restrictions, such as government classification, should have no type
+                    attribute.</accessconditiontype>
+                <abstract>Record a succinct summary of the content of the digital resource. When
+                    creating a MODS record for a digital surrogate, record a summary of the content
+                    of the original resource. If only a portion of the resource was digitized,
+                    summarize only that portion. This element provides end users with information
+                    about the digital resource that assists them in making a judgment about its
+                    likely usefulness, and also provides context, if needed, for controlled
+                    vocabulary used in the record. The use of your content standard of choice is
+                    strongly recommended.</abstract>
+                <physicaldescription>Physical Description Help Needed</physicaldescription>
+                <location>Location Help Needed</location>
+                <note>Note Help Needed</note>
+                <abstract>Abstract Help Needed</abstract>
+                <seriesInfo>Series Information</seriesInfo>
+                <relatedItemTitle>Series Type</relatedItemTitle>
+                <relatedItemSubtitle>Box or Drawer Name</relatedItemSubtitle>
+                <relatedItemPartName>Folder Name</relatedItemPartName>
+                <relatedItemPartNumber>Folder Number</relatedItemPartNumber>
+            </help>
+
+        </detail>
+        <lists>
+            <identifiertype>
+
+                <instance>
+                    <section>
+                        <item>
+                            <label>--Select One--</label>
+                        </item>
+                    </section>
+                    <section>
+                        <label>Local</label>
+                        <item>
+                            <label>local</label>
+                            <value>local</value>
+                        </item>
+                    </section>
+                    <section>
+                        <label>Analog Original</label>
+                        <item>
+                            <label>isbn</label>
+                            <value>isbn</value>
+                        </item>
+                        <item>
+                            <label>isrc</label>
+                            <value>isrc</value>
+                        </item>
+                        <item>
+                            <label>ismn</label>
+                            <value>ismn</value>
+                        </item>
+                        <item>
+                            <label>issn</label>
+                            <value>issn</value>
+                        </item>
+                        <item>
+                            <label>issue number</label>
+                            <value>issue number</value>
+                        </item>
+                        <item>
+                            <label>istc</label>
+                            <value>istc</value>
+                        </item>
+                        <item>
+                            <label>lccn</label>
+                            <value>lccn</value>
+                        </item>
+                        <item>
+                            <label>matrix number</label>
+                            <value>matrix number</value>
+                        </item>
+                        <item>
+                            <label>music publisher</label>
+                            <value>music publisher</value>
+                        </item>
+                        <item>
+                            <label>music plate</label>
+                            <value>music plate</value>
+                        </item>
+                        <item>
+                            <label>sici</label>
+                            <value>sici</value>
+                        </item>
+
+                        <item>
+                            <label>upc</label>
+                            <value>upc</value>
+                        </item>
+                        <item>
+                            <label>videorecording identifier</label>
+                            <value>videorecording identifier</value>
+                        </item>
+                        <item>
+                            <label>stock number</label>
+                            <value>stock number</value>
+                        </item>
+                    </section>
+                    <section>
+                        <label>Digital Original</label>
+                        <item>
+                            <label>uri</label>
+                            <value>uri</value>
+                        </item>
+                        <item>
+                            <label>doi</label>
+                            <value>doi</value>
+                        </item>
+                    </section>
+                </instance>
+            </identifiertype>
+            <titletype>
+                <instance>
+                    <section>
+                        <item>
+                            <label>Main</label>
+                            <value>main</value>
+                        </item>
+                        <item>
+                            <label>Abbreviated</label>
+                            <value>abbreviated</value>
+                        </item>
+                        <item>
+                            <label>Translated</label>
+                            <value>translated</value>
+                        </item>
+                        <item>
+                            <label>Alternative</label>
+                            <value>alternative</value>
+                        </item>
+                        <item>
+                            <label>Uniform</label>
+                            <value>uniform</value>
+                        </item>
+                    </section>
+                </instance>
+            </titletype>
+            <nametype>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                        <item>
+                            <label>Organization</label>
+                            <value>organization</value>
+                        </item>
+                        <item>
+                            <label>Corporate</label>
+                            <value>corporate</value>
+                        </item>
+                        <item>
+                            <label>Personal</label>
+                            <value>personal</value>
+                        </item>
+                    </section>
+                </instance>
+            </nametype>
+            <nameauthority>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                        <item>
+                            <label>Local</label>
+                            <value>local</value>
+                        </item>
+                        <item>
+                            <label>NAF</label>
+                            <value>naf</value>
+                        </item>
+                    </section>
+                </instance>
+            </nameauthority>
+            <authority>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                        <item>
+                            <label>Local</label>
+                            <value>local</value>
+                        </item>
+                        <item>
+                            <label>LCSH</label>
+                            <value>lcsh</value>
+                        </item>
+                    </section>
+                </instance>
+            </authority>
+            <roletype>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                        <item>
+                            <label>Actor</label>
+                            <value>actor</value>
+                        </item>
+                        <item>
+                            <label>Adapter</label>
+                            <value>adapter</value>
+                        </item>
+                        <item>
+                            <label>Annotator</label>
+                            <value>annotator</value>
+                        </item>
+                        <item>
+                            <label>Arranger</label>
+                            <value>arranger</value>
+                        </item>
+                        <item>
+                            <label>Assignee</label>
+                            <value>assignee</value>
+                        </item>
+                        <item>
+                            <label>Associated name</label>
+                            <value>associated name</value>
+                        </item>
+                        <item>
+                            <label>Attributed name</label>
+                            <value>attributed name</value>
+                        </item>
+                        <item>
+                            <label>Author</label>
+                            <value>author</value>
+                        </item>
+                        <item>
+                            <label>Author of afterword, colophon, etc.</label>
+                            <value>author of afterword, colophon, etc.</value>
+                        </item>
+                        <item>
+                            <label>Author of introduction, etc.</label>
+                            <value>author of introduction, etc.</value>
+                        </item>
+                        <item>
+                            <label>Bibliographic antecedent</label>
+                            <value>bibliographic antecedent</value>
+                        </item>
+                        <item>
+                            <label>Binder</label>
+                            <value>binder</value>
+                        </item>
+                        <item>
+                            <label>Binding designer</label>
+                            <value>binding designer</value>
+                        </item>
+                        <item>
+                            <label>Book designer</label>
+                            <value>book designer</value>
+                        </item>
+                        <item>
+                            <label>Bookjacket designer</label>
+                            <value>bookjacket designer</value>
+                        </item>
+                        <item>
+                            <label>Bookseller</label>
+                            <value>bookseller</value>
+                        </item>
+                        <item>
+                            <label>Censor</label>
+                            <value>censor</value>
+                        </item>
+                        <item>
+                            <label>Choreographer</label>
+                            <value>choreographer</value>
+                        </item>
+                        <item>
+                            <label>Collaborator</label>
+                            <value>collaborator</value>
+                        </item>
+                        <item>
+                            <label>Colorist</label>
+                            <value>colorist</value>
+                        </item>
+                        <item>
+                            <label>Commentator for written text</label>
+                            <value>commentator for written text</value>
+                        </item>
+                        <item>
+                            <label>Compiler</label>
+                            <value>compiler</value>
+                        </item>
+                        <item>
+                            <label>Composer</label>
+                            <value>composer</value>
+                        </item>
+                        <item>
+                            <label>Contributor</label>
+                            <value>contributor</value>
+                        </item>
+                        <item>
+                            <label>Copyright claimant</label>
+                            <value>copyright claimant</value>
+                        </item>
+                        <item>
+                            <label>Copyright holder</label>
+                            <value>copyright holder</value>
+                        </item>
+                        <item>
+                            <label>Correspondent</label>
+                            <value>correspondent</value>
+                        </item>
+                        <item>
+                            <label>Costume designer</label>
+                            <value>costume designer</value>
+                        </item>
+                        <item>
+                            <label>Cover designer</label>
+                            <value>cover designer</value>
+                        </item>
+                        <item>
+                            <label>Creator</label>
+                            <value>creator</value>
+                        </item>
+                        <item>
+                            <label>Curator of an exhibition</label>
+                            <value>curator of an exhibition</value>
+                        </item>
+                        <item>
+                            <label>Dancer</label>
+                            <value>dancer</value>
+                        </item>
+                        <item>
+                            <label>Dedicatee</label>
+                            <value>dedicatee</value>
+                        </item>
+                        <item>
+                            <label>Dedicator</label>
+                            <value>dedicator</value>
+                        </item>
+                        <item>
+                            <label>Director</label>
+                            <value>director</value>
+                        </item>
+                        <item>
+                            <label>Dissertant</label>
+                            <value>dissertant</value>
+                        </item>
+                        <item>
+                            <label>Distributor</label>
+                            <value>distributor</value>
+                        </item>
+                        <item>
+                            <label>Donor</label>
+                            <value>donor</value>
+                        </item>
+                        <item>
+                            <label>Draftsman</label>
+                            <value>draftsman</value>
+                        </item>
+                        <item>
+                            <label>Dubious author</label>
+                            <value>dubious author</value>
+                        </item>
+                        <item>
+                            <label>Editor</label>
+                            <value>editor</value>
+                        </item>
+                        <item>
+                            <label>Engraver</label>
+                            <value>engraver</value>
+                        </item>
+                        <item>
+                            <label>Etcher</label>
+                            <value>etcher</value>
+                        </item>
+                        <item>
+                            <label>Facsimilist</label>
+                            <value>facsimilist</value>
+                        </item>
+                        <item>
+                            <label>Forger</label>
+                            <value>forger</value>
+                        </item>
+                        <item>
+                            <label>Former owner</label>
+                            <value>former owner</value>
+                        </item>
+                        <item>
+                            <label>Honoree</label>
+                            <value>honoree</value>
+                        </item>
+                        <item>
+                            <label>Illustrator</label>
+                            <value>illustrator</value>
+                        </item>
+                        <item>
+                            <label>Inscriber</label>
+                            <value>inscriber</value>
+                        </item>
+                        <item>
+                            <label>Instrumentalist</label>
+                            <value>instrumentalist</value>
+                        </item>
+                        <item>
+                            <label>Librettist</label>
+                            <value>librettist</value>
+                        </item>
+                        <item>
+                            <label>Lyricist</label>
+                            <value>lyricist</value>
+                        </item>
+                        <item>
+                            <label>Music copyist</label>
+                            <value>music copyist</value>
+                        </item>
+                        <item>
+                            <label>Musical director</label>
+                            <value>musical director</value>
+                        </item>
+                        <item>
+                            <label>Musician</label>
+                            <value>musician</value>
+                        </item>
+                        <item>
+                            <label>Narrator</label>
+                            <value>narrator</value>
+                        </item>
+                        <item>
+                            <label>Patron</label>
+                            <value>patron</value>
+                        </item>
+                        <item>
+                            <label>Performer</label>
+                            <value>performer</value>
+                        </item>
+                        <item>
+                            <label>Printer</label>
+                            <value>printer</value>
+                        </item>
+                        <item>
+                            <label>Printer of plates</label>
+                            <value>printer of plates</value>
+                        </item>
+                        <item>
+                            <label>Printmaker</label>
+                            <value>printmaker</value>
+                        </item>
+                        <item>
+                            <label>Producer</label>
+                            <value>producer</value>
+                        </item>
+                        <item>
+                            <label>Publisher</label>
+                            <value>publisher</value>
+                        </item>
+                        <item>
+                            <label>Publishing director</label>
+                            <value>publishing director</value>
+                        </item>
+                        <item>
+                            <label>Recipient</label>
+                            <value>recipient</value>
+                        </item>
+                        <item>
+                            <label>Reviewer</label>
+                            <value>reviewer</value>
+                        </item>
+                        <item>
+                            <label>Scribe</label>
+                            <value>scribe</value>
+                        </item>
+                        <item>
+                            <label>Singer</label>
+                            <value>singer</value>
+                        </item>
+                        <item>
+                            <label>Speaker</label>
+                            <value>speaker</value>
+                        </item>
+                        <item>
+                            <label>Stage manager</label>
+                            <value>stage manager</value>
+                        </item>
+                        <item>
+                            <label>Transcriber</label>
+                            <value>transcriber</value>
+                        </item>
+                        <item>
+                            <label>Translator</label>
+                            <value>translator</value>
+                        </item>
+                        <item>
+                            <label>Vocalist</label>
+                            <value>vocalist</value>
+                        </item>
+                    </section>
+                </instance>
+            </roletype>
+
+            <nameparttype>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value> </value>
+                        </item>
+                        <item>
+                            <label>Given</label>
+                            <value>given</value>
+                        </item>
+                        <item>
+                            <label>Family</label>
+                            <value>family</value>
+                        </item>
+                        <item>
+                            <label>Date</label>
+                            <value>date</value>
+                        </item>
+                        <item>
+                            <label>Term Of Address</label>
+                            <value>termsOfAddress</value>
+                        </item>
+                    </section>
+                </instance>
+            </nameparttype>
+            <typeOfRelatedItem>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>Host</label>
+                            <value>host</value>
+                        </item>
+                        <item>
+                            <label>Consituent</label>
+                            <value>consituent</value>
+                        </item>
+                        <item>
+                            <label>Series</label>
+                            <value>series</value>
+                        </item>
+                        <item>
+                            <label>Other Version</label>
+                            <value>otherVersion</value>
+                        </item>
+                    </section>
+                </instance>
+
+            </typeOfRelatedItem>
+            <typeofresource>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>Cartographic</label>
+                            <value>cartographic</value>
+                        </item>
+                        <item>
+                            <label>Text</label>
+                            <value>text</value>
+                        </item>
+                        <item>
+                            <label>Notated Music</label>
+                            <value>notated music</value>
+                        </item>
+                        <item>
+                            <label>Still Image</label>
+                            <value>still image</value>
+                        </item>
+                        <item>
+                            <label>Mixed Material</label>
+                            <value>mixed material</value>
+                        </item>
+                    </section>
+                </instance>
+            </typeofresource>
+
+            <qualifier>
+
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>Approximate</label>
+                            <value>approximate</value>
+                        </item>
+                    </section>
+                    <section>
+
+                        <item>
+                            <label>Inferred</label>
+                            <value>inferred</value>
+                        </item>
+                    </section>
+                    <section>
+
+                        <item>
+                            <label>Questionable</label>
+                            <value>questionable</value>
+                        </item>
+                    </section>
+                </instance>
+
+            </qualifier>
+
+            <yesno>
+                <instance>
+                    <section>
+                        <item>
+                            <label>Yes</label>
+                            <value>yes</value>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>No</label>
+                            <value>no</value>
+                        </item>
+                    </section>
+                </instance>
+            </yesno>
+
+            <genre>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>Aerial photographs</label>
+                            <value>Aerial photographs</value>
+                        </item>
+                        <item>
+                            <label>Aerial views</label>
+                            <value>Aerial views</value>
+                        </item>
+                        <item>
+                            <label>Aeronautical charts</label>
+                            <value>Aeronautical charts</value>
+                        </item>
+                        <item>
+                            <label>Astronautical charts</label>
+                            <value>Astronautical charts</value>
+                        </item>
+                        <item>
+                            <label>Astronomical models</label>
+                            <value>Astronomical models</value>
+                        </item>
+                        <item>
+                            <label>Atlas factice</label>
+                            <value>Atlas factice</value>
+                        </item>
+                        <item>
+                            <label>Atlases</label>
+                            <value>Atlases</value>
+                        </item>
+                        <item>
+                            <label>Bathymetric maps</label>
+                            <value>Bathymetric maps</value>
+                        </item>
+                        <item>
+                            <label>Block diagrams</label>
+                            <value>Block diagrams</value>
+                        </item>
+                        <item>
+                            <label>Bottle-charts</label>
+                            <value>Bottle-charts</value>
+                        </item>
+                        <item>
+                            <label>Cadastral maps</label>
+                            <value>Cadastral maps</value>
+                        </item>
+                        <item>
+                            <label>Cartographic materials</label>
+                            <value>Cartographic materials</value>
+                        </item>
+                        <item>
+                            <label>Cartographic materials for people with visual
+                                disabilities</label>
+                            <value>Cartographic materials for people with visual
+                                disabilities</value>
+                        </item>
+                        <item>
+                            <label>Celestial charts</label>
+                            <value>Celestial charts</value>
+                        </item>
+                        <item>
+                            <label>Celestial globes</label>
+                            <value>Celestial globes</value>
+                        </item>
+                        <item>
+                            <label>Children's atlases</label>
+                            <value>Children's atlases</value>
+                        </item>
+                        <item>
+                            <label>Children's maps</label>
+                            <value>Children's maps</value>
+                        </item>
+                        <item>
+                            <label>Comparative maps</label>
+                            <value>Comparative maps</value>
+                        </item>
+                        <item>
+                            <label>Digital maps</label>
+                            <value>Digital maps</value>
+                        </item>
+                        <item>
+                            <label>Early maps</label>
+                            <value>Early maps</value>
+                        </item>
+                        <item>
+                            <label>Fire insurance maps</label>
+                            <value>Fire insurance maps</value>
+                        </item>
+                        <item>
+                            <label>Geodatabases</label>
+                            <value>Geodatabases</value>
+                        </item>
+                        <item>
+                            <label>Geographic information systems</label>
+                            <value>Geographic information systems</value>
+                        </item>
+                        <item>
+                            <label>Geological cross-sections</label>
+                            <value>Geological cross-sections</value>
+                        </item>
+                        <item>
+                            <label>Geospatial data</label>
+                            <value>Geospatial data</value>
+                        </item>
+                        <item>
+                            <label>Globes</label>
+                            <value>Globes</value>
+                        </item>
+                        <item>
+                            <label>Gores (Maps)</label>
+                            <value>Gores (Maps)</value>
+                        </item>
+                        <item>
+                            <label>Index maps</label>
+                            <value>Index maps</value>
+                        </item>
+                        <item>
+                            <label>Linguistic atlases</label>
+                            <value>Linguistic atlases</value>
+                        </item>
+                        <item>
+                            <label>Loran charts</label>
+                            <value>Loran charts</value>
+                        </item>
+                        <item>
+                            <label>Lunar globes</label>
+                            <value>Lunar globes</value>
+                        </item>
+                        <item>
+                            <label>Manuscript maps</label>
+                            <value>Manuscript maps</value>
+                        </item>
+                        <item>
+                            <label>Mappae mundi</label>
+                            <value>Mappae mundi</value>
+                        </item>
+                        <item>
+                            <label>Maps</label>
+                            <value>Maps</value>
+                        </item>
+                        <item>
+                            <label>Meteorological charts</label>
+                            <value>Meteorological charts</value>
+                        </item>
+                        <item>
+                            <label>Military maps</label>
+                            <value>Military maps</value>
+                        </item>
+                        <item>
+                            <label>Mine maps</label>
+                            <value>Mine maps</value>
+                        </item>
+                        <item>
+                            <label>Miniature maps</label>
+                            <value>Miniature maps</value>
+                        </item>
+                        <item>
+                            <label>Nautical charts</label>
+                            <value>Nautical charts</value>
+                        </item>
+                        <item>
+                            <label>Outline maps</label>
+                            <value>Outline maps</value>
+                        </item>
+                        <item>
+                            <label>Physical maps</label>
+                            <value>Physical maps</value>
+                        </item>
+                        <item>
+                            <label>Pictorial maps</label>
+                            <value>Pictorial maps</value>
+                        </item>
+                        <item>
+                            <label>Plat maps</label>
+                            <value>Plat maps</value>
+                        </item>
+                        <item>
+                            <label>Plotting charts</label>
+                            <value>Plotting charts</value>
+                        </item>
+                        <item>
+                            <label>Portolan charts</label>
+                            <value>Portolan charts</value>
+                        </item>
+                        <item>
+                            <label>Quadrangle maps</label>
+                            <value>Quadrangle maps</value>
+                        </item>
+                        <item>
+                            <label>Raster data</label>
+                            <value>Raster data</value>
+                        </item>
+                        <item>
+                            <label>Relief models</label>
+                            <value>Relief models</value>
+                        </item>
+                        <item>
+                            <label>Remote-sensing images</label>
+                            <value>Remote-sensing images</value>
+                        </item>
+                        <item>
+                            <label>Road maps</label>
+                            <value>Road maps</value>
+                        </item>
+                        <item>
+                            <label>Statistical maps</label>
+                            <value>Statistical maps</value>
+                        </item>
+                        <item>
+                            <label>Stick charts</label>
+                            <value>Stick charts</value>
+                        </item>
+                        <item>
+                            <label>Strip maps</label>
+                            <value>Strip maps</value>
+                        </item>
+                        <item>
+                            <label>Thematic maps</label>
+                            <value>Thematic maps</value>
+                        </item>
+                        <item>
+                            <label>Topographic maps</label>
+                            <value>Topographic maps</value>
+                        </item>
+                        <item>
+                            <label>Tourist maps</label>
+                            <value>Tourist maps</value>
+                        </item>
+                        <item>
+                            <label>Vector data</label>
+                            <value>Vector data</value>
+                        </item>
+                        <item>
+                            <label>Wall maps</label>
+                            <value>Wall maps</value>
+                        </item>
+                        <item>
+                            <label>World atlases</label>
+                            <value>World atlases</value>
+                        </item>
+                        <item>
+                            <label>World maps</label>
+                            <value>World maps</value>
+                        </item>
+                        <item>
+                            <label>Worm's-eye views</label>
+                            <value>Worm's-eye views</value>
+                        </item>
+                    </section>
+                </instance>
+            </genre>
+            <identifierDisplayLabels>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>Book Number</label>
+                            <value>book_number</value>
+                        </item>
+                        <item>
+                            <label>Entry Number</label>
+                            <value>entry_number</value>
+                        </item>
+                        <item>
+                            <label>Call Number</label>
+                            <value>call_number</value>
+                        </item>
+                        <item>
+                            <label>Record Number</label>
+                            <value>record_number</value>
+                        </item>
+                        <item>
+                            <label>SU DRUID</label>
+                            <value>SU DRUID</value>
+                        </item>
+			<item>
+				<label>Stanford Catalog Key</label>
+				<value>Stanford University Libraries Catalog Key</value>
+			</item>
+			<item>
+				<label>Stanford Barcode</label>
+				<value>Stanford University Libraries Barcode</value>
+			</item>
+                    </section>
+
+
+                </instance>
+
+
+            </identifierDisplayLabels>
+            <coordinates>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>California</label>
+                            <value>W1243000 W1141500 N420000 N323000</value>
+                        </item>
+                        <item>
+                            <label>North America</label>
+                            <value>W1730000 W0100000 N840000 N080000</value>
+                        </item>
+                        <item>
+                            <label>North and Central America</label>
+                            <value>W1730000 W0100000 N840000 N071000</value>
+                        </item>
+                        <item>
+                            <label>North Pole (Polar Projection)</label>
+                            <value>W0000000 W0000000 N900000 N900000</value>
+                        </item>
+                        <item>
+                            <label>Pacific Ocean</label>
+                            <value>W0700000 E1100000 N630000 S530000</value>
+                        </item>
+                        <item>
+                            <label>South Pole (Polar Projection)</label>
+                            <value>W0000000 W0000000 S900000 S900000</value>
+                        </item>
+                        <item>
+                            <label>United States (not Alaska)</label>
+                            <value>W1280000 W0650000 N510000 N250000</value>
+                        </item>
+                        <item>
+                            <label>Western Hemisphere</label>
+                            <value>W0200000 E1600000 N900000 S900000</value>
+                        </item>
+                        <item>
+                            <label>Western United States</label>
+                            <value>W0830000 W0690000 N470000 N310000</value>
+                        </item>
+                        <item>
+                            <label>World</label>
+                            <value>W1800000 E1800000 N850000 S850000</value>
+                        </item>
+                    </section>
+                </instance>
+            </coordinates>
+
+            <form>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>Atlas</label>
+                            <value>atlas</value>
+                        </item>
+                        <item>
+                            <label>Atlas Map</label>
+                            <value>atlas map</value>
+                        </item>
+                        <item>
+                            <label>Book Map</label>
+                            <value>book map</value>
+                        </item>
+                        <item>
+                            <label>Celestial Chart</label>
+                            <value>celestial chart</value>
+                        </item>
+                        <item>
+                            <label>Fake Map</label>
+                            <value>fake map</value>
+                        </item>
+                        <item>
+                            <label>Separate Map</label>
+                            <value>separate map</value>
+                        </item>
+                        <item>
+                            <label>Title Page</label>
+                            <value>title page</value>
+                        </item>
+                    </section>
+                </instance>
+            </form>
+
+            <internetmediatype>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>TIFF image</label>
+                            <value>image/tiff</value>
+                        </item>
+                    </section>
+                </instance>
+            </internetmediatype>
+
+            <notetype>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>State Note</label>
+                            <value>state_note</value>
+                        </item>
+                        <item>
+                            <label>Reference Note</label>
+                            <value>reference</value>
+                        </item>
+                        <item>
+                            <label>Publication Note</label>
+                            <value>publications</value>
+                        </item>
+                        <item>
+                            <label>Language Note</label>
+                            <value>language</value>
+                        </item>
+                        <item>
+                            <label>General Note</label>
+                            <value>content</value>
+                        </item>
+                    </section>
+                </instance>
+            </notetype>
+
+
+            <digitalorigin>
+                <instance>
+
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+
+                    </section>
+                    <section>
+
+                        <item>
+                            <label>reformatted digital</label>
+                            <value>reformatted digital</value>
+                        </item>
+
+                    </section>
+                </instance>
+            </digitalorigin>
+
+            <urlaccess>
+
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>preview</label>
+                            <value>preview</value>
+                        </item>
+                        <item>
+                            <label>raw object</label>
+                            <value>raw object</value>
+                        </item>
+                        <item>
+                            <label>object in context</label>
+                            <value>object in context</value>
+                        </item>
+                    </section>
+                </instance>
+            </urlaccess>
+
+            <accessconditiontype>
+
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>Use and Reproduction</label>
+                            <value>useAndReproduction</value>
+                        </item>
+                        <item>
+                            <label>Restriction On Access</label>
+                            <value>restrictionOnAccess</value>
+                        </item>
+                    </section>
+                </instance>
+            </accessconditiontype>
+
+            <relatedItemTitle>
+                <instance>
+                    <section>
+                        <item>
+                            <label>--Select One--</label>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>General Photo</label>
+                            <value>general photo</value>
+                        </item>
+                        <item>
+                            <label>Stanford Family</label>
+                            <value>stanford family</value>
+                        </item>
+                        <item>
+                            <label>Biographical Photographs</label>
+                            <value>biographical photographs</value>
+                        </item>
+                    </section>
+                </instance>
+            </relatedItemTitle>
+            <placetype>
+                <instance>
+                    <section>
+                        <item>
+                            <label>--Select One--</label>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>Code</label>
+                            <value>code</value>
+                        </item>
+                        <item>
+                            <label>Text</label>
+                            <value>text</value>
+                        </item>
+                    </section>
+                </instance>
+            </placetype>
+            <point>
+                <instance>
+                    <section>
+                        <item>
+                            <label>None</label>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>Start Point</label>
+                            <value>start</value>
+                        </item>
+                        <item>
+                            <label>End Point</label>
+                            <value>end</value>
+                        </item>
+                    </section>
+                </instance>
+            </point>
+            <language>
+                <instance>
+                    <section>
+                        <item>
+                            <label>-- Select One --</label>
+                            <value/>
+                        </item>
+                    </section>
+                    <section>
+                        <item>
+                            <label>Arabic</label>
+                            <value>ara</value>
+                        </item>
+                        <item>
+                            <label>Dutch</label>
+                            <value>dut</value>
+                        </item>
+                        <item>
+                            <label>English</label>
+                            <value>eng</value>
+                        </item>
+                        <item>
+                            <label>French</label>
+                            <value>fre</value>
+                        </item>
+                        <item>
+                            <label>German</label>
+                            <value>ger</value>
+                        </item>
+                        <item>
+                            <label>Italian</label>
+                            <value>ita</value>
+                        </item>
+                        <item>
+                            <label>Japanese</label>
+                            <value>jpn</value>
+                        </item>
+                        <item>
+                            <label>Portuguese</label>
+                            <value>por</value>
+                        </item>
+                        <item>
+                            <label>Russian</label>
+                            <value>rus</value>
+                        </item>
+                        <item>
+                            <label>Spanish</label>
+                            <value>spa</value>
+                        </item>
+                    </section>
+                </instance>
+            </language>
+        </lists>
+    </resource>
+</resources>

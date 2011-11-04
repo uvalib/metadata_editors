@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <fr:section id="accessCondition" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/accesscondition"/>
+        <xforms:help ref="$form-resources/detail/help/accesscondition"/>
+
+
+
+        <fr:repeat nodeset="mods:accessCondition" id="accessCondition-repeat[position()]"
+            origin="xxforms:instance('mods-insert')/insert[@name = 'accessCondition']/child::*">
+            <fr:body>
+
+                <fr:tr>
+                    <fr:td>
+                        <div class="item-row show-title">
+                            <div class="item-cell">
+                                <xforms:group ref=".">
+                                    <xforms:label
+                                        value="$form-resources/detail/titles/accesscondition"/>
+                                    <xforms:alert
+                                        ref="$form-resources/detail/alerts/accesscondition"/>
+                                    <xforms:help ref="$form-resources/detail/help/accesscondition"/>
+                                </xforms:group>
+                            </div>
+                            <div class="item-cell show-title">
+                                <xforms:select1 ref="@type" class="drop-down">
+                                    <xforms:label ref="$form-resources/detail/labels/type"/>
+                                    <xforms:alert
+                                        ref="$form-resources/detail/alerts/accessconditiontype"/>
+                                    <xforms:help
+                                        ref="$form-resources/detail/help/accessconditiontype"/>
+                                    <xforms:itemset
+                                        nodeset="$form-resources/lists/accessconditiontype/instance//(section|item)">
+                                        <xforms:label ref="label"/>
+                                        <xforms:value ref="value"/>
+                                    </xforms:itemset>
+                                </xforms:select1>
+                            </div>
+                        </div>
+                        <div class="item-row show-title">
+                            <xforms:textarea ref=".">
+                                <xforms:label value="$form-resources/detail/titles/accesscondition"/>
+                                <xforms:alert ref="$form-resources/detail/alerts/accesscondition"/>
+                                <xforms:help ref="$form-resources/detail/help/accesscondition"/>
+                            </xforms:textarea>
+                        </div>
+                    </fr:td>
+                </fr:tr>
+            </fr:body>
+        </fr:repeat>
+
+
+
+    </fr:section>
+
+</html>

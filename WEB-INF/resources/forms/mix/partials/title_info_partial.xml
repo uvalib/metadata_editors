@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    
+    <!-- START TITLEINFO -->
+    <fr:section id="titleInfo-section" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/titleInfo"/>
+        <xforms:help ref="$form-resources/detail/help/titleInfo"/>
+        <xforms:alert ref="$form-resources/detail/alert/titleInfo"/>
+        <fr:grid>
+            <fr:tr>
+                <fr:td> 
+                   
+                    <fr:repeat nodeset="mods:titleInfo" id="titleInfo-repeat"
+                        origin="xxforms:instance('mods-insert')/insert[@name = 'titleInfo']/mods:titleInfo">
+                        <fr:body>
+                        
+                            <fr:tr>
+                                <fr:td>
+                                    <div class="item-row show-title">
+                                        <xforms:textarea incremental="true"
+                                            ref="mods:title" appearance="xxforms:autosize">
+                                            <xforms:label
+                                                ref="$form-resources/detail/titles/title"/>
+                                            <xforms:help
+                                                ref="$form-resources/detail/help/title"/>
+                                            <xforms:alert
+                                                ref="$form-resources/detail/alerts/title"/>
+                                        </xforms:textarea>
+                                    </div>
+                                    <div class="item-row show-title">
+                                        <div class="item-cell">
+                                            <fr:optional-element ref="mods:nonSort"
+                                                nodeset="mods:titleInfo">
+                                                <xforms:output
+                                                    ref="$form-resources/detail/titles/nonSort"
+                                                    class="forms-hidden"/>
+                                                <xforms:input incremental="true" ref=".">
+                                                    <xforms:label
+                                                        ref="$form-resources/detail/titles/nonSort"
+                                                        class="forms-hidden"/>
+                                                    <xforms:help
+                                                        ref="$form-resources/detail/help/nonSort"/>
+                                                    <xforms:alert
+                                                        ref="$form-resources/detail/alerts/nonSort"/>
+                                                </xforms:input>
+                                            </fr:optional-element>
+                                        </div>
+                                        <div class="item-cell">
+                                            <!-- TitleInfo @type -->
+                                            <fr:optional-element ref="@type"
+                                                nodeset="mods:titleInfo">
+                                                <xforms:output
+                                                    ref="$form-resources/detail/titles/titletype"/>
+                                                <xforms:select1 ref="." incremental="false"
+                                                    class="drop-down" id="additional-title">
+                                                    <xforms:label
+                                                        ref="$form-resources/detail/titles/titletype"/>
+                                                    <xforms:alert
+                                                        ref="$form-resources/detail/alerts/titletype"/>
+                                                    <xforms:help
+                                                        ref="$form-resources/detail/help/titletype"/>
+                                                    <xforms:itemset
+                                                        nodeset="$form-resources/lists/titletype/instance//(section|item)">
+                                                        <xforms:label ref="label"/>
+                                                        <xforms:value ref="value"/>
+                                                    </xforms:itemset>
+                                                </xforms:select1>
+                                            </fr:optional-element>
+                                        </div>
+                                    </div>
+                                    <div class="item-row show-title">
+                                        <fr:optional-element ref="mods:subTitle"
+                                            nodeset="mods:titleInfo">
+                                            <xforms:output
+                                                ref="$form-resources/detail/titles/subtitle"
+                                                class="forms-hidden"/>
+                                            <div style="clear:both"/>
+                                            <xforms:textarea incremental="true" ref="."
+                                                appearance="xxforms:autosize">
+                                                <xforms:label
+                                                    ref="$form-resources/detail/titles/subtitle"/>
+                                                <xforms:alert
+                                                    ref="$form-resources/detail/alerts/subtitle"/>
+                                                <xforms:help
+                                                    ref="$form-resources/detail/help/subtitle"/>
+                                            </xforms:textarea>
+                                        </fr:optional-element>
+                                    </div>
+                                    <div class="item-row show-title">
+                                        <div class="item-cell">
+                                            <fr:optional-element ref="mods:partNumber"
+                                                nodeset="mods:titleInfo">
+                                                <xforms:output
+                                                    ref="$form-resources/detail/titles/partnumber"/>
+                                                <xforms:input incremental="true" ref="."
+                                                    style="width:20em;">
+                                                    <xforms:label
+                                                        ref="$form-resources/detail/titles/partnumber"
+                                                        class="forms-hidden"/>
+                                                    <xforms:alert
+                                                        ref="$form-resources/detail/alerts/partnumber"/>
+                                                    <xforms:help
+                                                        ref="$form-resources/detail/help/partnumber"/>
+                                                </xforms:input>
+                                            </fr:optional-element>
+                                        </div>
+                                        <div class="item-cell">
+                                            <fr:optional-element ref="mods:partName"
+                                                nodeset="mods:titleInfo">
+                                                <xforms:output
+                                                    ref="$form-resources/detail/titles/partname"/>
+                                                <xforms:input incremental="true" ref=".">
+                                                    <xforms:label
+                                                        ref="$form-resources/detail/titles/partname"
+                                                        class="forms-hidden"/>
+                                                    <xforms:alert
+                                                        ref="$form-resources/detail/alerts/partname"/>
+                                                    <xforms:help
+                                                        ref="$form-resources/detail/help/partname"/>
+                                                </xforms:input>
+                                            </fr:optional-element>
+                                        </div>
+                                    </div>
+                                    <div class="repeat-border"/>
+                                </fr:td>
+                            </fr:tr>
+                      
+                        </fr:body>
+                    </fr:repeat>
+                </fr:td>
+            </fr:tr>
+        </fr:grid>
+    </fr:section>
+    <!-- END TITLEINFO -->
+</html>

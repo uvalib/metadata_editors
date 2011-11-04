@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This presents the interface to import MODS XML from Symphony via catkey or barcode. --> 
+
+<!-- BEGEIN IMPORT -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <fr:section id="import-section" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/import"/>
+        <xforms:help ref="$form-resources/detail/help/import"/>
+
+        <fr:grid columns="2">
+            <fr:tr>
+                <fr:td>
+
+                    <xforms:group ref="instance('import-instance')">
+                        <xforms:input ref=".">
+                            <xforms:label ref="$form-resources/detail/labels/import"/>
+                            <xforms:alert ref="$form-resources/detail/alerts/import"/>
+                            <xforms:help ref="$form-resources/detail/help/import"/>
+                        </xforms:input>
+                        <xforms:group ref=".">
+                            <xforms:action ev:event="DOMActivate">
+                                <xforms:send submission="import-mods"/>
+                                <xforms:insert context="xxforms:instance('fr-form-instance')"
+                                    origin="xxforms:instance('mods-insert')/insert[@name = 'identifiercatkey']/child::*"/>
+                                <xforms:setvalue
+                                    ref="xxforms:instance('fr-form-instance')/mods:identifier[@displayLabel='Stanford University Libraries Catalog Key']"
+                                    value="xxforms:instance('fr-form-instance')/mods:recordInfo[1]/mods:recordIdentifier[1]"/>
+                                <xforms:insert context="xxforms:instance('fr-form-instance')"
+                                    origin="xxforms:instance('mods-insert')/insert[@name = 'identifierdruid']/child::*"/>
+                                <xforms:setvalue
+                                    ref="xxforms:instance('fr-form-instance')/mods:identifier[@displayLabel='SU DRUID']"
+                                    value="concat('druid:', xxforms:instance('fr-parameters-instance')/document)"
+                                />
+                            </xforms:action>
+                            <xforms:trigger appearance="minimal" bind="buttons-triggers">
+                                <xforms:label>
+                                    <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                </xforms:label>
+                            </xforms:trigger>
+                        </xforms:group>
+                    </xforms:group>
+
+                </fr:td>
+                <fr:td>
+
+                    <xforms:group ref="instance('import-instance')">
+                        <xforms:input ref=".">
+                            <xforms:label ref="$form-resources/detail/labels/import-barcode"/>
+                            <xforms:alert ref="$form-resources/detail/alerts/import-barcode"/>
+                            <xforms:help ref="$form-resources/detail/help/import-barcode"/>
+                        </xforms:input>
+                        <xforms:group ref=".">
+                            <xforms:action ev:event="DOMActivate">
+                                <xforms:send submission="import-mods-barcode"/>
+                                <xforms:insert context="xxforms:instance('fr-form-instance')"
+                                    origin="xxforms:instance('mods-insert')/insert[@name = 'identifiercatkey']/child::*"/>
+                                <xforms:setvalue
+                                    ref="xxforms:instance('fr-form-instance')/mods:identifier[@displayLabel='Stanford University Libraries Catalog Key']"
+                                    value="xxforms:instance('fr-form-instance')/mods:recordInfo[1]/mods:recordIdentifier[1]"/>
+                                <xforms:insert context="xxforms:instance('fr-form-instance')"
+                                    origin="xxforms:instance('mods-insert')/insert[@name = 'identifierdruid']/child::*"/>
+                                <xforms:setvalue
+                                    ref="xxforms:instance('fr-form-instance')/mods:identifier[@displayLabel='SU DRUID']"
+                                    value="concat('druid:', xxforms:instance('fr-parameters-instance')/document)"
+                                />
+                            </xforms:action>
+                            <xforms:trigger appearance="minimal" bind="buttons-triggers">
+                                <xforms:label>
+                                    <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                </xforms:label>
+                            </xforms:trigger>
+                        </xforms:group>
+                    </xforms:group>
+
+                </fr:td>
+            </fr:tr>
+        </fr:grid>
+    </fr:section>
+    <!-- END IMPORT -->
+
+</html>

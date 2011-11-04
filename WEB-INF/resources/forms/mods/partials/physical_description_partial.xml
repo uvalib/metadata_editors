@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!-- START PHYSCIALDESC -->
+    <fr:section id="physicalDescription" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/physicaldescription"/>
+        <xforms:help ref="$form-resources/detail/help/physicaldescription"/>
+
+        <fr:repeat nodeset="mods:physicalDescription[position()]"
+            id="physicalDescription-repeat[position()]"
+            origin="xxforms:instance('mods-insert')/insert[@name = 'physicalDescription']/child::*">
+            <fr:body>
+
+                <fr:tr>
+                    <fr:td>
+                        <div class="button-row">
+                            <!-- ADD FORM -->
+                            <div class="item-cell">
+                                <xforms:group ref=".">
+                                    <xforms:insert ev:event="DOMActivate" context="."
+                                        position="after" at="form-repeat"
+                                        origin="instance('mods-insert')/insert[@name = 'form']/child::*"/>
+                                    <fr:button bind="buttons-triggers">
+                                        <xforms:label>
+                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <span class="label">Form</span>
+                                        </xforms:label></fr:button>
+                                </xforms:group>
+                            </div>
+                            <!--ADD internet media type-->
+                            <div class="item-cell">
+                                <xforms:group ref=".">
+                                    <xforms:insert ev:event="DOMActivate" context="."
+                                        position="after" at="internetmedia-repeat"
+                                        origin="instance('mods-insert')/insert[@name = 'internetMediaType']/child::*"/>
+                                    <fr:button bind="buttons-triggers">
+                                        <xforms:label>
+                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <span class="label">Internet Media Type</span>
+                                        </xforms:label></fr:button>
+                                </xforms:group>
+                            </div>
+                            <!-- add extent -->
+                            <div class="item-cell">
+                                <xforms:group ref=".">
+                                    <xforms:insert ev:event="DOMActivate" context="."
+                                        position="after" at="extent-repeat"
+                                        origin="instance('mods-insert')/insert[@name = 'extent']/child::*"/>
+                                    <fr:button bind="buttons-triggers">
+                                        <xforms:label>
+                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <span class="label">Extent</span>
+                                        </xforms:label></fr:button>
+                                </xforms:group>
+                            </div>
+                        </div>
+                        <!-- END BUTTON -->
+                        <!-- form -->
+                        <xforms:repeat nodeset="mods:form" id="form-repeat">
+                            <div class="item-row show-title">
+                                <div class="repeat-container">
+                                    <div class="repeat-container-item">
+                                        <div class="item-row">
+                                            <div class="repeat-remove">
+                                                <xforms:group ref=".">
+                                                  <xforms:delete ev:event="DOMActivate" context="."
+                                                  nodeset=".[position()]"/>
+                                                  <xforms:trigger appearance="minimal" ref=".">
+                                                  <xforms:label>
+                                                  <img src="/apps/fr/style/remove.gif"
+                                                  alt="Remove Form"/>
+                                                  </xforms:label>
+                                                  </xforms:trigger>
+                                                </xforms:group>
+                                            </div>
+                                            <div class="item-cell">
+                                                <xforms:select1 ref="." incremental="false"
+                                                  class="drop-down" id="additional-form">
+                                                  <xforms:label
+                                                  ref="$form-resources/detail/labels/form"/>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/form"/>
+                                                  <xforms:help
+                                                  ref="$form-resources/detail/help/form"/>
+                                                  <xforms:itemset
+                                                  nodeset="$form-resources/lists/form/instance//(section|item)">
+                                                  <xforms:label ref="label"/>
+                                                  <xforms:value ref="value"/>
+                                                  </xforms:itemset>
+                                                </xforms:select1>
+                                            </div>
+                                            <div class="item-cell">
+                                                <xforms:output ref="./@authority"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div></div>
+                        </xforms:repeat>
+                        <!-- END FORM -->
+                        <!-- START INTERNETMEDIATYPE -->
+                        <xforms:repeat nodeset="mods:internetMediaType[position()]"
+                            id="internetMediaType-repeat">
+                            <div class="item-row show-title">
+                                <div class="repeat-container">
+                                    <div class="repeat-container-item">
+                                        <div class="item-row">
+                                            <div class="repeat-remove">
+                                                <xforms:group ref=".">
+                                                  <xforms:delete ev:event="DOMActivate" context="."
+                                                  nodeset=".[position()]"/>
+                                                  <xforms:trigger appearance="minimal" ref=".">
+                                                  <xforms:label>
+                                                  <img src="/apps/fr/style/remove.gif"
+                                                  alt="Remove Internetmediatype"/>
+                                                  </xforms:label>
+                                                  </xforms:trigger>
+                                                </xforms:group>
+                                            </div>
+                                            <div class="item-cell">
+                                                <xforms:select1 ref="." incremental="false"
+                                                  class="drop-down"
+                                                  id="additional-internetmediatype">
+                                                  <xforms:label
+                                                  ref="$form-resources/detail/labels/internetmediatype"/>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/internetmediatype"/>
+                                                  <xforms:help
+                                                  ref="$form-resources/detail/help/internetmediatype"/>
+                                                  <xforms:itemset
+                                                  nodeset="$form-resources/lists/internetmediatype//(section|item)">
+                                                  <xforms:label ref="label"/>
+                                                  <xforms:value ref="value"/>
+                                                  </xforms:itemset>
+                                                </xforms:select1>
+                                            </div>
+                                        </div>
+                                    </div></div>
+                            </div>
+                        </xforms:repeat>
+                        <!-- END INTERNETMEDIATYPE -->
+                        <!-- START  EXTENT -->
+                        <xforms:repeat nodeset="mods:extent[position()]" id="extent-repeat">
+                            <div class="item-row show-title">
+                                <div class="repeat-container">
+                                    <div class="repeat-container-item">
+                                        <div class="item-row">
+                                            <div class="repeat-remove">
+                                                <xforms:group ref=".">
+                                                  <xforms:delete ev:event="DOMActivate" context="."
+                                                  nodeset=".[position()]"/>
+                                                  <xforms:trigger appearance="minimal" ref=".">
+                                                  <xforms:label>
+                                                  <img src="/apps/fr/style/remove.gif"
+                                                  alt="Remove Extent"/>
+                                                  </xforms:label>
+                                                  </xforms:trigger>
+                                                </xforms:group>
+                                            </div>
+                                            <xforms:input ref="." incremental="true"
+                                                id="additional-extent">
+                                                <xforms:label
+                                                  ref="$form-resources/detail/labels/extent"/>
+                                                <xforms:alert ref="$form-resources/detail/alerts"/>
+                                                <xforms:help
+                                                  ref="$form-resources/detail/help/extent"/>
+                                            </xforms:input>
+                                        </div>
+                                        <div class="item-cell"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </xforms:repeat>
+                        <!-- END EXTENT -->
+                    </fr:td>
+                </fr:tr>
+            </fr:body>
+        </fr:repeat>
+    </fr:section>
+    <!-- END PHYSICALDES -->
+
+</html>

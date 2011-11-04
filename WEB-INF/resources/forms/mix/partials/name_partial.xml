@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!-- START NAME -->
+    <fr:section id="name-section" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/name"/>
+        <xforms:help ref="$form-resources/detail/help/name"/>
+      
+                    <fr:repeat nodeset="mods:name" bind="name-bind" id="name-repeat[position()]"
+                        origin="xxforms:instance('mods-insert')/insert[@name = 'name']/mods:name">
+                        <fr:body>
+                            <fr:tr>
+                                <fr:td>
+                                    <div class="item-row show-title">
+                                        <div class="item-cell">
+                                            <xforms:select1 ref="@type">
+                                                <xforms:label
+                                                  ref="$form-resources/detail/titles/nametype"/>
+                                                <xforms:alert
+                                                  ref="$form-resources/detail/alerts/nametype"/>
+                                                <xforms:help
+                                                  ref="$form-resources/detail/help/nametype"/>
+                                                <xforms:itemset
+                                                  nodeset="$form-resources/lists/nametype/instance//(section|item)">
+                                                  <xforms:label ref="label"/>
+                                                  <xforms:value ref="value"/>
+                                                </xforms:itemset>
+                                            </xforms:select1>
+                                        </div>
+                                        
+                                        <div class="item-cell">
+                                            <xforms:select1 ref="@authority">
+                                                <xforms:label
+                                                  ref="$form-resources/detail/titles/nameauthority"/>
+                                                <xforms:alert
+                                                  ref="$form-resources/detail/alerts/nameauthority"/>
+                                                <xforms:help
+                                                  ref="$form-resources/detail/help/nameauthority"/>
+                                                <xforms:itemset
+                                                  nodeset="$form-resources/lists/nameauthority/instance//(section|item)">
+                                                  <xforms:label ref="label"/>
+                                                  <xforms:value ref="value"/>
+                                                </xforms:itemset>
+                                            </xforms:select1>
+                                        </div>
+                                    </div>
+                                    <div class="nested-repeatable-header-cell">
+                                        <div class="nested-repeatable-header-cell">
+                                            <xforms:group ref=".">
+                                                <xforms:insert ev:event="DOMActivate" context="."
+                                                  position="after" at="namePart-repeat"
+                                                  origin="instance('mods-insert')/insert[@name = 'name']/mods:name/mods:namePart"/>
+                                                <fr:button bind="buttons-triggers">
+                                                  <xforms:label>
+                                                  <img src="/apps/fr/style/images/silk/add.png"
+                                                  alt="Add"/><span class="label">Add Name
+                                                  Part</span></xforms:label></fr:button>
+                                            </xforms:group>
+                                        </div>
+                                    </div>
+                                    <div class="repeat-container show-title">
+                                        <xforms:repeat nodeset="mods:namePart"
+                                            id="namePart-repeat[position()]">
+                                            <div class="repeat-container-item">
+                                                <div class="item-row">
+                                                  <div class="repeat-remove">
+                                                  <xforms:group ref=".">
+                                                  <xforms:delete ev:event="DOMActivate" nodeset="."/>
+                                                  <xforms:trigger appearance="minimal"
+                                                  bind="buttons-triggers">
+                                                  <xforms:label>
+                                                  <img src="/apps/fr/style/remove.gif"
+                                                  alt="Remove Name Role"/>
+                                                  </xforms:label>
+                                                  </xforms:trigger>
+                                                  </xforms:group>
+                                                  </div>
+                                                  <div class="item-cell">
+                                                  <xforms:input ref="." selection="open"
+                                                  incremental="true">
+                                                  <xforms:label
+                                                  value="$form-resources/detail/titles/nameParts"/>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/namepart"/>
+                                                  <xforms:help
+                                                  ref="$form-resources/detail/help/namepart"/>
+                                                  </xforms:input>
+                                                  </div>
+                                                  <!-- NamePart @type -->
+                                                  <div class="item-cell">
+                                                  <fr:optional-element ref="./@type"
+                                                  nodeset="mods:namePart">
+                                                  <xforms:output
+                                                  ref="$form-resources/detail/titles/nametype"/>
+                                                  <xforms:select1 ref="." incremental="false"
+                                                  class="drop-down" id="nameparttype">
+                                                  <xforms:label
+                                                  ref="$form-resources/detail/titles/nametype"/>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/nametype"/>
+                                                  <xforms:help
+                                                  ref="$form-resources/detail/help/nametype"/>
+                                                  <xforms:itemset
+                                                  nodeset="$form-resources/lists/nameparttype/instance//(section|item)">
+                                                  <xforms:label ref="label"/>
+                                                  <xforms:value ref="value"/>
+                                                  </xforms:itemset>
+                                                  </xforms:select1>
+                                                  </fr:optional-element>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </xforms:repeat>
+                                    </div>
+                                    <!-- name role -->
+                                    <div class="nested-repeatable-header-cell show-title">
+                                        <xforms:group ref=".">
+                                            <xforms:insert ev:event="DOMActivate" context="."
+                                                position="after" at="nameRole-repeat"
+                                                origin="instance('mods-insert')/insert[@name = 'name']/mods:name/mods:role"/>
+                                            <fr:button id="control-2-control"
+                                                bind="buttons-triggers">
+                                                <xforms:label>
+                                                  <img src="/apps/fr/style/images/silk/add.png"
+                                                  alt="Add"/><span class="label">Add
+                                                  Role</span></xforms:label></fr:button>
+                                        </xforms:group>
+                                    </div>
+                                    <div class="repeat-container">
+                                        <xforms:repeat nodeset="mods:role"
+                                            id="nameRole-repeat[position()]">
+                                            <div class="repeat-container-item ">
+                                                <div class="item-row show-title">
+                                                  <div class="repeat-remove">
+                                                  <xforms:group ref=".">
+                                                  <xforms:delete ev:event="DOMActivate" nodeset="."/>
+                                                  <xforms:trigger appearance="minimal"
+                                                  bind="buttons-triggers">
+                                                  <xforms:label>
+                                                  <img src="/apps/fr/style/remove.gif"
+                                                  alt="Remove Name Role"/>
+                                                  </xforms:label>
+                                                  </xforms:trigger>
+                                                  </xforms:group>
+                                                  </div>
+                                                  <div class="item-cell">
+                                                  <xforms:select1 ref="mods:roleTerm"
+                                                  class="drop-down">
+                                                  <xforms:label
+                                                  value="$form-resources/detail/titles/roleTerm"/>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/roleTerm"/>
+                                                  <xforms:help
+                                                  ref="$form-resources/detail/help/roleTerm"/>
+                                                  <xforms:itemset
+                                                  nodeset="$form-resources/lists/roletype/instance//(section|item)">
+                                                  <xforms:label ref="label"/>
+                                                  <xforms:value ref="value"/>
+                                                  </xforms:itemset>
+                                                  </xforms:select1>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </xforms:repeat>
+                                    </div>
+                                    <div class="repeat-border"/>
+                                </fr:td>
+                            </fr:tr>
+                        </fr:body>
+                    </fr:repeat>
+    </fr:section>
+    <!-- END NAME -->
+</html>

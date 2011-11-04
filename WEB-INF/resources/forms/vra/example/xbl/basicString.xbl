@@ -1,0 +1,45 @@
+<xbl:xbl xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms"
+	xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+	xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xbl="http://www.w3.org/ns/xbl"
+	xmlns:xxbl="http://orbeon.org/oxf/xml/xbl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:oxf="http://www.orbeon.com/oxf/processors" xmlns="http://www.lib.virginia.edu/ole">
+
+	<xbl:binding id="uva-basic-string" element="uva|basicString">
+		<xbl:template xxbl:transform="oxf:unsafe-xslt">
+			<xsl:transform version="2.0">
+				<xsl:import href="oxf:/oxf/xslt/utils/copy.xsl"/>
+
+				<xsl:template match="/*">
+
+					<xforms:group xbl:attr="model context ref bind" xxbl:scope="outer"
+						appearance="xxforms:table">
+						<!-- TODO: This should not be necessary, but we need it until this bug is fixed:
+							http://forge.ow2.org/tracker/index.php?func=detail&aid=313850&group_id=168&atid=350207 -->
+						<xsl:copy-of select="namespace::*"/>
+						<xsl:copy-of select="@class"/>
+
+						<xsl:for-each select="xforms:label">
+							<xsl:apply-templates/>
+						</xsl:for-each>
+						<fr:tr>
+							<fr:td>
+								<fr:label>basicString value</fr:label>
+								<xforms:input ref=".">
+									<xforms:label ref="name()"/>
+								</xforms:input>
+							</fr:td>
+						</fr:tr>
+						<fr:tr>
+							<fr:label>basicString attributes</fr:label>
+							<fr:td>
+								<xforms:input ref="@href">
+									<xforms:label ref="name()"/>
+								</xforms:input>
+							</fr:td>
+						</fr:tr>
+					</xforms:group>
+				</xsl:template>
+			</xsl:transform>
+		</xbl:template>
+	</xbl:binding>
+</xbl:xbl>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<instance xmlns:mods="http://www.loc.gov/mods/v3" point=" " type=" ">
+ <insert name="identifierdruid">
+  <mods:identifier type="local" displayLabel="SU DRUID"/>
+ </insert>
+ <insert name="identifier">
+  <mods:identifier type="local" displayLabel=""/>
+ </insert>
+ <insert name="titleInfo">
+  <mods:titleInfo type="">
+   <mods:title/>
+   <mods:subTitle/>
+   <mods:nonSort/>
+   <mods:partNumber/>
+   <mods:partName/>
+  </mods:titleInfo>
+ </insert>
+ <mods:title/>
+ <mods:subTitle/>
+ <mods:nonSort/>
+ <mods:partName/>
+ <mods:partNumber/>
+ <mods:role><mods:roleTerm/></mods:role>
+ <insert name="originInfo">
+  <mods:originInfo/>
+ </insert>
+ <insert name="name">
+  <mods:name type="" authority="">
+   <mods:namePart/>
+   <mods:role><mods:roleTerm/></mods:role>
+  </mods:name>
+ </insert>
+ <insert name="keyDateYes" keydate="yes"/>
+ <insert name="keyDateNo" keydate="no"/>
+ <insert name="originInfoDate">
+  <keyDate name="copyrightDate" type="single" keyDate="no">
+   <mods:copyrightDate encoding="w3cdtf" keyDate="no" qualifier=""/>
+  </keyDate>
+  <keyDate name="dateCreated" type="single">
+   <mods:dateCreated encoding="w3cdtf" keyDate="no" qualifier=""/>
+  </keyDate>
+  <keyDate name="dateIssued" type="single">
+   <mods:dateIssued encoding="w3cdtf" keyDate="no" qualifier=""/>
+  </keyDate>
+  <keyDate name="dateOther" type="single">
+   <mods:dateOther encoding="w3cdtf" keyDate="no" qualifier=""/>
+  </keyDate>
+  <keyDate name="dateCreated" type="range">
+   <mods:dateCreated encoding="w3cdtf" keyDate="no" qualifier="" point="start"/>
+   <mods:dateCreated encoding="w3cdtf" qualifier="" point="end"/>
+  </keyDate>
+  <keyDate name="dateIssued" type="range">
+   <mods:dateIssued encoding="w3cdtf" keyDate="no" qualifier="" point="start"/>
+   <mods:dateIssued encoding="w3cdtf" qualifier="" point="end"/>
+  </keyDate>
+  <keyDate name="dateOther" type="range">
+   <mods:dateOther encoding="w3cdtf" keyDate="no" qualifier="" point="start"/>
+   <mods:dateOther encoding="w3cdtf" qualifier="" point="end"/>
+  </keyDate>
+  <placeNode>
+   <mods:place>
+    <mods:placeTerm type="text"/>
+   </mods:place>
+  </placeNode>
+  <publisherNode>
+   <mods:publisher/>
+  </publisherNode>
+  <editionNode>
+   <mods:edition/>
+  </editionNode> </insert>
+ <insert name="subject">
+  <mods:subject authority=""></mods:subject>
+ </insert>
+ <insert name="subjectcartographics">
+  <mods:subject authority="">
+  <mods:cartographics>
+   <mods:scale/>
+   <mods:coordinates/>
+   <mods:projection/>
+  </mods:cartographics>
+  </mods:subject>
+  </insert>
+ <insert name="singleDate">
+  <mods:temporal encoding="w3cdtf"/>
+ </insert>
+ <insert name="rangeDate">
+  <mods:temporal encoding="w3cdtf" point="start"/>
+  <mods:temporal encoding="w3cdtf" point="end"/>
+ </insert>
+ <insert name="topic">
+  <mods:topic/>
+ </insert>
+ <insert name="geographic">
+  <mods:geographic/>
+ </insert>
+ <insert name="cartographics">
+  <mods:cartographics>
+   <mods:scale/>
+   <mods:coordinates/>
+   <mods:projection/>
+  </mods:cartographics>
+ </insert>
+ <insert name="genre">
+  <mods:genre/>
+ </insert>
+ <insert name="language">
+  <mods:language>
+   <mods:languageTerm type="text"/>
+   <mods:languageTerm type="code" authority="iso639- 
+	2b"/>
+  </mods:language>
+ </insert>
+ <insert name="physicalDescription">
+  <mods:physicalDescription>
+   <mods:form authority="smd"/>
+   <mods:internetMediaType/>
+   <mods:extent/>
+   <mods:digitalOrigin/>
+  </mods:physicalDescription>
+ </insert>
+ <insert name="form">
+  <mods:form authority="smd"/>
+ </insert>
+ <insert name="internetMediaType">
+  <mods:internetMediaType> </mods:internetMediaType>
+ </insert>
+ <insert name="extent">
+  <mods:extent> </mods:extent>
+ </insert>
+ <insert name="location">
+  <mods:location>
+   <mods:url access=" "> </mods:url>
+  </mods:location>
+ </insert>
+ <insert name="url">
+  <mods:url access=" "/>
+ </insert>
+ <insert name="physicalLocation">
+  <mods:physicalLocation/>
+ </insert>
+ <insert name="accessCondition">
+  <mods:accessCondition type=" "> </mods:accessCondition>
+ </insert>
+ <insert name="abstract">
+  <mods:abstract/>
+ </insert>
+ <insert name="note">
+  <mods:note displayLabel="general note" type=" "/>
+ </insert> > <insert name="typeOfResource">
+  <mods:typeOfResource/>
+ </insert>
+</instance>

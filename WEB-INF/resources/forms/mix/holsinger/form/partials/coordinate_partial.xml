@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <!-- START COORDINATE -->
+
+    <fr:section id="coordinates" bind="fr-form-binds">
+        <xforms:label ref="$form-resources/detail/titles/coordinates"/>
+        <xforms:help ref="$form-resources/detail/help/coordinates"/>
+        <fr:repeat nodeset="mods:subject[position()][child::node()[ name() = 'mods:cartographics']]"
+            id="cartographics-repeat[position()]"
+            origin="xxforms:instance('mods-insert')/insert[@name = 'subjectcartographics']/child::*"
+            appearance="xxforms:table">
+            <fr:body>
+
+                <fr:tr>
+                    <fr:td>
+
+
+
+                        <!-- START SUBJECT CARTO -->
+                        <xforms:repeat nodeset="mods:cartographics[position()]"
+                            id="coordinate-cartographics">
+
+
+                            <div class="item-row show-title">
+                                <div class="repeat-container">
+                                    <div class="repeat-container-item">
+                                        <div class="item-row">
+                                            <div class="item-cell"> Aggregate Coordinates:
+                                                  <xforms:output incremental="true"
+                                                  ref="mods:coordinates" id="mods-coordinates-input"
+                                                />
+                                            </div>
+                                        </div>
+                                        <xforms:group ref="instance('form-coordinates')"
+                                            id="mods-coordinates-group">
+                                            <div class="item-row">
+                                                <div class="item-cell">
+                                                  <div style="padding-left:120px"
+                                                  class="coordinate-topbottom">
+                                                  <xforms:input incremental="true" ref="./north">
+                                                  <xforms:label
+                                                  ref="$form-resources/detail/titles/coordinatesnorth"/>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/coordinates"/>
+                                                  <xforms:help
+                                                  ref="$form-resources/detail/help/coordinates"/>
+                                                  </xforms:input>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="item-row" style="padding-left:30px">
+                                                <div class="item-cell">
+                                                  <xforms:input incremental="true" ref="./west">
+                                                  <xforms:label
+                                                  ref="$form-resources/detail/titles/coordinateswest"/>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/coordinates"/>
+                                                  <xforms:help
+                                                  ref="$form-resources/detail/help/coordinates"/>
+                                                  </xforms:input>
+                                                </div>
+                                                <div class="item-cell">
+                                                  <xforms:input incremental="true" ref="./east">
+                                                  <xforms:label
+                                                  ref="$form-resources/detail/titles/coordinateseast"/>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/coordinates"/>
+                                                  <xforms:help
+                                                  ref="$form-resources/detail/help/coordinates"/>
+                                                  </xforms:input>
+                                                </div>
+                                            </div>
+                                            <div class="item-row">
+                                                <div class="item-cell">
+                                                  <div style="padding-left:120px"
+                                                  class="coordinate-topbottom">
+                                                  <xforms:input incremental="true" ref="./south">
+                                                  <xforms:label
+                                                  ref="$form-resources/detail/titles/coordinatessouth"/>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/coordinates"/>
+                                                  <xforms:help
+                                                  ref="$form-resources/detail/help/coordinates"/>
+                                                  </xforms:input>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </xforms:group>
+                                        <div class="item-cell">
+                                            <xforms:input incremental="true" ref="mods:scale">
+                                                <xforms:label
+                                                  ref="$form-resources/detail/titles/scale"/>
+                                                <xforms:alert
+                                                  ref="$form-resources/detail/alerts/scale"/>
+                                                <xforms:help ref="$form-resources/detail/help/scale"
+                                                />
+                                            </xforms:input>
+                                        </div>
+                                        <div class="item-cell">
+                                            <xforms:input incremental="true" ref="mods:projection">
+                                                <xforms:label
+                                                  ref="$form-resources/detail/titles/projection"/>
+                                                <xforms:alert
+                                                  ref="$form-resources/detail/alerts/projection"/>
+                                                <xforms:help
+                                                  ref="$form-resources/detail/help/projection"/>
+                                            </xforms:input>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </xforms:repeat>
+                    </fr:td>
+                </fr:tr>
+            </fr:body>
+        </fr:repeat>
+
+    </fr:section>
+</html>
+<!-- END COORDINATE DATA -->
