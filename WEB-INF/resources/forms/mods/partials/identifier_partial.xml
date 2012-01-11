@@ -15,29 +15,39 @@
         <fr:repeat nodeset="mods:identifier" id="identifier-repeat"
             origin="xxforms:instance('mods-insert')/insert[@name = 'identifier']/mods:identifier">
             <fr:body>
-
-                <fr:tr>
-                    <fr:td>
-
-                        <xforms:select1 ref="@displayLabel">
-                            <xforms:label ref="$form-resources/detail/labels/label"/>
-                            <xforms:alert ref="$form-resources/detail/alerts/label"/>
-                            <xforms:help ref="$form-resources/detail/help/label"/>
-                            <xforms:itemset
-                                nodeset="$form-resources/lists/identifierDisplayLabels/instance//(section|item)">
-                                <xforms:label ref="label"/>
-                                <xforms:value ref="value"/>
-                            </xforms:itemset>
-                        </xforms:select1>
-
-                    </fr:td>
-                    <fr:td>
-                        <xforms:input incremental="true" ref=".">
-                            <xforms:label ref="$form-resources/detail/labels/identifier"/>
-                            <xforms:alert ref="$form-resources/detail/alerts/identifier"/>
-                        </xforms:input>
-                    </fr:td>
-                </fr:tr>
+				<fr:tr>
+					<fr:td colspan="2">
+			            <div class="item-row show-title">
+			                <div class="repeat-container">
+			                    <div class="repeat-container-item">
+			                        <div class="item-row">
+				                        <xforms:select1 ref="@displayLabel">
+				                            <xforms:label ref="$form-resources/detail/labels/label"/>
+				                            <xforms:alert ref="$form-resources/detail/alerts/label"/>
+				                            <xforms:help ref="$form-resources/detail/help/label"/>
+				                            <xforms:itemset nodeset="$form-resources/lists/identifierDisplayLabels/instance//(section|item)">
+				                                <xforms:label ref="label"/>
+				                                <xforms:value ref="value"/>
+				                            </xforms:itemset>
+				                        </xforms:select1>
+									</div>
+								</div>
+							</div>
+						</div>
+			            <div class="item-row show-title">
+			                <div class="repeat-container">
+			                    <div class="repeat-container-item">
+			                        <div class="item-row">					
+				                        <xforms:input incremental="true" ref=".">
+				                            <xforms:label ref="$form-resources/detail/labels/identifier"/>
+				                            <xforms:alert ref="$form-resources/detail/alerts/identifier"/>
+				                        </xforms:input>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fr:td>
+				</fr:tr>
             </fr:body>
         </fr:repeat>
     </fr:section>

@@ -18,6 +18,9 @@
                 <fr:tr>
                     <fr:td>
                         <div class="button-row">
+                            <div class="item-cell button-heading">
+                                <h6>Add:</h6>
+                            </div>
                             <div class="item-cell">
                                 <xforms:group ref=".">
                                     <xforms:insert ev:event="DOMActivate" context="."
@@ -25,7 +28,7 @@
                                         origin="instance('mods-insert')/insert[@name = 'originInfoDate']/keyDate[@name = 'dateCreated' and @type= 'single']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Creation Date</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -38,7 +41,7 @@
                                         origin="instance('mods-insert')/insert[@name = 'originInfoDate']/keyDate[@name = 'dateIssued' and @type= 'single']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Issued Date</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -50,7 +53,7 @@
                                         origin="instance('mods-insert')/insert[@name = 'originInfoDate']/keyDate[@name = 'dateOther' and @type= 'single']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Aquisition Date</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -63,7 +66,7 @@
                                         origin="instance('mods-insert')/insert[@name = 'originInfoDate']/keyDate[@name = 'copyrightDate']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Copyright Date</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -76,7 +79,7 @@
                                         origin="instance('mods-insert')/insert[@name = 'originInfoDate']/placeNode/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Place</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -89,7 +92,7 @@
                                         origin="instance('mods-insert')/insert[@name = 'originInfoDate']/publisherNode/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Publisher</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -102,7 +105,7 @@
                                         origin="instance('mods-insert')/insert[@name = 'originInfoDate']/editionNode/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Edition</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -123,7 +126,7 @@
                                                   at="index('originInfo-dateCreated')"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove DateCreated Info"/>
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-dateCreated"
@@ -216,7 +219,7 @@
                                                   at="index('originInfo-dateIssued')"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove DateIssued Info"/>
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-dateIssued"
@@ -309,7 +312,7 @@
                                                   at="index('originInfo-dateOther')"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove dateOther Info"/>
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-dateOther"
@@ -402,7 +405,7 @@
                                                   at="index('originInfo-copyrightDate')"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove dateOther Info"/>
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-copyrightDate"
@@ -494,7 +497,7 @@
                                                   at="index('originInfo-place')"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove Place"/>
                                                   </xforms:label>
                                                   </xforms:trigger>
@@ -535,7 +538,7 @@
                                                   at="index('originInfo-publisher')"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove Place"/>
                                                   </xforms:label>
                                                   </xforms:trigger>
@@ -568,7 +571,7 @@
                                                   at="index('originInfo-publisher')"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove Edition"/>
                                                   </xforms:label>
                                                   </xforms:trigger>

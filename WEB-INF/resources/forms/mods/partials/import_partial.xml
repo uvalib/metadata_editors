@@ -41,7 +41,7 @@
                             </xforms:action>
                             <xforms:trigger appearance="minimal" bind="buttons-triggers">
                                 <xforms:label>
-                                    <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                    <img src="/forms/style/icons/plus.png" alt="Add"/>
                                 </xforms:label>
                             </xforms:trigger>
                         </xforms:group>
@@ -73,7 +73,7 @@
                             </xforms:action>
                             <xforms:trigger appearance="minimal" bind="buttons-triggers">
                                 <xforms:label>
-                                    <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                    <img src="/forms/style/icons/plus.png" alt="Add"/>
                                 </xforms:label>
                             </xforms:trigger>
                         </xforms:group>

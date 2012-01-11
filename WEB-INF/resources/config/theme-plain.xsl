@@ -30,7 +30,42 @@
             <xsl:call-template name="head"/>
         </xsl:copy>
     </xsl:template>
-
+    
+    <xsl:template match="xhtml:div[contains(@class, 'fr-top') or contains(@class, 'fr-separator')]">
+    </xsl:template>
+    
+    <xsl:template match="xhtml:div[contains(@class, 'fr-toc')]">
+        <xhtml:div class="topbar">
+            <xhtml:div class="topbar-inner">
+                <xhtml:div class="toc-wrapper container">
+                    <xhtml:a class="toc-title brand"><xsl:value-of select="//xhtml:title"/></xhtml:a>
+                    <xsl:apply-templates select="xhtml:ol" />
+                </xhtml:div>
+            </xhtml:div>
+        </xhtml:div>
+    </xsl:template>
+    
+    <xsl:template match="//xhtml:div[contains(@class, 'fr-toc')]/xhtml:ol">
+        <xhtml:ul class="nav secondary-nav">
+            <xhtml:li class="dropdown">
+                <xhtml:a href="#" class="dropdown-toggle">Jump to Section</xhtml:a>
+                <xhtml:ol class="dropdown-menu">
+                    <xsl:apply-templates />
+                </xhtml:ol>
+            </xhtml:li>
+        </xhtml:ul>
+    </xsl:template>
+    
+    <xsl:template match="xhtml:a[contains(@class, 'xforms-trigger')]/xhtml:img[@title='Add']">
+        <xsl:copy>
+           <xsl:copy-of select="@*"/>
+           <xsl:attribute name="src">/forms/style/icons/add_circle.png</xsl:attribute>
+           <xsl:attribute name="height">26</xsl:attribute>
+           <xsl:attribute name="width">26</xsl:attribute>
+    	   <xsl:value-of select="."/>
+        </xsl:copy>
+    </xsl:template>
+        
     <xsl:template name="head">
         <xsl:apply-templates select="@*"/>
         <!-- Handle head elements except scripts -->
@@ -51,6 +86,7 @@
         <xhtml:meta name="generator" content="{$orbeon-forms-version}"/>
         <!-- Handle head scripts if present -->
         <xsl:apply-templates select="xhtml:script"/>
+        <xhtml:script src="/forms/scripts/main.js"><!-- custom script --></xhtml:script>
     </xsl:template>
 
     <!-- Simply copy everything that's not matched -->

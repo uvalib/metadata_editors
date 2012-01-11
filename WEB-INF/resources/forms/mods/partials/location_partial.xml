@@ -21,6 +21,9 @@
                     <fr:td>
                         <div class="button-row">
                             <!-- ADD FORM -->
+                            <div class="item-cell button-heading">
+                                <h6>Add:</h6>
+                            </div>
                             <div class="item-cell">
                                 <xforms:group ref=".">
                                     <xforms:insert ev:event="DOMActivate" context="."
@@ -28,7 +31,7 @@
                                         origin="instance('mods-insert')/insert[@name = 'url']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">URL</span>
                                         </xforms:label>
                                     </fr:button>
@@ -42,7 +45,7 @@
                                         origin="instance('mods-insert')/insert[@name = 'physicalLocation']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Physical Location</span>
                                         </xforms:label>
                                     </fr:button>
@@ -61,7 +64,7 @@
                                                   nodeset=".[position()]"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove URL"/>
                                                   </xforms:label>
                                                   </xforms:trigger>
@@ -124,7 +127,7 @@
                                                   nodeset=".[position()]"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove Physical Location"/>
                                                   </xforms:label>
                                                   </xforms:trigger>

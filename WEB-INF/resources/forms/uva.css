@@ -1,0 +1,175 @@
+body {background: url("style/content_texture.png") repeat scroll 0 0 #f7f7f7;}
+.fr-container, .yui-skin-sam tr.yui-dt-even,.fr-section-title .fr-section-arrow {background: transparent;}
+#yui-main {margin: 0 auto; width: 640px;}
+.dropdown:hover .dropdown-menu {display: block;}
+.xforms-form .fr-section-title {border-bottom: none; color: inherit;}
+.fr-section-title a {color: inherit; font-size: 20px; font-weight: bold; line-height: 22px; vertical-align: middle; text-shadow: 0 -1px 0 #fff;}
+.fr-repeat-table .fr-repeat-column-trigger {width: 41px;}
+.fr-repeat-table .fr-repeat-column-trigger img {margin: 0 auto; }
+label.forms-hidden {display: none !important;}
+.yui-dt-table {border-radius: 4px;}
+.yui-dt-table td {border-left: 0 !important; border-right: 0 !important;}
+.yui-dt-table tbody .fr-repeat-column-trigger {background: #eaeaea; border-right: 1px solid #bbb; }
+.fr-dt-master-row {
+  border-radius: 4px 4px 0 0;
+  background-color:#123347;
+  background-repeat:repeat-x;
+  background-image:-khtml-gradient(linear, left top, left bottom, from(#456285), to(#123347));
+  background-image:-moz-linear-gradient(top, #456285, #123347);
+  background-image:-ms-linear-gradient(top, #456285, #123347);
+  background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #123347), color-stop(100%, #123347));
+  background-image:-webkit-linear-gradient(top, #456285, #123347);
+  background-image:-o-linear-gradient(top, #456285, #123347);
+  background-image:linear-gradient(top, #456285, #123347);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#456285', endColorstr='#123347', GradientType=0);
+  -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:0 1px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  }
+.yui-skin-sam .yui-dt th {background: transparent; border-bottom: 1px solid #aaa; border-right: none; color: #fff; text-shadow: 0 -1px 0 #000; vertical-align: middle; }
+.yui-skin-sam .yui-dt th .yui-dt-liner {padding: 3px;}
+.yui-skin-sam .yui-dt th label { color: #fafdff; font-size: 14px; font-style: normal; font-weight: bold; padding-left: 1em; padding-top: 0; text-align: left; width: auto;}
+.yui-dt-table label {display: block; font-size: 14px; font-style: normal; font-weight: bold; text-align: left; width: auto;}
+.yui-skin-sam .yui-dt tr.yui-dt-first td {border-top: 1px solid #fff;}
+.yui-dt-table .xforms-output {color: #5a5a5a; display: block; font-size: 12px;}
+.yui-dt-table button .label {background: none; color: #444;}
+.fr-grid .fr-grid-td {border-top: none; padding: 0;}
+.repeat-container-item {border-color: #AAA #FFF #AAA #FFF; border-width: 1px 0 1px 0; background: #fafafa; position: relative;}
+div.item-cell {display: block;}
+.button-row {display: block; overflow: hidden;}
+.button-row div.item-cell {float: left;}
+.item-cell h6 {color: #999; display: inline; line-height: 1.5em; vertical-align: middle; }
+.fr-grid-content {margin: 0;}
+.fr-grid-td { overflow: visible; width: 100%; }
+.fr-grid-td .fr-grid-content {margin: 0 0.67em 1em; width: 575px;}
+.fr-grid-content label.xforms-label {display: block !important; width: 100%;}
+.fr-grid .repeat-container .item-row,
+.fr-grid-content .xforms-control, .fr-grid-content .fr-component-group {display: block; }
+.xforms-input input, textarea.xforms-textarea, input.xforms-secret, .xforms-textarea textarea, .xforms-secret input, .xbl-component .xbl-html-input, select.drop-down {background-image: none; 
+  -webkit-box-sizing: content-box !important;
+  -moz-box-sizing:    content-box !important;
+  box-sizing:         content-box !important;
+  color: #444;
+  padding: 1% !important;
+  width: 97% !important; }
+.yui-skin-sam tr.yui-dt-odd { background: transparent; border-bottom: 1px solid #BBB; border-top: 1px solid #BBB; }
+.yui-dt-data .fr-repeat-column.fr-repeat-column-trigger {display: none;}
+.repeat-container {clear: both;}
+.repeat-container .item-row {overflow: hidden;}
+.repeat-remove-section.section-remove {  float: right; }
+.repeat-remove-section.section-remove a { background: #CCC; border-radius: 8px; display: block; padding: 3px 7px; }
+.repeat-remove-section.section-remove a:hover { background: #BBB; text-decoration: none; }
+.repeat-remove-section.section-remove .label { background: transparent; color: #222; }
+.repeat-remove {position: absolute; right: 5px; top: 5px; }
+.repeat-container .item-cell label { padding: 0.33em 0 1em; }
+
+
+/* =Stanford Styles
+-------------------------------------------------------------- */
+
+
+.item-row {
+  padding: .5em;
+}
+
+
+
+.item-cell {
+    border-width:1px;
+    padding: .25em;
+}
+
+
+/* Stylize the buttons. We want them more compact. */
+
+button.xforms-trigger img, .xforms-trigger button img {
+    margin: 0px 0px;
+}
+
+.yui-skin-sam .yui-button button, .yui-skin-sam .yui-button a, .yui-skin-sam .yui-button a:visited {
+	line-height: 1.5em;
+	min-height: 1.5em;
+    padding: 0 3px;
+}
+
+
+.button-row {
+    padding: 10px 0px;
+	width:100%;	
+}
+
+
+
+.fr-grid-content .xforms-control, .fr-grid-content .fr-component-group {
+  display: inline; }
+
+/* Below styles the repeats within repeats */
+.nested-repeatable-header-cell {	margin: .25em .5em; }
+
+
+.repeat-container { 
+/* border-color:#243356 #808080 #808080;
+border-right:1px solid #808080;
+border-style:solid;
+border-width:1px; */
+margin: .5em 0;
+}
+
+
+.repeat-container-header { 
+  background:none repeat scroll 0 0  #C0C0C0; 
+  padding: 1em;
+ 
+  }
+  
+.repeat-container-header span#label { font-size: 110%; color:white; } 
+
+
+  
+ .repeat-container-body {
+    background:none repeat scroll 0 0 #EDF5FF;
+ }
+ 
+ .repeat-container-item {
+/*	display: block;
+ */ border-style:solid;
+border-width:1px;
+padding-bottom: .25em;
+padding-top:.25em;
+ }
+
+.repeat-container .item-row {
+/*display: block; */
+  padding: .5em;
+}
+
+
+.repeat-container .item-row input {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing:    content-box !important;
+    box-sizing:         content-box !important;
+    color: #444;
+    padding: 4px !important;
+}
+
+
+.repeat-container .item-cell input {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing:    content-box !important;
+    box-sizing:         content-box !important;
+    color: #444;
+	margin-right: 5px;
+    padding: 4px !important;
+}
+
+
+.repeat-container .item-row .xforms-select-appearance-full span { 
+  /* display: inherit;
+  */ margin-left: 80px;
+}
+
+.repeat-remove {
+	margin: 0 0.5em;
+     display: inline-block;	
+}
+

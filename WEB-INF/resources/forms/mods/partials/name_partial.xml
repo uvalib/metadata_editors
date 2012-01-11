@@ -58,7 +58,7 @@
                                                   origin="instance('mods-insert')/insert[@name = 'name']/mods:name/mods:namePart"/>
                                                 <fr:button bind="buttons-triggers">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/images/silk/add.png"
+                                                  <img src="/forms/style/icons/plus.png"
                                                   alt="Add"/><span class="label">Add Name
                                                   Part</span></xforms:label></fr:button>
                                             </xforms:group>
@@ -75,7 +75,7 @@
                                                   <xforms:trigger appearance="minimal"
                                                   bind="buttons-triggers">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove Name Role"/>
                                                   </xforms:label>
                                                   </xforms:trigger>
@@ -127,7 +127,7 @@
                                             <fr:button id="control-2-control"
                                                 bind="buttons-triggers">
                                                 <xforms:label>
-                                                  <img src="/apps/fr/style/images/silk/add.png"
+                                                  <img src="/forms/style/icons/plus.png"
                                                   alt="Add"/><span class="label">Add
                                                   Role</span></xforms:label></fr:button>
                                         </xforms:group>
@@ -143,7 +143,7 @@
                                                   <xforms:trigger appearance="minimal"
                                                   bind="buttons-triggers">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove Name Role"/>
                                                   </xforms:label>
                                                   </xforms:trigger>

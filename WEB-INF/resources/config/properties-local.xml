@@ -41,7 +41,7 @@
     <property as="xs:string" name="oxf.fr.persistence.provider.mods.africanMaps.data" value="fedora"/>
     <property as="xs:string" name="oxf.fr.persistence.provider.mix.holsinger.data" value="fedora"/>
     <property as="xs:anyURI" name="oxf.fr.persistence.fedora.uri"
-        value="http://fedoraAdmin:fedoraAdmin@localhost:8000/repository/orbeon-integration"/>
+        value="http://fedoraAdmin:fedoraAdmin@mbusdev.lib.virginia.edu/repository/orbeon-integration"/>
 
 
     <property as="xs:string" name="oxf.fr.persistence.provider.vra.*.form" value="resource"/>
@@ -55,7 +55,8 @@
         /ops/yui/datatable/assets/skins/sam/datatable.css
         /apps/fr/style/form-runner-base.css
         /apps/fr/style/form-runner-orbeon.css
-	/forms/stanford.css"/>
+        /forms/style/bootstrap/bootstrap.min.css
+	/forms/uva.css"/>
 
     <!--
     <property as="xs:NMTOKENS" name="oxf.xforms.logging.debug"

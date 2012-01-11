@@ -23,6 +23,9 @@
                     <fr:td>
                         <div class="button-row">
                             <!-- ADD TOPIC -->
+                            <div class="item-cell button-heading">
+                                <h6>Add:</h6>
+                            </div>
                             <div class="item-cell">
                                 <xforms:group ref=".">
                                     <xforms:insert ev:event="DOMActivate" context="."
@@ -30,7 +33,7 @@
                                         origin="instance('mods-insert')/insert[@name =  'topic']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Topic</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -43,7 +46,7 @@
                                         origin="instance('mods-insert')/insert[@name =  'genre']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Genre</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -56,7 +59,7 @@
                                         origin="instance('mods-insert')/insert[@name =  'name']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Name</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -69,7 +72,7 @@
                                         origin="instance('mods-insert')/insert[@name =  'singleDate']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Date</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -82,7 +85,7 @@
                                         origin="instance('mods-insert')/insert[@name =  'titleInfo']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Title</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -95,7 +98,7 @@
                                         origin="instance('mods-insert')/insert[@name =  'geographic']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Geographic</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -108,7 +111,7 @@
                                         origin="instance('mods-insert')/insert[@name =  'cartographics']/child::*"/>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/apps/fr/style/images/silk/add.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
                                             <span class="label">Cartographic</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -129,7 +132,7 @@
                                                   nodeset=".[position()]"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove Subject Temporal"/>
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-subject-date"
@@ -207,7 +210,7 @@
                                                   nodeset=".[position()]"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove Subject Topic"/>
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-topic"/>
@@ -247,7 +250,7 @@
                                                   at="index('subject-genre')"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove dateOther Info"/>
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-subjectGenre"
@@ -292,7 +295,7 @@
                                                   nodeset=".[position()]"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove Subject Name"/>
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-subjectName"
@@ -365,7 +368,7 @@
                                                   nodeset=".[position()]"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove Subject TitleInfo"/>
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-subjectTitleInfo"
@@ -438,7 +441,7 @@
                                                   nodeset=".[position()]"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove Subject Geographic"/>
                                                   </xforms:label>
                                                   </xforms:trigger>
@@ -476,7 +479,7 @@
                                                   nodeset=".[position()]"/>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
-                                                  <img src="/apps/fr/style/remove.gif"
+                                                  <img src="/forms/style/icons/remove_sm.png"
                                                   alt="Remove Cartographics"/>
                                                   </xforms:label>
                                                   </xforms:trigger>
