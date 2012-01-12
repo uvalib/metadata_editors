@@ -72,7 +72,7 @@
 							<xforms:delete ev:event="DOMActivate" nodeset="instance('suggestions-aggregate-subject')/response"/>
 							<xforms:delete ev:event="DOMActivate" nodeset="$binding"/>
 							<xforms:label>
-								<img src="/apps/eaditor/images/remove.gif"/>
+								<img src="/forms/style/icons/remove_sm.png"/>
 							</xforms:label>
 						</xforms:trigger>						
 						

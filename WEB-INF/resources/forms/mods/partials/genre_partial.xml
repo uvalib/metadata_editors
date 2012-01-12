@@ -19,6 +19,19 @@
 
                 <fr:tr>
                     <fr:td>
+                        <div class="repeat-remove-section section-remove">
+                            <xforms:group ref=".">
+								<xforms:delete ev:event="DOMActivate" context="."
+								nodeset=".[position()]"/>
+								<xforms:trigger appearance="minimal" ref=".">
+									<xforms:label>
+										<img src="/forms/style/icons/remove.png"
+										alt="Remove Section"/>
+										<span class="label">Remove Section</span>
+									</xforms:label>
+								</xforms:trigger>
+							</xforms:group>
+                        </div>
                         <xforms:select1 ref="." class="drop-down">
                             <xforms:label ref="$form-resources/detail/titles/genre"/>
                             <xforms:alert ref="$form-resources/detail/alerts/genre"/>

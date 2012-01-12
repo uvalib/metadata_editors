@@ -18,7 +18,7 @@
             <fr:body>
 
                 <fr:tr>
-                    <fr:td colspan="2">
+                    <fr:td>
                         <div class="button-row">
                             <!-- ADD FORM -->
                             <div class="item-cell button-heading">
@@ -113,7 +113,7 @@
                                                 </xforms:select1>
                                             </div>
                                             <div class="item-cell">
-                                                <xforms:output ref="./@authority"/>
+                                                Authority: <xforms:output ref="./@authority"/>
                                             </div>
                                         </div>
                                     </div>

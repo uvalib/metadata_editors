@@ -57,6 +57,8 @@
         /apps/fr/style/form-runner-orbeon.css
         /forms/style/bootstrap/bootstrap.min.css
 	/forms/uva.css"/>
+	
+	<property as="xs:string" name="oxf.epilogue.theme" value="/config/theme-uva.xsl"/>
 
     <!--
     <property as="xs:NMTOKENS" name="oxf.xforms.logging.debug"

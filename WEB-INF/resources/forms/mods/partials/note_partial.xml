@@ -17,9 +17,21 @@
         <fr:repeat nodeset="mods:note[position()]" id="note-repeat[position()]"
             origin="xxforms:instance('mods-insert')/insert[@name = 'note']/child::*">
             <fr:body>
-
                 <fr:tr>
                     <fr:td>
+                        <div class="repeat-remove-section section-remove">
+                            <xforms:group ref=".">
+								<xforms:delete ev:event="DOMActivate" context="."
+								nodeset=".[position()]"/>
+								<xforms:trigger appearance="minimal" ref=".">
+									<xforms:label>
+										<img src="/forms/style/icons/remove.png"
+										alt="Remove Section"/>
+										<span class="label">Remove Section</span>
+									</xforms:label>
+								</xforms:trigger>
+							</xforms:group>
+                        </div>
                         <div class="item-row show-title">
                             <div class="item-cell">
                                 <fr:optional-element id="note-label" ref="@displayLabel"

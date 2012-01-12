@@ -110,6 +110,19 @@
                                         </xforms:label></fr:button>
                                 </xforms:group>
                             </div>
+                             <div class="repeat-remove-section section-remove">
+                                 <xforms:group ref=".">
+ 									<xforms:delete ev:event="DOMActivate" context="."
+ 									nodeset=".[position()]"/>
+ 									<xforms:trigger appearance="minimal" ref=".">
+ 										<xforms:label>
+ 											<img src="/forms/style/icons/remove.png"
+ 											alt="Remove Section"/>
+ 											<span class="label">Remove Section</span>
+ 										</xforms:label>
+ 									</xforms:trigger>
+ 								</xforms:group>
+                             </div>
                         </div>
                         <!-- END BUTTON -->
                         <!-- Creation Date -->
@@ -183,7 +196,8 @@
                                                 <fr:optional-element ref="@point"
                                                   nodeset="mods:dateCreated">
                                                   <xforms:output
-                                                  ref="$form-resources/detail/titles/point"/>
+                                                  ref="$form-resources/detail/titles/point"
+												  class="forms-hidden" />
                                                   <xforms:select1 ref="." id="point-select"
                                                   class="drop-down">
                                                   <xforms:label
@@ -277,7 +291,8 @@
                                                   id="dateIssued-point-select"
                                                   nodeset="mods:dateCreated">
                                                   <xforms:output
-                                                  ref="$form-resources/detail/titles/point"/>
+                                                  ref="$form-resources/detail/titles/point"
+												  class="forms-hidden" />
                                                   <xforms:select1 ref="." class="drop-down">
                                                   <xforms:label
                                                   ref="$form-resources/detail/titles/point"/>
@@ -513,12 +528,6 @@
                                                   <xforms:help
                                                   ref="$form-resources/detail/help/place"/>
                                                 </xforms:input>
-                                            </div>
-                                            <div class="item-cell">
-                                                <xforms:output
-                                                  ref="$form-resources/detail/titles/placetype"/>
-                                                <xforms:output
-                                                  ref="descendant-or-self::*/attribute::type"/>
                                             </div>
                                         </div>
                                     </div>

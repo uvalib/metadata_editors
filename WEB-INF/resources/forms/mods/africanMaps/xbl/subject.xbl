@@ -64,17 +64,7 @@
 								<xforms:label ref="@name"/>
 								<xforms:value ref="@name"/>
 							</xforms:itemset>
-						</fr:autocomplete>
-						
-						
-						
-						<xforms:trigger appearance="minimal" style="float:left">
-							<xforms:delete ev:event="DOMActivate" nodeset="instance('suggestions-aggregate-subject')/response"/>
-							<xforms:delete ev:event="DOMActivate" nodeset="$binding"/>
-							<xforms:label>
-								<img src="/apps/eaditor/images/remove.gif"/>
-							</xforms:label>
-						</xforms:trigger>						
+						</fr:autocomplete>					
 						
 						<!-- set label on xforms-enabled -->
 						<xforms:action ev:event="xforms-enabled" if="string($binding/text())">

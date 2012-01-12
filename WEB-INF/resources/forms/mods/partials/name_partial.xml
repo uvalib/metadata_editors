@@ -17,6 +17,19 @@
                         <fr:body>
                             <fr:tr>
                                 <fr:td>
+		                            <div class="repeat-remove-section section-remove">
+		                                <xforms:group ref=".">
+											<xforms:delete ev:event="DOMActivate" context="."
+											nodeset=".[position()]"/>
+											<xforms:trigger appearance="minimal" ref=".">
+												<xforms:label>
+													<img src="/forms/style/icons/remove.png"
+													alt="Remove Section"/>
+													<span class="label">Remove Section</span>
+												</xforms:label>
+											</xforms:trigger>
+										</xforms:group>
+		                            </div>
                                     <div class="item-row show-title">
                                         <div class="item-cell">
                                             <xforms:select1 ref="@type">
@@ -50,8 +63,11 @@
                                             </xforms:select1>
                                         </div>
                                     </div>
-                                    <div class="nested-repeatable-header-cell">
-                                        <div class="nested-repeatable-header-cell">
+			                        <div class="button-row">
+			                            <div class="item-cell button-heading">
+			                                <h6>Add:</h6>
+			                            </div>
+			                            <div class="item-cell">
                                             <xforms:group ref=".">
                                                 <xforms:insert ev:event="DOMActivate" context="."
                                                   position="after" at="namePart-repeat"
@@ -59,7 +75,7 @@
                                                 <fr:button bind="buttons-triggers">
                                                   <xforms:label>
                                                   <img src="/forms/style/icons/plus.png"
-                                                  alt="Add"/><span class="label">Add Name
+                                                  alt="Add"/><span class="label">Name
                                                   Part</span></xforms:label></fr:button>
                                             </xforms:group>
                                         </div>
@@ -97,7 +113,8 @@
                                                   <fr:optional-element ref="./@type"
                                                   nodeset="mods:namePart">
                                                   <xforms:output
-                                                  ref="$form-resources/detail/titles/nametype"/>
+                                                  ref="$form-resources/detail/titles/nametype"
+												  class="forms-hidden" />
                                                   <xforms:select1 ref="." incremental="false"
                                                   class="drop-down" id="nameparttype">
                                                   <xforms:label
@@ -119,18 +136,24 @@
                                         </xforms:repeat>
                                     </div>
                                     <!-- name role -->
-                                    <div class="nested-repeatable-header-cell show-title">
-                                        <xforms:group ref=".">
-                                            <xforms:insert ev:event="DOMActivate" context="."
-                                                position="after" at="nameRole-repeat"
-                                                origin="instance('mods-insert')/insert[@name = 'name']/mods:name/mods:role"/>
-                                            <fr:button id="control-2-control"
-                                                bind="buttons-triggers">
-                                                <xforms:label>
-                                                  <img src="/forms/style/icons/plus.png"
-                                                  alt="Add"/><span class="label">Add
-                                                  Role</span></xforms:label></fr:button>
-                                        </xforms:group>
+			                        <div class="button-row">
+			                            <div class="item-cell button-heading">
+			                                <h6>Add:</h6>
+			                            </div>
+			                            <div class="item-cell">
+	                                        <xforms:group ref=".">
+	                                            <xforms:insert ev:event="DOMActivate" context="."
+	                                                position="after" at="nameRole-repeat"
+	                                                origin="instance('mods-insert')/insert[@name = 'name']/mods:name/mods:role"/>
+	                                            <fr:button id="control-2-control"
+	                                                bind="buttons-triggers">
+	                                                <xforms:label>
+	                                                  <img src="/forms/style/icons/plus.png"
+	                                                  alt="Add"/><span class="label">Role</span>
+												  </xforms:label>
+											  </fr:button>
+	                                        </xforms:group>
+										</div>
                                     </div>
                                     <div class="repeat-container">
                                         <xforms:repeat nodeset="mods:role"

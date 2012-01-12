@@ -59,19 +59,10 @@
     <xsl:template match="xhtml:a[contains(@class, 'xforms-trigger')]/xhtml:img[@title='Add']">
         <xsl:copy>
            <xsl:copy-of select="@*"/>
-           <xsl:attribute name="src">/forms/style/icons/glyphs/glyphicons_190_circle_plus.png</xsl:attribute>
+           <xsl:attribute name="src">/forms/style/icons/add_circle.png</xsl:attribute>
            <xsl:attribute name="height">26</xsl:attribute>
            <xsl:attribute name="width">26</xsl:attribute>
-    	   <xsl:value-of select="."/>
-        </xsl:copy>
-    </xsl:template>
-    
-    <xsl:template match="xhtml:a[contains(@class, 'xforms-trigger')]/xhtml:img[@title='Remove']">
-        <xsl:copy>
-           <xsl:copy-of select="@*"/>
-           <xsl:attribute name="src">/forms/style/icons/glyphs/glyphicons_197_remove.png</xsl:attribute>
-           <xsl:attribute name="height">26</xsl:attribute>
-           <xsl:attribute name="width">26</xsl:attribute>
+		   <xsl:attribute name="alt">Add New Section</xsl:attribute>
     	   <xsl:value-of select="."/>
         </xsl:copy>
     </xsl:template>

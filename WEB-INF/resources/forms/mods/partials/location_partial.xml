@@ -51,6 +51,20 @@
                                     </fr:button>
                                 </xforms:group>
                             </div>
+                            <div class="repeat-remove-section section-remove">
+                                <xforms:group ref=".">
+									<xforms:delete ev:event="DOMActivate" context="."
+									nodeset=".[position()]"/>
+									<xforms:trigger appearance="minimal" ref=".">
+										<xforms:label>
+											<img src="/forms/style/icons/remove.png"
+											alt="Remove Section"/>
+											<span class="label">Remove Section</span>
+										</xforms:label>
+									</xforms:trigger>
+								</xforms:group>
+                            </div>
+						</div>
                             <!-- END BUTTON -->
                             <!-- URL -->
                             <xforms:repeat nodeset="mods:url[position()]" id="url-repeat">
@@ -150,14 +164,11 @@
                                     </div>
                                 </div>
                             </xforms:repeat>
-                        </div>
                         <!-- END EXTENT -->
                     </fr:td>
                 </fr:tr>
             </fr:body>
         </fr:repeat>
-
-
 
     </fr:section>
     <!-- END LOCATION -->
