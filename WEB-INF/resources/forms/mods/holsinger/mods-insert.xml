@@ -147,9 +147,7 @@
  </insert>
  <insert name="note">
   <mods:note displayLabel="general note" type=" "/>
- </insert> 
-
- <insert name="typeOfResource">
+ </insert> > <insert name="typeOfResource">
   <mods:typeOfResource/>
  </insert>
 </instance>
