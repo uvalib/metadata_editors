@@ -21,14 +21,18 @@
  <mods:nonSort/>
  <mods:partName/>
  <mods:partNumber/>
- <mods:role><mods:roleTerm/></mods:role>
+ <mods:role>
+  <mods:roleTerm/>
+ </mods:role>
  <insert name="originInfo">
   <mods:originInfo/>
  </insert>
  <insert name="name">
   <mods:name type="" authority="">
    <mods:namePart/>
-   <mods:role><mods:roleTerm/></mods:role>
+   <mods:role>
+    <mods:roleTerm/>
+   </mods:role>
   </mods:name>
  </insert>
  <insert name="keyDateYes" keydate="yes"/>
@@ -68,19 +72,20 @@
   </publisherNode>
   <editionNode>
    <mods:edition/>
-  </editionNode> </insert>
+  </editionNode>
+ </insert>
  <insert name="subject">
-  <mods:subject authority=""></mods:subject>
+  <mods:subject authority=""/>
  </insert>
  <insert name="subjectcartographics">
   <mods:subject authority="">
-  <mods:cartographics>
-   <mods:scale/>
-   <mods:coordinates/>
-   <mods:projection/>
-  </mods:cartographics>
+   <mods:cartographics>
+    <mods:scale/>
+    <mods:coordinates/>
+    <mods:projection/>
+   </mods:cartographics>
   </mods:subject>
-  </insert>
+ </insert>
  <insert name="singleDate">
   <mods:temporal encoding="w3cdtf"/>
  </insert>
@@ -147,7 +152,8 @@
  </insert>
  <insert name="note">
   <mods:note displayLabel="general note" type=" "/>
- </insert> > <insert name="typeOfResource">
+ </insert>
+ <insert name="typeOfResource">
   <mods:typeOfResource/>
  </insert>
 </instance>
