@@ -151,7 +151,7 @@
   <mods:abstract/>
  </insert>
  <insert name="note">
-  <mods:note displayLabel="general note" type=" "/>
+  <mods:note displayLabel="General Note" type="content"/>
  </insert>
  <insert name="typeOfResource">
   <mods:typeOfResource/>

@@ -1415,20 +1415,20 @@
                             <value>book_number</value>
                         </item>
                         <item>
-                            <label>Entry Number</label>
-                            <value>entry_number</value>
+                            <label>Special Collections legacy database record number</label>
+                            <value>Special Collections legacy database record number</value>
                         </item>
                         <item>
                             <label>Call Number</label>
-                            <value>call_number</value>
+                            <value>Call Number</value>
                         </item>
                         <item>
                             <label>Record Number</label>
                             <value>record_number</value>
                         </item>
                         <item>
-                            <label>SU DRUID</label>
-                            <value>SU DRUID</value>
+                            <label>UVA Library Fedora Repository PID</label>
+                            <value>UVA Library Fedora Repository PID</value>
                         </item>
 			<item>
 				<label>Stanford Catalog Key</label>

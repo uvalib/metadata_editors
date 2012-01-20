@@ -72,12 +72,7 @@ xxi:omit-xml-base="true"/>
 				if="xxforms:instance('fr-parameters-instance')/mode = 'new'">
 				<!-- disabling Stanford-specific SURI service call -->
 				<!-- <xforms:send submission="new-submission"/> -->
-				<xforms:setvalue ref="xxforms:instance('fr-parameters-instance')/document"
-					value="xxforms:instance('suri-instance')/identifier/id"/>
-				<xforms:setvalue
-					ref="xxforms:instance('fr-form-instance')/mods:identifier[@displayLabel = 'SU DRUID']"
-					value="concat('druid:' , xxforms:instance('suri-instance')/identifier/id)"/>
-					
+				
 			</xforms:action>
 
 			<!-- Handy Brown date schema. -->
@@ -90,12 +85,12 @@ xxi:omit-xml-base="true"/>
 			<!-- This is the default basic skeleton for your form. Any nodes you want to be present, or
 				default values, add to this xml file. -->
 			<xforms:instance id="fr-form-instance" xxforms:validation="lax">
-				<xi:include href="oxf:/forms/mods/africanMaps/template.xml" xxi:omit-xml-base="true"/>
+				<xi:include href="oxf:/forms/mods/holsinger/template.xml" xxi:omit-xml-base="true"/>
 			</xforms:instance>
 
 
 			<!--  Insert Instance -->
-			<xforms:instance id="mods-insert" src="oxf:/forms/mods/africanMaps/mods-insert.xml"/>
+			<xforms:instance id="mods-insert" src="oxf:/forms/mods/holsinger/mods-insert.xml"/>
 
 
 
@@ -107,14 +102,6 @@ xxi:omit-xml-base="true"/>
 			<xforms:instance id="import-instance">
 				<query type="catkey" xmlns:mods="http://www.loc.gov/mods/v3"/>
 			</xforms:instance>
-
-			<xforms:submission id="import-mods" serialization="none" method="get"
-				action="http://stanford.edu/group/lyberteam/cgi-bin/mods/mods.php?q={instance('import-instance')}"
-				replace="instance" instance="fr-form-instance"/>
-
-			<xforms:submission id="import-mods-barcode" serialization="none" method="get"
-				action="http://stanford.edu/group/lyberteam/cgi-bin/mods/mods-barcode.php?q={instance('import-instance')}"
-				replace="instance" instance="fr-form-instance"/>
 
 
 			<!--  Instance to control button triggers -->
@@ -146,10 +133,9 @@ xxi:omit-xml-base="true"/>
 
 			<xforms:bind id="fr-form-binds" nodeset=".">
 
-				<xforms:bind id="identifier-bind" nodeset="mods:identifier" required="true()"/>
-				<xforms:bind id="identifier-type" nodeset="mods:identifier/@type" required="true()"/>
-				<xforms:bind id="suri-bind" nodeset="mods:identifier[@displayLabel='SU DRUID']"
-					readonly="true()"/>
+				<xforms:bind id="identifier-bind" nodeset="mods:identifier" readonly="true()" required="true()"/>
+				<xforms:bind id="identifier-type" nodeset="mods:identifier/@type" readonly="true()" required="true()"/>
+				
 				<xforms:bind id="titleInfo" nodeset="mods:titleInfo" required="true()"/>
 				<xforms:bind
 					nodeset="mods:titleInfo/child::*[position()=1 and contains(name(), 'title')]"
@@ -172,13 +158,11 @@ xxi:omit-xml-base="true"/>
 				<xforms:bind nodeset="mods:accessCondition/@type" required="true()" type="xs:string"/>
 				<xforms:bind nodeset="mods:note/@displayLabel" type="xs:string"/>
 				
-				<xforms:bind nodeset="mods:relatedItem[@type = 'host']" readonly="true()" />
+				<xforms:bind nodeset="mods:relatedItem[@type = 'host']" />
 			    <xforms:bind nodeset="mods:relatedItem/mods:identifier"/>
 				<xforms:bind nodeset="mods:relatedItem/@type"/>
 				<xforms:bind nodeset="mods:relatedItem/@displayLabel"/>
-				<xforms:bind nodeset="mods:relatedItem/@xlink:href"
-					calculate="concat('https://mdtoolkit-dev.stanford.edu/orbeon/fr/mods/africanMaps/edit/', 'mods:identifier[@displayLabel = ''SU DRUID'']')"/>
--->
+			
 				<!-- <xforms:bind nodeset="mods:subject/mods:cartographics/mods:coordinates"
 					type="xs:string"
 					calculate=" "/> -->
@@ -197,7 +181,7 @@ xxi:omit-xml-base="true"/>
 xml:lang="en">Holsinger Collection</title>
 					<description xml:lang="en">MODS Metadata Toolkit</description>
 					<title xml:lang="fr">MODS Metadata Toolkit</title>
-					<author>Stanford University Library</author>
+					<author>Joe and Adam</author>
 					<logo mediatype="image/png" filename="banner.gif" size=""
 						>/apps/fr/style/banner.gif</logo>
 
@@ -221,22 +205,9 @@ xml:lang="en">Holsinger Collection</title>
 				the values into the form. However, a few values were added to the resources.xml
 				for form running to properly function -->
 			<xforms:instance id="fr-form-resources">
-				<xi:include href="oxf:/forms/mods/africanMaps/form/resources.xml"
+				<xi:include href="oxf:/forms/mods/holsinger/form/resources.xml"
 					xxi:omit-xml-base="true"/>
 			</xforms:instance>
-
-
-			<!-- This is an instance being used to concat the mods:coordinates together -->
-			<xforms:instance id="form-coordinates">
-				<coordinates xmlns="">
-					<north/>
-					<south/>
-					<east/>
-					<west/>
-				</coordinates>
-			</xforms:instance>
-
-
 
 		</xforms:model>
 		<style type="text/css">
@@ -250,7 +221,7 @@ xml:lang="en">Holsinger Collection</title>
 			Replace the html tables with the fr:grid and add fr: prefix to your td's and tr's -->
 		<fr:view>
 			<xforms:label>Metadata Toolkit</xforms:label>
-			<xhtml:img src="/apps/fr/style/sulair-banner.gif"/>
+		
 			<fr:body>
 
 				<!-- XFORMS Repeats have a hard-time showing up in the summary table. This section exposes values to be populated in the 
@@ -271,11 +242,8 @@ xml:lang="en">Holsinger Collection</title>
 					</xforms:input>
 				</div>
 				
-				<!--
-				<xi:include href="oxf:/forms/mods/partials/druid_partial.xml" xxi:omit-xml-base="true"/>
-				<xi:include href="oxf:/forms/mods/partials/import_partial.xml" xxi:omit-xml-base="true"/>
--->		<!-- 		
-<xi:include href="oxf:/forms/mods/partials/identifier_partial.xml" xxi:omit-xml-base="true"/> -->
+			
+<xi:include href="oxf:/forms/mods/partials/identifier_partial.xml" xxi:omit-xml-base="true"/> 
 				
 				<xi:include href="oxf:/forms/mods/partials/related_item_partial.xml" xxi:omit-xml-base="true"/>
 
@@ -284,9 +252,7 @@ xml:lang="en">Holsinger Collection</title>
 				<xi:include href="oxf:/forms/mods/partials/resource_type_partial.xml" xxi:omit-xml-base="true"/>
 				
 				<xi:include href="oxf:/forms/mods/africanMaps/form/partials/origin_info_partial.xml" xxi:omit-xml-base="true"/>
-<!--
-				<xi:include href="oxf:/forms/mods/africanMaps/form/partials/coordinate_partial.xml" xxi:omit-xml-base="true"/>
--->
+
 				<xi:include 
 href="oxf:/forms/mods/africanMaps/form/partials/subject_partial.xml" 
 xxi:omit-xml-base="true"/> 

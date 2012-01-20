@@ -39,6 +39,7 @@
     <property as="xs:string" name="oxf.fr.persistence.provider.tei.*.form" value="resource"/>
 
     <property as="xs:string" name="oxf.fr.persistence.provider.mods.africanMaps.data" value="fedora"/>
+<property as="xs:string" name="oxf.fr.persistence.provider.mods.holsinger.data" value="fedora"/>
     <property as="xs:string" name="oxf.fr.persistence.provider.mix.holsinger.data" value="fedora"/>
     <property as="xs:anyURI" name="oxf.fr.persistence.fedora.uri"
         value="http://fedoraAdmin:fedoraAdmin@mbusdev.lib.virginia.edu/repository/orbeon-integration"/>
@@ -67,6 +68,7 @@
 
     <property as="xs:NMTOKENS" name="oxf.xforms.logging.debug"
         value="document model submission server server-body"/>
-    <property as="xs:boolean" name="oxf.xforms.combine-resources" value="true"/>
+    <property as="xs:boolean" name="oxf.xforms.combine-resources" value="false"/>
+    <property as="xs:boolean" name="oxf.xforms.minimal-resources" value="false"/>
 
 </properties>
