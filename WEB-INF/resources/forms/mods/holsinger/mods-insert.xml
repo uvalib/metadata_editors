@@ -31,7 +31,7 @@
   <mods:name type="" authority="">
    <mods:namePart/>
    <mods:role>
-    <mods:roleTerm/>
+    <mods:roleTerm type="text"/>
    </mods:role>
   </mods:name>
  </insert>

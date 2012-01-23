@@ -193,7 +193,7 @@
                                             </div>
                                             <div class="item-cell">
                                                 <!-- Set point -->
-                                                <fr:optional-element ref="@point"
+                                                <!-- <fr:optional-element ref="@point"
                                                   nodeset="mods:dateCreated">
                                                   <xforms:output
                                                   ref="$form-resources/detail/titles/point"
@@ -212,7 +212,7 @@
                                                   <xforms:value ref="value"/>
                                                   </xforms:itemset>
                                                   </xforms:select1>
-                                                </fr:optional-element>
+                                                </fr:optional-element> -->
                                             </div>
                                         </div>
                                     </div>
@@ -285,29 +285,7 @@
                                                   </xforms:itemset>
                                                 </xforms:select1>
                                             </div>
-                                            <div class="item-cell">
-                                                <!-- Set point -->
-                                                <fr:optional-element ref="@point"
-                                                  id="dateIssued-point-select"
-                                                  nodeset="mods:dateCreated">
-                                                  <xforms:output
-                                                  ref="$form-resources/detail/titles/point"
-												  class="forms-hidden" />
-                                                  <xforms:select1 ref="." class="drop-down">
-                                                  <xforms:label
-                                                  ref="$form-resources/detail/titles/point"/>
-                                                  <xforms:alert
-                                                  ref="$form-resources/detail/alerts/point"/>
-                                                  <xforms:help
-                                                  ref="$form-resources/detail/help/point"/>
-                                                  <xforms:itemset
-                                                  nodeset="$form-resources/lists/point/instance//(section|item)">
-                                                  <xforms:label ref="label"/>
-                                                  <xforms:value ref="value"/>
-                                                  </xforms:itemset>
-                                                  </xforms:select1>
-                                                </fr:optional-element>
-                                            </div>
+                                            
                                         </div>
                                     </div></div>
                             </div>
@@ -379,28 +357,7 @@
                                                   </xforms:itemset>
                                                 </xforms:select1>
                                             </div>
-                                            <div class="item-cell">
-                                                <!-- Set point -->
-                                                <fr:optional-element ref="@point"
-                                                  id="dateOther-point-select"
-                                                  nodeset="mods:dateOther">
-                                                  <xforms:output
-                                                  ref="$form-resources/detail/titles/point"/>
-                                                  <xforms:select1 ref="." class="drop-down">
-                                                  <xforms:label
-                                                  ref="$form-resources/detail/titles/point"/>
-                                                  <xforms:alert
-                                                  ref="$form-resources/detail/alerts/point"/>
-                                                  <xforms:help
-                                                  ref="$form-resources/detail/help/point"/>
-                                                  <xforms:itemset
-                                                  nodeset="$form-resources/lists/point/instance//(section|item)">
-                                                  <xforms:label ref="label"/>
-                                                  <xforms:value ref="value"/>
-                                                  </xforms:itemset>
-                                                  </xforms:select1>
-                                                </fr:optional-element>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div></div>
@@ -474,28 +431,7 @@
                                                   </xforms:itemset>
                                                 </xforms:select1>
                                             </div>
-                                            <div class="item-cell">
-                                                <!-- Set point -->
-                                                <fr:optional-element ref="@point"
-                                                  id="copyrightDate-point-select"
-                                                  nodeset="mods:copyrightDate">
-                                                  <xforms:output
-                                                  ref="$form-resources/detail/titles/point"/>
-                                                  <xforms:select1 ref="." class="drop-down">
-                                                  <xforms:label
-                                                  ref="$form-resources/detail/titles/point"/>
-                                                  <xforms:alert
-                                                  ref="$form-resources/detail/alerts/point"/>
-                                                  <xforms:help
-                                                  ref="$form-resources/detail/help/point"/>
-                                                  <xforms:itemset
-                                                  nodeset="$form-resources/lists/point/instance//(section|item)">
-                                                  <xforms:label ref="label"/>
-                                                  <xforms:value ref="value"/>
-                                                  </xforms:itemset>
-                                                  </xforms:select1>
-                                                </fr:optional-element>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div></div>

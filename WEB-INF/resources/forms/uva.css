@@ -81,7 +81,6 @@ div.item-cell {display: block;}
 	z-index: 10000;
 	overflow: visible;
 }
-#orbeon-xforms-inspector { display: none; }
 #orbeon-xforms-inspector.debug-show {display: block; }
 #toggle_debug { float: right; margin: 0 2em 2em; }
 #ft {margin: 2em 0 1em;}

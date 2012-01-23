@@ -156,7 +156,7 @@ xxi:omit-xml-base="true"/>
 				<xforms:bind nodeset="mods:location" required="true()"/>
 				<xforms:bind nodeset="mods:accessCondition" required="true()" type="xs:string"/>
 				<xforms:bind nodeset="mods:accessCondition/@type" required="true()" type="xs:string"/>
-				<xforms:bind nodeset="mods:note/@displayLabel" type="xs:string"/>
+				<!-- <xforms:bind nodeset="mods:note/@displayLabel" type="xs:string"/> -->
 				
 				<xforms:bind nodeset="mods:relatedItem[@type = 'host']" />
 			    <xforms:bind nodeset="mods:relatedItem/mods:identifier"/>
@@ -258,8 +258,9 @@ href="oxf:/forms/mods/africanMaps/form/partials/subject_partial.xml"
 xxi:omit-xml-base="true"/> 
 			
 				<xi:include href="oxf:/forms/mods/partials/genre_partial.xml" xxi:omit-xml-base="true"/>
-				
+				<!--
 				<xi:include href="oxf:/forms/mods/africanMaps/form/partials/language_partial.xml" xxi:omit-xml-base="true"/>
+				-->
 				<xi:include href="oxf:/forms/mods/partials/physical_description_partial.xml" xxi:omit-xml-base="true"/>
 				<xi:include href="oxf:/forms/mods/partials/location_partial.xml" xxi:omit-xml-base="true"/>
 				<xi:include href="oxf:/forms/mods/partials/note_partial.xml" xxi:omit-xml-base="true"/>
