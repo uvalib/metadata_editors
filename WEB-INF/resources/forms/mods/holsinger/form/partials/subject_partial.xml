@@ -249,7 +249,7 @@
                                             </div>
                                             <div class="item-cell">
                                                 
-                                                <eaditor:subject xmlns:eaditor="yyyy" ref=".">
+                                                <eaditor:subject xmlns:eaditor="eaditor" ref=".">
                                                   <xforms:label
                                                   ref="$form-resources/detail/titles/subjectTopic"/>
                                                   <xforms:alert
