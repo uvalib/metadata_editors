@@ -248,9 +248,8 @@
                                                 </xforms:group>
                                             </div>
                                             <div class="item-cell">
-                                                <eaditor:subject 
-xmlns:eaditor="yyyy" 
-ref=".">
+                                                
+                                                <eaditor:subject xmlns:eaditor="yyyy" ref=".">
                                                   <xforms:label
                                                   ref="$form-resources/detail/titles/subjectTopic"/>
                                                   <xforms:alert
@@ -258,6 +257,7 @@ ref=".">
                                                   <xforms:help
                                                   ref="$form-resources/detail/help/subjectTopic"/>
                                                 </eaditor:subject>
+                                               
                                             </div>
                                         </div>
                                     </div>

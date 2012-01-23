@@ -31,7 +31,7 @@
   <mods:name type="" authority="">
    <mods:namePart/>
    <mods:role>
-    <mods:roleTerm/>
+    <mods:roleTerm type="text"/>
    </mods:role>
   </mods:name>
  </insert>
@@ -151,7 +151,7 @@
   <mods:abstract/>
  </insert>
  <insert name="note">
-  <mods:note displayLabel="general note" type=" "/>
+  <mods:note displayLabel="General Note" type="content"/>
  </insert>
  <insert name="typeOfResource">
   <mods:typeOfResource/>

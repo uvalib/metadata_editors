@@ -678,6 +678,11 @@
                             <value>local</value>
                         </item>
                         <item>
+                            <label>LCNAF</label>
+                            <value>lcnaf</value>
+                        </item>
+                        
+                        <item>
                             <label>NAF</label>
                             <value>naf</value>
                         </item>
@@ -712,6 +717,14 @@
                         <item>
                             <label>Actor</label>
                             <value>actor</value>
+                        </item>
+                        <item>
+                            <label>Photographer</label>
+                            <value>Photographer</value>
+                        </item>
+                        <item>
+                            <label>pht</label>
+                            <value>pht</value>
                         </item>
                         <item>
                             <label>Adapter</label>
@@ -1319,6 +1332,11 @@
                             <value>Physical maps</value>
                         </item>
                         <item>
+                            <label>Photographs</label>
+                            <value>Photographs</value>
+                        </item>
+                        
+                        <item>
                             <label>Pictorial maps</label>
                             <value>Pictorial maps</value>
                         </item>
@@ -1415,20 +1433,20 @@
                             <value>book_number</value>
                         </item>
                         <item>
-                            <label>Entry Number</label>
-                            <value>entry_number</value>
+                            <label>Special Collections legacy database record number</label>
+                            <value>Special Collections legacy database record number</value>
                         </item>
                         <item>
                             <label>Call Number</label>
-                            <value>call_number</value>
+                            <value>Call Number</value>
                         </item>
                         <item>
                             <label>Record Number</label>
                             <value>record_number</value>
                         </item>
                         <item>
-                            <label>SU DRUID</label>
-                            <value>SU DRUID</value>
+                            <label>UVA Library Fedora Repository PID</label>
+                            <value>UVA Library Fedora Repository PID</value>
                         </item>
 			<item>
 				<label>Stanford Catalog Key</label>
@@ -1507,33 +1525,14 @@
                         </item>
                     </section>
                     <section>
-                        <item>
-                            <label>Atlas</label>
-                            <value>atlas</value>
-                        </item>
-                        <item>
-                            <label>Atlas Map</label>
-                            <value>atlas map</value>
-                        </item>
-                        <item>
-                            <label>Book Map</label>
-                            <value>book map</value>
-                        </item>
-                        <item>
-                            <label>Celestial Chart</label>
-                            <value>celestial chart</value>
-                        </item>
-                        <item>
-                            <label>Fake Map</label>
-                            <value>fake map</value>
-                        </item>
-                        <item>
-                            <label>Separate Map</label>
-                            <value>separate map</value>
-                        </item>
+                    
                         <item>
                             <label>Title Page</label>
                             <value>title page</value>
+                        </item>
+                        <item>
+                            <label>Glass negatives</label>
+                            <value>Glass negatives</value>
                         </item>
                     </section>
                 </instance>
@@ -1551,6 +1550,10 @@
                         <item>
                             <label>TIFF image</label>
                             <value>image/tiff</value>
+                        </item>
+                        <item>
+                            <label>JPEG image</label>
+                            <value>image/jpeg</value>
                         </item>
                     </section>
                 </instance>
@@ -1582,7 +1585,7 @@
                             <value>language</value>
                         </item>
                         <item>
-                            <label>General Note</label>
+                            <label>Content</label>
                             <value>content</value>
                         </item>
                     </section>

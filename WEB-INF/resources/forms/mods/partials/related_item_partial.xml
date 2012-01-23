@@ -48,25 +48,11 @@
                                 <xforms:value ref="value"/>
                             </xforms:itemset>
                         </xforms:select1>
-                    </fr:td>
-                    <fr:td>
                         <xforms:input incremental="true" ref="mods:titleInfo/mods:title">
                             <xforms:label ref="$form-resources/detail/titles/relatedItemTitle"/>
                             <xforms:alert ref="$form-resources/detail/alerts/relatedItemTitle"/>
                             <xforms:help ref="$form-resources/detail/help/relatedItemTitle"/>
                         </xforms:input>
-                    </fr:td>
-<!--
-                    <fr:td>
-                      
-                        <xforms:input incremental="true" ref="mods:identifier[@displayLabel = 'SU DRUID']">
-                                <xforms:label ref="$form-resources/detail/titles/druid"/>
-                                <xforms:help ref="$form-resources/detail/help/druid"/>
-                            </xforms:input>
-                        
-                    </fr:td>
---> 
-                   <fr:td>
                         <xforms:input ref="mods:location/mods:url">         
                             <xforms:label
                                 ref="$form-resources/detail/labels/url"/>
