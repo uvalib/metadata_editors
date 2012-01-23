@@ -96,17 +96,10 @@ xxi:omit-xml-base="true"/>
 				<xforms:bind nodeset="mods:location" required="true()"/>
 				<xforms:bind nodeset="mods:accessCondition" required="true()" type="xs:string"/>
 				<xforms:bind nodeset="mods:accessCondition/@type" required="true()" type="xs:string"/>
-				<!-- <xforms:bind nodeset="mods:note/@displayLabel" type="xs:string"/> -->
-				
 				<xforms:bind nodeset="mods:relatedItem[@type = 'host']" />
 			    <xforms:bind nodeset="mods:relatedItem/mods:identifier"/>
 				<xforms:bind nodeset="mods:relatedItem/@type"/>
 				<xforms:bind nodeset="mods:relatedItem/@displayLabel"/>
-			
-				<!-- <xforms:bind nodeset="mods:subject/mods:cartographics/mods:coordinates"
-					type="xs:string"
-					calculate=" "/> -->
-
 
 			</xforms:bind>
 
@@ -182,7 +175,7 @@ xxi:omit-xml-base="true"/>
 				</div>
 				
 			
-			<xi:include href="oxf:/forms/mods/partials/identifier_partial.xml" xxi:omit-xml-base="true"/> 
+				<xi:include href="oxf:/forms/mods/partials/identifier_partial.xml" xxi:omit-xml-base="true"/> 
 				
 				<xi:include href="oxf:/forms/mods/partials/related_item_partial.xml" xxi:omit-xml-base="true"/>
 
@@ -190,16 +183,12 @@ xxi:omit-xml-base="true"/>
 				<xi:include href="oxf:/forms/mods/partials/name_partial.xml" xxi:omit-xml-base="true"/>
 				<xi:include href="oxf:/forms/mods/partials/resource_type_partial.xml" xxi:omit-xml-base="true"/>
 				
-				<xi:include href="oxf:/forms/mods/africanMaps/form/partials/origin_info_partial.xml" xxi:omit-xml-base="true"/>
+				<xi:include href="oxf:/forms/mods/holsinger/form/partials/origin_info_partial.xml" xxi:omit-xml-base="true"/>
 
-				<xi:include 
-href="oxf:/forms/mods/africanMaps/form/partials/subject_partial.xml" 
-xxi:omit-xml-base="true"/> 
+				<xi:include href="oxf:/forms/mods/holsinger/form/partials/subject_partial.xml" xxi:omit-xml-base="true"/> 
 			
 				<xi:include href="oxf:/forms/mods/partials/genre_partial.xml" xxi:omit-xml-base="true"/>
-				<!--
-				<xi:include href="oxf:/forms/mods/africanMaps/form/partials/language_partial.xml" xxi:omit-xml-base="true"/>
-				-->
+
 				<xi:include href="oxf:/forms/mods/partials/physical_description_partial.xml" xxi:omit-xml-base="true"/>
 				<xi:include href="oxf:/forms/mods/partials/location_partial.xml" xxi:omit-xml-base="true"/>
 				<xi:include href="oxf:/forms/mods/partials/note_partial.xml" xxi:omit-xml-base="true"/>

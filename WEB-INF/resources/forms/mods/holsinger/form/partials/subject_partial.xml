@@ -116,6 +116,19 @@
                                         </xforms:label></fr:button>
                                 </xforms:group>
                             </div>
+                            <div class="repeat-remove-section section-remove">
+                                <xforms:group ref=".">
+									<xforms:delete ev:event="DOMActivate" context="."
+									nodeset=".[position()]"/>
+									<xforms:trigger appearance="minimal" ref=".">
+										<xforms:label>
+											<img src="/forms/style/icons/remove.png"
+											alt="Remove Section"/>
+											<span class="label">Remove Section</span>
+										</xforms:label>
+									</xforms:trigger>
+								</xforms:group>
+                            </div>
                         </div>
                         <!-- END BUTTON -->
                         <!-- Authority -->
@@ -190,7 +203,7 @@
                                                   nodeset="mods:dateCreated">
                                                   <xforms:output
                                                   ref="$form-resources/detail/titles/point"/>
-                                                  <xforms:select1 ref="." id="point-select"
+                                                  <xforms:select1 ref="." 
                                                   class="drop-down">
                                                   <xforms:label
                                                   ref="$form-resources/detail/titles/point"/>
@@ -235,9 +248,8 @@
                                                 </xforms:group>
                                             </div>
                                             <div class="item-cell">
-                                                <eaditor:subject 
-xmlns:eaditor="yyyy" 
-ref=".">
+                                                
+                                                <eaditor:subject xmlns:eaditor="yyyy" ref=".">
                                                   <xforms:label
                                                   ref="$form-resources/detail/titles/subjectTopic"/>
                                                   <xforms:alert
@@ -245,8 +257,8 @@ ref=".">
                                                   <xforms:help
                                                   ref="$form-resources/detail/help/subjectTopic"/>
                                                 </eaditor:subject>
+                                               
                                             </div>
-                                            <div class="item-cell"/>
                                         </div>
                                     </div>
                                 </xforms:repeat>
