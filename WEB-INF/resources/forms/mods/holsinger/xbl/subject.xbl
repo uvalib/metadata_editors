@@ -27,11 +27,12 @@
 					<xxforms:variable name="uid" select="position()"/>
 					<xxforms:variable name="name" select="name()"/>
 					<xhtml:div style="margin-top:10px;display:table;width:100%">
+						<xforms:output ref="$binding"/>
 						<fr:autocomplete ref="$binding" dynamic-itemset="true" id="subject-autocomplete-control">
 							<xforms:action ev:event="fr-search-changed">
 								<xxforms:variable name="search-value" select="event('fr-search-value')"/>
 								<xxforms:variable name="make-suggestion" select="string-length($search-value) >= 2"/>
-								<xforms:action if="$make-suggestion">
+								<xforms:action if="$make-suggestion" >
 									<xforms:setvalue ref="instance('suggest-query')" value="$search-value"/>
 									<xforms:send submission="suggest-subject"/>
 									<xforms:action ev:event="xforms-submit">
@@ -64,28 +65,20 @@
 								<xforms:label ref="@name"/>
 								<xforms:value ref="@name"/>
 							</xforms:itemset>
-						</fr:autocomplete>
-						
-						
-						
-						<xforms:trigger appearance="minimal" style="float:left">
-							<xforms:delete ev:event="DOMActivate" nodeset="instance('suggestions-aggregate-subject')/response"/>
-							<xforms:delete ev:event="DOMActivate" nodeset="$binding"/>
-							<xforms:label>
-								<img src="/forms/style/icons/remove_sm.png"/>
-							</xforms:label>
-						</xforms:trigger>						
+						</fr:autocomplete>					
 						
 						<!-- set label on xforms-enabled -->
 						<xforms:action ev:event="xforms-enabled" if="string($binding/text())">
 							<xforms:insert context="instance('suggestions-aggregate-subject')" nodeset="response" origin="instance('response-temp')"/>
 							<xforms:setvalue ref="instance('suggestions-aggregate-subject')/response[last()]/lst[@name='terms']/lst/@name" value="'subject'"/>
 							<xforms:setvalue ref="instance('suggestions-aggregate-subject')/response[last()]/lst[@name='terms']/lst[@name='subject']/int/@name" value="$binding/text()"/>
-							<xforms:dispatch target="subject-autocomplete-control" name="fr-set-label">
+							<xforms:dispatch   target="subject-autocomplete-control" name="fr-set-label">
 								<xxforms:context name="label" select="$binding/text()"/>
 							</xforms:dispatch>
+							
 						</xforms:action>
 						
+					
 					</xhtml:div>
 					<!-- ********************************************************************** -->
 					<!-- ***********************  DIALOG INTERNAL MODEL *********************** -->
@@ -123,7 +116,7 @@
 							</response>
 						</xforms:instance>
 						<xforms:submission id="suggest-subject" serialization="none" method="get"
-							action="http://mbusdev.lib.virginia.edu:8080/lcsh/vocabularies/terms?terms.fl=subject&amp;terms.limit=10&amp;terms.sort=index&amp;terms.prefix={instance('suggest-query')}"
+							action="http://localhost:8080/lcsh/vocabularies/terms?terms.fl=subject&amp;terms.limit=10&amp;terms.sort=index&amp;terms.prefix={instance('suggest-query')}"
 							instance="suggestions" replace="instance"/>
 						
 						<!-- query solr for the id of a controlled access term, if it exists -->						
@@ -131,7 +124,7 @@
 							<response xmlns=""/>
 						</xforms:instance>
 						<xforms:submission id="query-terms" serialization="none" method="get"
-							action="http://mbusdev.lib.virginia.edu:8080/lcsh/vocabularies/select?q=subject:&#x022;{instance('suggest-query')}&#x022;" instance="term-doc" replace="instance"/>
+							action="http://localhost:8080/lcsh/vocabularies/select?q=subject:&#x022;{instance('suggest-query')}&#x022;" instance="term-doc" replace="instance"/>
 					</xforms:model>
 				</xforms:group>
 			</xforms:group>

@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    Copyright (C) 2010 Orbeon, Inc.
-    
-    This program is free software; you can redistribute it and/or modify it under the terms of the
-    GNU Lesser General Public License as published by the Free Software Foundation; either version
-    2.1 of the License, or (at your option) any later version.
-    
-    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    See the GNU Lesser General Public License for more details.
-    
-    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
--->
+
 
 <html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd
@@ -39,42 +27,6 @@ xxi:omit-xml-base="true"/>
 		<!-- CSS -->
 		<xforms:model id="fr-form-model" xxforms:help-tooltip="false">
 
-			<xforms:action ev:event="xforms-model-construct-done">
-				<xxforms:variable name="coordinates" select="tokenize(xxforms:instance('fr-form-instance')/mods:subject/mods:cartographics/mods:coordinates, '\s+')" as="xs:token"/>
-				<xforms:setvalue
-				ref="xxforms:instance('form-coordinates')/west" value="$coordinates[1]"/>
-				<xforms:setvalue
-				ref="xxforms:instance('form-coordinates')/east" value="$coordinates[2]"/>
-				<xforms:setvalue
-				ref="xxforms:instance('form-coordinates')/north" value="$coordinates[3]"/>
-				<xforms:setvalue
-				ref="xxforms:instance('form-coordinates')/south" value="$coordinates[4]"/>
-			</xforms:action>
-			
-			<xforms:action ev:observer="mods-coordinates-group"  ev:event="xforms-value-changed">
-				<xforms:setvalue ref="xxforms:instance('fr-form-instance')/mods:subject/mods:cartographics/mods:coordinates" value="concat(xxforms:instance('form-coordinates')/west, ' ', xxforms:instance('form-coordinates')/east, ' ', xxforms:instance('form-coordinates')/north, ' ', xxforms:instance('form-coordinates')/south)" />
-			</xforms:action>
-			
-		
-			
-			
-			<!-- BOILER PLATE DLSS SURI DRUID service -->
-			<!-- Varaible to the SURI URL that mints DRUIDS. THis is set in the config/properties-form-runner.xml -->
-			
-			<xxforms:variable name="suri-uri" select="xxforms:property('oxf.fr.suri.uri')"
-				as="xs:anyURI"/>
-
-			<!-- This submits the request to SURI -->
-			<xforms:submission id="new-submission" serialize="false" action="{$suri-uri}"
-				method="post" replace="instance" xxforms:instance="suri-instance"
-				xxforms:user="xforms" xxforms:password="lyberteam"/>
-			<xforms:action ev:event="xforms-ready"
-				if="xxforms:instance('fr-parameters-instance')/mode = 'new'">
-				<!-- disabling Stanford-specific SURI service call -->
-				<!-- <xforms:send submission="new-submission"/> -->
-				
-			</xforms:action>
-
 			<!-- Handy Brown date schema. -->
 			<xi:include href="oxf:/forms/mods/schema.xsd" xxi:omit-xml-base="true"/>
 
@@ -91,18 +43,6 @@ xxi:omit-xml-base="true"/>
 
 			<!--  Insert Instance -->
 			<xforms:instance id="mods-insert" src="oxf:/forms/mods/holsinger/mods-insert.xml"/>
-
-
-
-			<!-- Dummy instance for SURI IDs -->
-			<xforms:instance id="suri-instance">
-				<identifiers xmlns=""/>
-			</xforms:instance>
-			<!-- Import MODS service -->
-			<xforms:instance id="import-instance">
-				<query type="catkey" xmlns:mods="http://www.loc.gov/mods/v3"/>
-			</xforms:instance>
-
 
 			<!--  Instance to control button triggers -->
 			<xforms:instance id="triggers-instance">
@@ -177,10 +117,9 @@ xxi:omit-xml-base="true"/>
 				<metadata xmlns="">
 					<application-name>mods</application-name>
 					<form-name>MODS</form-name>
-					<title 
-xml:lang="en">Holsinger Collection</title>
-					<description xml:lang="en">MODS Metadata Toolkit</description>
-					<title xml:lang="fr">MODS Metadata Toolkit</title>
+					<title xml:lang="en">Holsinger Collection</title>
+					<description xml:lang="en">MODS Metadata Editor</description>
+					<title xml:lang="fr">MODS Metadata Editor</title>
 					<author>Joe and Adam</author>
 					<logo mediatype="image/png" filename="banner.gif" size=""
 						>/apps/fr/style/banner.gif</logo>
@@ -243,7 +182,7 @@ xml:lang="en">Holsinger Collection</title>
 				</div>
 				
 			
-<xi:include href="oxf:/forms/mods/partials/identifier_partial.xml" xxi:omit-xml-base="true"/> 
+			<xi:include href="oxf:/forms/mods/partials/identifier_partial.xml" xxi:omit-xml-base="true"/> 
 				
 				<xi:include href="oxf:/forms/mods/partials/related_item_partial.xml" xxi:omit-xml-base="true"/>
 
