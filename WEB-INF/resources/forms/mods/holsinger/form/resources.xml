@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    Copyright (C) 2006 Orbeon, Inc.
 
-    This program is free software; you can redistribute it and/or modify it under the terms of the
-    GNU Lesser General Public License as published by the Free Software Foundation; either version
-    2.1 of the License, or (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    See the GNU Lesser General Public License for more details.
-
-    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
--->
 <resources xmlns="" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xxi="http://orbeon.org/oxf/xml/xinclude" xmlns:mods="http://www.loc.gov/mods/v3">
     <resource xml:lang="en">
@@ -174,13 +162,10 @@
                     <creation>Creation</creation>
                     <publication>Publication</publication>
                 </origintype>
-                <import>From Catalog Key</import>
-                <import-barcode>From Barcode</import-barcode>
                 <language>Language</language>
                 <languageSuggest>LC Language Lookup</languageSuggest>
                 <manuscript>Manuscript</manuscript>
                 <label>Label</label>
-                <druid>Druid</druid>
             </labels>
 
             <alerts>
@@ -548,14 +533,6 @@
                     <section>
                         <label>Analog Original</label>
                         <item>
-                            <label>isbn</label>
-                            <value>isbn</value>
-                        </item>
-                        <item>
-                            <label>isrc</label>
-                            <value>isrc</value>
-                        </item>
-                        <item>
                             <label>ismn</label>
                             <value>ismn</value>
                         </item>
@@ -564,45 +541,8 @@
                             <value>issn</value>
                         </item>
                         <item>
-                            <label>issue number</label>
-                            <value>issue number</value>
-                        </item>
-                        <item>
-                            <label>istc</label>
-                            <value>istc</value>
-                        </item>
-                        <item>
                             <label>lccn</label>
                             <value>lccn</value>
-                        </item>
-                        <item>
-                            <label>matrix number</label>
-                            <value>matrix number</value>
-                        </item>
-                        <item>
-                            <label>music publisher</label>
-                            <value>music publisher</value>
-                        </item>
-                        <item>
-                            <label>music plate</label>
-                            <value>music plate</value>
-                        </item>
-                        <item>
-                            <label>sici</label>
-                            <value>sici</value>
-                        </item>
-
-                        <item>
-                            <label>upc</label>
-                            <value>upc</value>
-                        </item>
-                        <item>
-                            <label>videorecording identifier</label>
-                            <value>videorecording identifier</value>
-                        </item>
-                        <item>
-                            <label>stock number</label>
-                            <value>stock number</value>
                         </item>
                     </section>
                     <section>
@@ -681,7 +621,7 @@
                             <label>LCNAF</label>
                             <value>lcnaf</value>
                         </item>
-                        
+
                         <item>
                             <label>NAF</label>
                             <value>naf</value>
@@ -727,22 +667,6 @@
                             <value>pht</value>
                         </item>
                         <item>
-                            <label>Adapter</label>
-                            <value>adapter</value>
-                        </item>
-                        <item>
-                            <label>Annotator</label>
-                            <value>annotator</value>
-                        </item>
-                        <item>
-                            <label>Arranger</label>
-                            <value>arranger</value>
-                        </item>
-                        <item>
-                            <label>Assignee</label>
-                            <value>assignee</value>
-                        </item>
-                        <item>
                             <label>Associated name</label>
                             <value>associated name</value>
                         </item>
@@ -755,44 +679,8 @@
                             <value>author</value>
                         </item>
                         <item>
-                            <label>Author of afterword, colophon, etc.</label>
-                            <value>author of afterword, colophon, etc.</value>
-                        </item>
-                        <item>
-                            <label>Author of introduction, etc.</label>
-                            <value>author of introduction, etc.</value>
-                        </item>
-                        <item>
-                            <label>Bibliographic antecedent</label>
-                            <value>bibliographic antecedent</value>
-                        </item>
-                        <item>
-                            <label>Binder</label>
-                            <value>binder</value>
-                        </item>
-                        <item>
-                            <label>Binding designer</label>
-                            <value>binding designer</value>
-                        </item>
-                        <item>
-                            <label>Book designer</label>
-                            <value>book designer</value>
-                        </item>
-                        <item>
-                            <label>Bookjacket designer</label>
-                            <value>bookjacket designer</value>
-                        </item>
-                        <item>
-                            <label>Bookseller</label>
-                            <value>bookseller</value>
-                        </item>
-                        <item>
                             <label>Censor</label>
                             <value>censor</value>
-                        </item>
-                        <item>
-                            <label>Choreographer</label>
-                            <value>choreographer</value>
                         </item>
                         <item>
                             <label>Collaborator</label>
@@ -801,14 +689,6 @@
                         <item>
                             <label>Colorist</label>
                             <value>colorist</value>
-                        </item>
-                        <item>
-                            <label>Commentator for written text</label>
-                            <value>commentator for written text</value>
-                        </item>
-                        <item>
-                            <label>Compiler</label>
-                            <value>compiler</value>
                         </item>
                         <item>
                             <label>Composer</label>
@@ -827,18 +707,6 @@
                             <value>copyright holder</value>
                         </item>
                         <item>
-                            <label>Correspondent</label>
-                            <value>correspondent</value>
-                        </item>
-                        <item>
-                            <label>Costume designer</label>
-                            <value>costume designer</value>
-                        </item>
-                        <item>
-                            <label>Cover designer</label>
-                            <value>cover designer</value>
-                        </item>
-                        <item>
                             <label>Creator</label>
                             <value>creator</value>
                         </item>
@@ -847,173 +715,10 @@
                             <value>curator of an exhibition</value>
                         </item>
                         <item>
-                            <label>Dancer</label>
-                            <value>dancer</value>
-                        </item>
-                        <item>
-                            <label>Dedicatee</label>
-                            <value>dedicatee</value>
-                        </item>
-                        <item>
-                            <label>Dedicator</label>
-                            <value>dedicator</value>
-                        </item>
-                        <item>
-                            <label>Director</label>
-                            <value>director</value>
-                        </item>
-                        <item>
-                            <label>Dissertant</label>
-                            <value>dissertant</value>
-                        </item>
-                        <item>
-                            <label>Distributor</label>
-                            <value>distributor</value>
-                        </item>
-                        <item>
-                            <label>Donor</label>
-                            <value>donor</value>
-                        </item>
-                        <item>
-                            <label>Draftsman</label>
-                            <value>draftsman</value>
-                        </item>
-                        <item>
-                            <label>Dubious author</label>
-                            <value>dubious author</value>
-                        </item>
-                        <item>
-                            <label>Editor</label>
-                            <value>editor</value>
-                        </item>
-                        <item>
-                            <label>Engraver</label>
-                            <value>engraver</value>
-                        </item>
-                        <item>
-                            <label>Etcher</label>
-                            <value>etcher</value>
-                        </item>
-                        <item>
-                            <label>Facsimilist</label>
-                            <value>facsimilist</value>
-                        </item>
-                        <item>
-                            <label>Forger</label>
-                            <value>forger</value>
-                        </item>
-                        <item>
-                            <label>Former owner</label>
-                            <value>former owner</value>
-                        </item>
-                        <item>
-                            <label>Honoree</label>
-                            <value>honoree</value>
-                        </item>
-                        <item>
-                            <label>Illustrator</label>
-                            <value>illustrator</value>
-                        </item>
-                        <item>
-                            <label>Inscriber</label>
-                            <value>inscriber</value>
-                        </item>
-                        <item>
-                            <label>Instrumentalist</label>
-                            <value>instrumentalist</value>
-                        </item>
-                        <item>
-                            <label>Librettist</label>
-                            <value>librettist</value>
-                        </item>
-                        <item>
-                            <label>Lyricist</label>
-                            <value>lyricist</value>
-                        </item>
-                        <item>
-                            <label>Music copyist</label>
-                            <value>music copyist</value>
-                        </item>
-                        <item>
-                            <label>Musical director</label>
-                            <value>musical director</value>
-                        </item>
-                        <item>
-                            <label>Musician</label>
-                            <value>musician</value>
-                        </item>
-                        <item>
-                            <label>Narrator</label>
-                            <value>narrator</value>
-                        </item>
-                        <item>
-                            <label>Patron</label>
-                            <value>patron</value>
-                        </item>
-                        <item>
-                            <label>Performer</label>
-                            <value>performer</value>
-                        </item>
-                        <item>
-                            <label>Printer</label>
-                            <value>printer</value>
-                        </item>
-                        <item>
-                            <label>Printer of plates</label>
-                            <value>printer of plates</value>
-                        </item>
-                        <item>
-                            <label>Printmaker</label>
-                            <value>printmaker</value>
-                        </item>
-                        <item>
-                            <label>Producer</label>
-                            <value>producer</value>
-                        </item>
-                        <item>
                             <label>Publisher</label>
                             <value>publisher</value>
                         </item>
-                        <item>
-                            <label>Publishing director</label>
-                            <value>publishing director</value>
-                        </item>
-                        <item>
-                            <label>Recipient</label>
-                            <value>recipient</value>
-                        </item>
-                        <item>
-                            <label>Reviewer</label>
-                            <value>reviewer</value>
-                        </item>
-                        <item>
-                            <label>Scribe</label>
-                            <value>scribe</value>
-                        </item>
-                        <item>
-                            <label>Singer</label>
-                            <value>singer</value>
-                        </item>
-                        <item>
-                            <label>Speaker</label>
-                            <value>speaker</value>
-                        </item>
-                        <item>
-                            <label>Stage manager</label>
-                            <value>stage manager</value>
-                        </item>
-                        <item>
-                            <label>Transcriber</label>
-                            <value>transcriber</value>
-                        </item>
-                        <item>
-                            <label>Translator</label>
-                            <value>translator</value>
-                        </item>
-                        <item>
-                            <label>Vocalist</label>
-                            <value>vocalist</value>
-                        </item>
+
                     </section>
                 </instance>
             </roletype>
@@ -1082,18 +787,7 @@
                         </item>
                     </section>
                     <section>
-                        <item>
-                            <label>Cartographic</label>
-                            <value>cartographic</value>
-                        </item>
-                        <item>
-                            <label>Text</label>
-                            <value>text</value>
-                        </item>
-                        <item>
-                            <label>Notated Music</label>
-                            <value>notated music</value>
-                        </item>
+
                         <item>
                             <label>Still Image</label>
                             <value>still image</value>
@@ -1165,257 +859,12 @@
                         </item>
                     </section>
                     <section>
-                        <item>
-                            <label>Aerial photographs</label>
-                            <value>Aerial photographs</value>
-                        </item>
-                        <item>
-                            <label>Aerial views</label>
-                            <value>Aerial views</value>
-                        </item>
-                        <item>
-                            <label>Aeronautical charts</label>
-                            <value>Aeronautical charts</value>
-                        </item>
-                        <item>
-                            <label>Astronautical charts</label>
-                            <value>Astronautical charts</value>
-                        </item>
-                        <item>
-                            <label>Astronomical models</label>
-                            <value>Astronomical models</value>
-                        </item>
-                        <item>
-                            <label>Atlas factice</label>
-                            <value>Atlas factice</value>
-                        </item>
-                        <item>
-                            <label>Atlases</label>
-                            <value>Atlases</value>
-                        </item>
-                        <item>
-                            <label>Bathymetric maps</label>
-                            <value>Bathymetric maps</value>
-                        </item>
-                        <item>
-                            <label>Block diagrams</label>
-                            <value>Block diagrams</value>
-                        </item>
-                        <item>
-                            <label>Bottle-charts</label>
-                            <value>Bottle-charts</value>
-                        </item>
-                        <item>
-                            <label>Cadastral maps</label>
-                            <value>Cadastral maps</value>
-                        </item>
-                        <item>
-                            <label>Cartographic materials</label>
-                            <value>Cartographic materials</value>
-                        </item>
-                        <item>
-                            <label>Cartographic materials for people with visual
-                                disabilities</label>
-                            <value>Cartographic materials for people with visual
-                                disabilities</value>
-                        </item>
-                        <item>
-                            <label>Celestial charts</label>
-                            <value>Celestial charts</value>
-                        </item>
-                        <item>
-                            <label>Celestial globes</label>
-                            <value>Celestial globes</value>
-                        </item>
-                        <item>
-                            <label>Children's atlases</label>
-                            <value>Children's atlases</value>
-                        </item>
-                        <item>
-                            <label>Children's maps</label>
-                            <value>Children's maps</value>
-                        </item>
-                        <item>
-                            <label>Comparative maps</label>
-                            <value>Comparative maps</value>
-                        </item>
-                        <item>
-                            <label>Digital maps</label>
-                            <value>Digital maps</value>
-                        </item>
-                        <item>
-                            <label>Early maps</label>
-                            <value>Early maps</value>
-                        </item>
-                        <item>
-                            <label>Fire insurance maps</label>
-                            <value>Fire insurance maps</value>
-                        </item>
-                        <item>
-                            <label>Geodatabases</label>
-                            <value>Geodatabases</value>
-                        </item>
-                        <item>
-                            <label>Geographic information systems</label>
-                            <value>Geographic information systems</value>
-                        </item>
-                        <item>
-                            <label>Geological cross-sections</label>
-                            <value>Geological cross-sections</value>
-                        </item>
-                        <item>
-                            <label>Geospatial data</label>
-                            <value>Geospatial data</value>
-                        </item>
-                        <item>
-                            <label>Globes</label>
-                            <value>Globes</value>
-                        </item>
-                        <item>
-                            <label>Gores (Maps)</label>
-                            <value>Gores (Maps)</value>
-                        </item>
-                        <item>
-                            <label>Index maps</label>
-                            <value>Index maps</value>
-                        </item>
-                        <item>
-                            <label>Linguistic atlases</label>
-                            <value>Linguistic atlases</value>
-                        </item>
-                        <item>
-                            <label>Loran charts</label>
-                            <value>Loran charts</value>
-                        </item>
-                        <item>
-                            <label>Lunar globes</label>
-                            <value>Lunar globes</value>
-                        </item>
-                        <item>
-                            <label>Manuscript maps</label>
-                            <value>Manuscript maps</value>
-                        </item>
-                        <item>
-                            <label>Mappae mundi</label>
-                            <value>Mappae mundi</value>
-                        </item>
-                        <item>
-                            <label>Maps</label>
-                            <value>Maps</value>
-                        </item>
-                        <item>
-                            <label>Meteorological charts</label>
-                            <value>Meteorological charts</value>
-                        </item>
-                        <item>
-                            <label>Military maps</label>
-                            <value>Military maps</value>
-                        </item>
-                        <item>
-                            <label>Mine maps</label>
-                            <value>Mine maps</value>
-                        </item>
-                        <item>
-                            <label>Miniature maps</label>
-                            <value>Miniature maps</value>
-                        </item>
-                        <item>
-                            <label>Nautical charts</label>
-                            <value>Nautical charts</value>
-                        </item>
-                        <item>
-                            <label>Outline maps</label>
-                            <value>Outline maps</value>
-                        </item>
-                        <item>
-                            <label>Physical maps</label>
-                            <value>Physical maps</value>
-                        </item>
+
                         <item>
                             <label>Photographs</label>
                             <value>Photographs</value>
                         </item>
-                        
-                        <item>
-                            <label>Pictorial maps</label>
-                            <value>Pictorial maps</value>
-                        </item>
-                        <item>
-                            <label>Plat maps</label>
-                            <value>Plat maps</value>
-                        </item>
-                        <item>
-                            <label>Plotting charts</label>
-                            <value>Plotting charts</value>
-                        </item>
-                        <item>
-                            <label>Portolan charts</label>
-                            <value>Portolan charts</value>
-                        </item>
-                        <item>
-                            <label>Quadrangle maps</label>
-                            <value>Quadrangle maps</value>
-                        </item>
-                        <item>
-                            <label>Raster data</label>
-                            <value>Raster data</value>
-                        </item>
-                        <item>
-                            <label>Relief models</label>
-                            <value>Relief models</value>
-                        </item>
-                        <item>
-                            <label>Remote-sensing images</label>
-                            <value>Remote-sensing images</value>
-                        </item>
-                        <item>
-                            <label>Road maps</label>
-                            <value>Road maps</value>
-                        </item>
-                        <item>
-                            <label>Statistical maps</label>
-                            <value>Statistical maps</value>
-                        </item>
-                        <item>
-                            <label>Stick charts</label>
-                            <value>Stick charts</value>
-                        </item>
-                        <item>
-                            <label>Strip maps</label>
-                            <value>Strip maps</value>
-                        </item>
-                        <item>
-                            <label>Thematic maps</label>
-                            <value>Thematic maps</value>
-                        </item>
-                        <item>
-                            <label>Topographic maps</label>
-                            <value>Topographic maps</value>
-                        </item>
-                        <item>
-                            <label>Tourist maps</label>
-                            <value>Tourist maps</value>
-                        </item>
-                        <item>
-                            <label>Vector data</label>
-                            <value>Vector data</value>
-                        </item>
-                        <item>
-                            <label>Wall maps</label>
-                            <value>Wall maps</value>
-                        </item>
-                        <item>
-                            <label>World atlases</label>
-                            <value>World atlases</value>
-                        </item>
-                        <item>
-                            <label>World maps</label>
-                            <value>World maps</value>
-                        </item>
-                        <item>
-                            <label>Worm's-eye views</label>
-                            <value>Worm's-eye views</value>
-                        </item>
+
                     </section>
                 </instance>
             </genre>
@@ -1448,14 +897,7 @@
                             <label>UVA Library Fedora Repository PID</label>
                             <value>UVA Library Fedora Repository PID</value>
                         </item>
-			<item>
-				<label>Stanford Catalog Key</label>
-				<value>Stanford University Libraries Catalog Key</value>
-			</item>
-			<item>
-				<label>Stanford Barcode</label>
-				<value>Stanford University Libraries Barcode</value>
-			</item>
+                        
                     </section>
 
 
@@ -1463,58 +905,7 @@
 
 
             </identifierDisplayLabels>
-            <coordinates>
-                <instance>
-                    <section>
-                        <item>
-                            <label>-- Select One --</label>
-                            <value/>
-                        </item>
-                    </section>
-                    <section>
-                        <item>
-                            <label>California</label>
-                            <value>W1243000 W1141500 N420000 N323000</value>
-                        </item>
-                        <item>
-                            <label>North America</label>
-                            <value>W1730000 W0100000 N840000 N080000</value>
-                        </item>
-                        <item>
-                            <label>North and Central America</label>
-                            <value>W1730000 W0100000 N840000 N071000</value>
-                        </item>
-                        <item>
-                            <label>North Pole (Polar Projection)</label>
-                            <value>W0000000 W0000000 N900000 N900000</value>
-                        </item>
-                        <item>
-                            <label>Pacific Ocean</label>
-                            <value>W0700000 E1100000 N630000 S530000</value>
-                        </item>
-                        <item>
-                            <label>South Pole (Polar Projection)</label>
-                            <value>W0000000 W0000000 S900000 S900000</value>
-                        </item>
-                        <item>
-                            <label>United States (not Alaska)</label>
-                            <value>W1280000 W0650000 N510000 N250000</value>
-                        </item>
-                        <item>
-                            <label>Western Hemisphere</label>
-                            <value>W0200000 E1600000 N900000 S900000</value>
-                        </item>
-                        <item>
-                            <label>Western United States</label>
-                            <value>W0830000 W0690000 N470000 N310000</value>
-                        </item>
-                        <item>
-                            <label>World</label>
-                            <value>W1800000 E1800000 N850000 S850000</value>
-                        </item>
-                    </section>
-                </instance>
-            </coordinates>
+            
 
             <form>
                 <instance>
@@ -1525,7 +916,7 @@
                         </item>
                     </section>
                     <section>
-                    
+
                         <item>
                             <label>Title Page</label>
                             <value>title page</value>
@@ -1674,10 +1065,7 @@
                             <label>General Photo</label>
                             <value>general photo</value>
                         </item>
-                        <item>
-                            <label>Stanford Family</label>
-                            <value>stanford family</value>
-                        </item>
+                   
                         <item>
                             <label>Biographical Photographs</label>
                             <value>biographical photographs</value>
@@ -1723,58 +1111,7 @@
                     </section>
                 </instance>
             </point>
-            <language>
-                <instance>
-                    <section>
-                        <item>
-                            <label>-- Select One --</label>
-                            <value/>
-                        </item>
-                    </section>
-                    <section>
-                        <item>
-                            <label>Arabic</label>
-                            <value>ara</value>
-                        </item>
-                        <item>
-                            <label>Dutch</label>
-                            <value>dut</value>
-                        </item>
-                        <item>
-                            <label>English</label>
-                            <value>eng</value>
-                        </item>
-                        <item>
-                            <label>French</label>
-                            <value>fre</value>
-                        </item>
-                        <item>
-                            <label>German</label>
-                            <value>ger</value>
-                        </item>
-                        <item>
-                            <label>Italian</label>
-                            <value>ita</value>
-                        </item>
-                        <item>
-                            <label>Japanese</label>
-                            <value>jpn</value>
-                        </item>
-                        <item>
-                            <label>Portuguese</label>
-                            <value>por</value>
-                        </item>
-                        <item>
-                            <label>Russian</label>
-                            <value>rus</value>
-                        </item>
-                        <item>
-                            <label>Spanish</label>
-                            <value>spa</value>
-                        </item>
-                    </section>
-                </instance>
-            </language>
+            
         </lists>
     </resource>
 </resources>
