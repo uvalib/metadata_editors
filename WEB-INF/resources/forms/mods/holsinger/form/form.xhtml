@@ -66,7 +66,7 @@ xxi:omit-xml-base="true"/>
 				Here are some examples: (from MODS)
 				<xforms:bind id="fr-form-binds" nodeset="."> 
 				(require field)   <xforms:bind id="identifier-bind" nodeset="mods:identifier" required="true()"/>
-				(readonly/uneditable field) <xforms:bind id="suri-bind" nodeset="mods:identifier[@displayLabel='SU DRUID']" readonly="true()"/>
+				(readonly/uneditable field) <xforms:bind id="identifier-type-bind" nodeset="mods:identifier/@type" readonly="true()"/>
 				(bound to the Brown schema date defination) <xforms:bind nodeset="mods:originInfo/mods:copyrightDate" type="dl:date"/>
 				</xforms:bind>
 			-->
@@ -74,7 +74,7 @@ xxi:omit-xml-base="true"/>
 			<xforms:bind id="fr-form-binds" nodeset=".">
 
 				<xforms:bind id="identifier-bind" nodeset="mods:identifier" readonly="true()" required="true()"/>
-				<xforms:bind id="identifier-type" nodeset="mods:identifier/@type" readonly="true()" required="true()"/>
+				<xforms:bind id="identifier-type-bind" nodeset="mods:identifier/@type" readonly="true()" required="true()"/>
 				
 				<xforms:bind id="titleInfo" nodeset="mods:titleInfo" required="true()"/>
 				<xforms:bind
@@ -96,10 +96,6 @@ xxi:omit-xml-base="true"/>
 				<xforms:bind nodeset="mods:location" required="true()"/>
 				<xforms:bind nodeset="mods:accessCondition" required="true()" type="xs:string"/>
 				<xforms:bind nodeset="mods:accessCondition/@type" required="true()" type="xs:string"/>
-				<xforms:bind nodeset="mods:relatedItem[@type = 'host']" />
-			    <xforms:bind nodeset="mods:relatedItem/mods:identifier"/>
-				<xforms:bind nodeset="mods:relatedItem/@type"/>
-				<xforms:bind nodeset="mods:relatedItem/@displayLabel"/>
 
 			</xforms:bind>
 
@@ -120,8 +116,6 @@ xxi:omit-xml-base="true"/>
 					<logo mediatype="" filename="" size=""/>
 				</metadata>
 			</xforms:instance>
-
-
 
 			<xforms:instance id="fr-form-attachments">
 				<attachments xmlns="">
