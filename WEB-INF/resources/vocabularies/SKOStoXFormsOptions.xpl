@@ -23,12 +23,12 @@
                 xmlns:pipeline="java:org.orbeon.oxf.processor.pipeline.PipelineFunctionLibrary">
                 <!-- LDPath pattern controls what is returned from Stanbol
                 see: https://code.google.com/p/ldpath/wiki/PathLanguage -->
-                <xsl:variable name="ldpath"
-                    select="encode-for-uri(
-                    'skos:prefLabel = skos:prefLabel :: xsd:string;
+                <xsl:variable name="ldpath">
+                    skos:prefLabel = skos:prefLabel :: xsd:string;
                     skos:inScheme = skos:inScheme;
-                    skos:notation = skos:notation;')"/>
-                <!-- where is Stanbol: pulled from an Orbeon property -->
+                    skos:notation = skos:notation;
+                </xsl:variable>
+                <!-- wheres Stanbol: pulled from an Orbeon property -->
                 <xsl:variable name="stanbol-url"
                     select="concat(pipeline:property('stanbol.url'),'/entityhub/site')"/>
                 <!-- controls which field to search. for SKOS vocabs, normally prefLabel is best -->
@@ -41,7 +41,7 @@
                     select="/request/parameters/parameter[name='vocab']/value"/>
 
                 <url><xsl:value-of
-                        select="concat($stanbol-url,'/',$vocab,'/find?field=',$search-field,'&amp;name=',$search-term,'&amp;ldpath=',$ldpath)"
+                    select="concat($stanbol-url,'/',$vocab,'/find?field=',encode-for-uri($search-field),'&amp;name=',encode-for-uri($search-term),'&amp;ldpath=',encode-for-uri($ldpath))"
                     /></url>
                 <content-type>application/rdf+xml</content-type>
                 <force-content-type>true</force-content-type>
