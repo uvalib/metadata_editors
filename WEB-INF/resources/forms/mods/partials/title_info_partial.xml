@@ -1,52 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
-    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
-    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
-    xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
-    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
-    
-    
-    <!-- START TITLEINFO -->
-    <fr:section id="titleInfo-section" bind="fr-form-binds">
-        <xforms:label ref="$form-resources/detail/titles/titleInfo"/>
-        <xforms:help ref="$form-resources/detail/help/titleInfo"/>
-        <xforms:alert ref="$form-resources/detail/alert/titleInfo"/>
-                 
-	    <fr:repeat nodeset="mods:titleInfo" id="titleInfo-repeat"
-	        origin="xxforms:instance('mods-insert')/insert[@name = 'titleInfo']/mods:titleInfo">
-	        <fr:body>
-                        
-	            <fr:tr>
-	                <fr:td>
-                        <div class="repeat-remove-section section-remove">
-                            <xforms:group ref=".">
-								<xforms:delete ev:event="DOMActivate" context="."
-								nodeset=".[position()]"/>
-								<xforms:trigger appearance="minimal" ref=".">
+	xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+	xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+	xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+	xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+	<!-- START TITLEINFO -->
+	<fr:section id="titleInfo-section" bind="fr-form-binds">
+		<xforms:label ref="$form-resources/detail/titles/titleInfo"></xforms:label>
+		<xforms:help ref="$form-resources/detail/help/titleInfo"></xforms:help>
+		<xforms:alert ref="$form-resources/detail/alert/titleInfo"></xforms:alert>
+
+		<fr:repeat nodeset="mods:titleInfo" id="titleInfo-repeat"
+			origin="xxforms:instance('mods-insert')/insert[@name = 'titleInfo']/mods:titleInfo">
+			<fr:body>
+
+				<fr:tr>
+					<fr:td>
+						<div class="repeat-remove-section section-remove">
+							<xforms:group ref=".">
+								<xforms:switch>
+									<xforms:case id="delete-titleInfo-delete">
+								<xforms:trigger appearance="minimal">
 									<xforms:label>
 										<img src="/forms/style/icons/remove.png"
-										alt="Remove Section"/>
+											alt="Remove Section" />
 										<span class="label">Remove Section</span>
 									</xforms:label>
+									<xforms:action ev:event="DOMActivate" if="count(/mods:mods/mods:titleInfo) > 1">
+										<xforms:toggle case="confirm" />
+									</xforms:action>
+									<xforms:action ev:event="DOMActivate" if="count(/mods:mods/mods:titleInfo) = 1">
+										<xforms:message>DLF Aquifer compliance demands at least one titleInfo section.</xforms:message>
+									</xforms:action>
 								</xforms:trigger>
+									</xforms:case>
+									<xforms:case id="confirm-titleInfo-delete">
+										Are you sure?
+										<xforms:trigger appearance="xxforms:link">
+											<xforms:label>Delete</xforms:label>
+										<xforms:action ev:event="DOMActivate" if="count(/mods:mods/mods:titleInfo)>1">
+											<xforms:delete  context="."
+												nodeset=".[position()]"></xforms:delete>
+										</xforms:action>
+										</xforms:trigger>
+										<xforms:trigger appearance="xxforms:link">
+											<xforms:label>Cancel</xforms:label>
+											<xforms:toggle case="delete-titleInfo-delete" ev:event="DOMActivate"/>
+										</xforms:trigger>
+									</xforms:case>
+								</xforms:switch>
 							</xforms:group>
-                        </div>
-						
-	                    <div class="item-row show-title">
-	                        <xforms:textarea incremental="true"
-	                            ref="mods:title" appearance="xxforms:autosize">
-	                            <xforms:label
-	                                ref="$form-resources/detail/titles/title"/>
-	                            <xforms:help
-	                                ref="$form-resources/detail/help/title"/>
-	                            <xforms:alert
-	                                ref="$form-resources/detail/alerts/title"/>
-	                        </xforms:textarea>
-	                    </div>
-	                    <div class="item-row show-title">
-	                    	<!-- 
+						</div>
+
+						<div class="item-row show-title">
+							<xforms:textarea incremental="true" ref="mods:title"
+								appearance="xxforms:autosize">
+								<xforms:label ref="$form-resources/detail/titles/title"></xforms:label>
+								<xforms:help ref="$form-resources/detail/help/title"></xforms:help>
+								<xforms:alert ref="$form-resources/detail/alerts/title"
+								></xforms:alert>
+							</xforms:textarea>
+						</div>
+						<div class="item-row show-title">
+							<!-- 
 	                    	<div class="item-cell">
 	                        	
 	                            <fr:optional-element ref="mods:nonSort"
@@ -66,31 +86,26 @@
 	                            </fr:optional-element>
 	                        </div>
 	                        -->
-	                        <div class="item-cell">
-	                            <!-- TitleInfo @type -->
-	                            <fr:optional-element ref="@type"
-	                                nodeset="mods:titleInfo">
-	                                <xforms:output
-	                                    ref="$form-resources/detail/titles/titletype"
-										class="forms-hidden" />
-	                                <xforms:select1 ref="." incremental="false"
-	                                    class="drop-down" id="additional-title">
-	                                    <xforms:label
-	                                        ref="$form-resources/detail/titles/titletype"/>
-	                                    <xforms:alert
-	                                        ref="$form-resources/detail/alerts/titletype"/>
-	                                    <xforms:help
-	                                        ref="$form-resources/detail/help/titletype"/>
-	                                    <xforms:itemset
-	                                        nodeset="$form-resources/lists/titletype/instance//(section|item)">
-	                                        <xforms:label ref="label"/>
-	                                        <xforms:value ref="value"/>
-	                                    </xforms:itemset>
-	                                </xforms:select1>
-	                            </fr:optional-element>
-	                        </div>
-	                    </div>
-	                	<!--
+							<div class="item-cell">
+								<!-- TitleInfo @type -->
+								<fr:optional-element ref="@type" nodeset="mods:titleInfo">
+									<xforms:output ref="$form-resources/detail/titles/titletype"
+										class="forms-hidden"></xforms:output>
+									<xforms:select1 ref="." incremental="false" class="drop-down"
+										id="additional-title">
+										<xforms:label ref="$form-resources/detail/titles/titletype"></xforms:label>
+										<xforms:alert ref="$form-resources/detail/alerts/titletype"></xforms:alert>
+										<xforms:help ref="$form-resources/detail/help/titletype"></xforms:help>
+										<xforms:itemset
+											nodeset="$form-resources/lists/titletype/instance//(section|item)">
+											<xforms:label ref="label"></xforms:label>
+											<xforms:value ref="value"></xforms:value>
+										</xforms:itemset>
+									</xforms:select1>
+								</fr:optional-element>
+							</div>
+						</div>
+						<!--
 	                    <div class="item-row show-title">
 	                    	
 	                        <fr:optional-element ref="mods:subTitle"
@@ -148,12 +163,12 @@
 	                        
 	                        
 	                        </div>-->
-	                    <div class="repeat-border"/>
-	                </fr:td>
-	            </fr:tr>
-                      
-	        </fr:body>
-	    </fr:repeat>
-    </fr:section>
-    <!-- END TITLEINFO -->
+						<div class="repeat-border"></div>
+					</fr:td>
+				</fr:tr>
+
+			</fr:body>
+		</fr:repeat>
+	</fr:section>
+	<!-- END TITLEINFO -->
 </html>

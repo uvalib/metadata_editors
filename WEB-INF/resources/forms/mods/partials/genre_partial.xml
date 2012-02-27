@@ -10,8 +10,8 @@
 
     <!-- START GENRE -->
     <fr:section id="genre" bind="fr-form-binds">
-        <xforms:label ref="$form-resources/detail/titles/genre"/>
-        <xforms:help ref="$form-resources/detail/help/genre"/>
+        <xforms:label ref="$form-resources/detail/titles/genre"></xforms:label>
+        <xforms:help ref="$form-resources/detail/help/genre"></xforms:help>
 
         <fr:repeat nodeset="mods:genre[position()]" id="genre-repeat[position()]"
             origin="xxforms:instance('mods-insert')/insert[@name = 'genre']/child::*">
@@ -21,32 +21,55 @@
                     <fr:td>
                         <div class="repeat-remove-section section-remove">
                             <xforms:group ref=".">
-								<xforms:delete ev:event="DOMActivate" context="."
-								nodeset=".[position()]"/>
-								<xforms:trigger appearance="minimal" ref=".">
-									<xforms:label>
-										<img src="/forms/style/icons/remove.png"
-										alt="Remove Section"/>
-										<span class="label">Remove Section</span>
-									</xforms:label>
-								</xforms:trigger>
-							</xforms:group>
+                                <xforms:delete ev:event="DOMActivate" context="."
+                                    nodeset=".[position()]"></xforms:delete>
+                                <xforms:trigger appearance="minimal" ref=".">
+                                    <xforms:label>
+                                        <img src="/forms/style/icons/remove.png"
+                                            alt="Remove Section" />
+                                        <span class="label">Remove Section</span>
+                                    </xforms:label>
+                                </xforms:trigger>
+                            </xforms:group>
                         </div>
+                        <!--
                         <xforms:select1 ref="." class="drop-down">
                             <xforms:label ref="$form-resources/detail/titles/genre"/>
                             <xforms:alert ref="$form-resources/detail/alerts/genre"/>
                             <xforms:help ref="$form-resources/detail/help/genre"/>
+                            
                             <xforms:itemset
                                 nodeset="$form-resources/lists/genre/instance//(section|item)">
+                                
+                            <xforms:itemset
+                                nodeset="instance('genreForms-instance')//(section|item)">
+                            
                                 <xforms:label ref="label"/>
                                 <xforms:value ref="value"/>
                             </xforms:itemset>
                         </xforms:select1>
+                        -->
+
+                        <fr:autocomplete ref="." id="genre-autocomplete" resource="/vocabularies/SKOSOptions?topic={$fr-search-value}&amp;vocab=genreForms">
+
+                            <xforms:label ref="$form-resources/detail/titles/genre"></xforms:label>
+                            <xforms:alert ref="$form-resources/detail/alerts/genre"></xforms:alert>
+                            <xforms:help ref="$form-resources/detail/help/genre"></xforms:help>
+                            <xforms:itemset
+                                nodeset="/section/item">
+                                <xforms:label ref="label"></xforms:label>
+                                <xforms:value ref="value"></xforms:value>
+                            </xforms:itemset>
+                        </fr:autocomplete>
+                        <span id="genreFormValue"><xforms:output ref="."/></span>
+
                     </fr:td>
+
                 </fr:tr>
             </fr:body>
         </fr:repeat>
     </fr:section>
+    
     <!-- END GENRE -->
 
 

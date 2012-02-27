@@ -46,7 +46,7 @@
          is created and the file used for logging is truncated.
          See: http://logging.apache.org/log4j/docs/api/org/apache/log4j/RollingFileAppender.html -->
     <appender name="RollingFileAppender" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="/var/log/tomcat6/orbeon.log"/>
+        <param name="File" value="/Users/ajs6f/Documents/xforms/tc/logs/orbeon.log"/>
         <param name="MaxFileSize" value="5MB"/>
         <param name="maxBackupIndex" value="200"/>
         <param name="Append" value="false" />
@@ -70,7 +70,11 @@
         <priority value="debug"/>
     </category>
     
-
+ <!--
+    <category name="org.orbeon.oxf.processor.generator.URLGenerator">
+        <priority value="debug"/>
+    </category>
+-->
     <!-- To enable logging for any of the sub-systems below, copy that section outside of the comment block -->
     <!--
     <category name="org.orbeon.oxf.properties.Properties">
@@ -85,10 +89,6 @@
         <priority value="debug"/>
     </category>
 
-    <category name="org.orbeon.oxf.processor.generator.URLGenerator">
-        <priority value="debug"/>
-    </category>
-
     <category name="org.orbeon.oxf.processor.xmldb.XMLDBProcessor">
         <priority value="debug"/>
     </category>
@@ -96,10 +96,11 @@
     <category name="org.orbeon.oxf.processor.sql.SQLProcessor">
         <priority value="debug"/>
     </category>
-
+   
     <category name="org.orbeon.oxf.processor.PageFlowControllerProcessor">
         <priority value="debug"/>
     </category>
+    
 
     <category name="org.orbeon.oxf.processor.generator.RequestGenerator">
         <priority value="debug"/>

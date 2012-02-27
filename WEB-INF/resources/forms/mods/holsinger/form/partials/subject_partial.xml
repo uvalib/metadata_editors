@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml"
-    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd
+    http://www.w3.org/2002/xforms  http://www.w3.org/MarkUp/Forms/2002/XForms-Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
     xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
     xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
     xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
 
+
     <!-- START SUBJECT -->
     <fr:section id="subject" bind="fr-form-binds">
-        <xforms:label ref="$form-resources/detail/titles/subject"/>
-        <xforms:help ref="$form-resources/detail/help/subject"/>
+        <xforms:label ref="$form-resources/detail/titles/subject"></xforms:label>
+        <xforms:help ref="$form-resources/detail/help/subject"></xforms:help>
 
 
         <fr:repeat
-            nodeset="mods:subject[position()][count(child::*) = 0 or child::*[ name() != 'mods:cartographics']]"
+            nodeset="mods:subject[position()]"
             id="subject-repeat[position()]"
             origin="xxforms:instance('mods-insert')/insert[@name = 'subject']/child::*"
             appearance="xxforms:table">
@@ -30,10 +33,10 @@
                                 <xforms:group ref=".">
                                     <xforms:insert ev:event="DOMActivate" context="."
                                         position="after" at="subject-topic"
-                                        origin="instance('mods-insert')/insert[@name =  'topic']/child::*"/>
+                                        origin="instance('mods-insert')/insert[@name =  'topic']/child::*"></xforms:insert>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add" />
                                             <span class="label">Topic</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -43,10 +46,10 @@
                                 <xforms:group ref=".">
                                     <xforms:insert ev:event="DOMActivate" context="."
                                         position="after" at="subject-genre"
-                                        origin="instance('mods-insert')/insert[@name =  'genre']/child::*"/>
+                                        origin="instance('mods-insert')/insert[@name =  'genre']/child::*"></xforms:insert>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add" />
                                             <span class="label">Genre</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -56,10 +59,10 @@
                                 <xforms:group ref=".">
                                     <xforms:insert ev:event="DOMActivate" context="."
                                         position="after" at="subject-name"
-                                        origin="instance('mods-insert')/insert[@name =  'name']/child::*"/>
+                                        origin="instance('mods-insert')/insert[@name =  'name']/child::*"></xforms:insert>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add" />
                                             <span class="label">Name</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -69,10 +72,10 @@
                                 <xforms:group ref=".">
                                     <xforms:insert ev:event="DOMActivate" context="."
                                         position="after" at="subject-date"
-                                        origin="instance('mods-insert')/insert[@name =  'singleDate']/child::*"/>
+                                        origin="instance('mods-insert')/insert[@name =  'singleDate']/child::*"></xforms:insert>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add" />
                                             <span class="label">Date</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -82,10 +85,10 @@
                                 <xforms:group ref=".">
                                     <xforms:insert ev:event="DOMActivate" context="."
                                         position="after" at="subject-titleInfo"
-                                        origin="instance('mods-insert')/insert[@name =  'titleInfo']/child::*"/>
+                                        origin="instance('mods-insert')/insert[@name =  'titleInfo']/child::*"></xforms:insert>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add" />
                                             <span class="label">Title</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -96,10 +99,10 @@
                                 <xforms:group ref=".">
                                     <xforms:insert ev:event="DOMActivate" context="."
                                         position="after" at="subject-geographic"
-                                        origin="instance('mods-insert')/insert[@name =  'geographic']/child::*"/>
+                                        origin="instance('mods-insert')/insert[@name =  'geographic']/child::*"></xforms:insert>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add" />
                                             <span class="label">Geographic</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
@@ -108,26 +111,26 @@
                             <div class="item-cell">
                                 <xforms:group ref=".">
                                     <xforms:insert ev:event="DOMActivate" context="."
-                                        origin="instance('mods-insert')/insert[@name =  'subject']/mods:subject/@authority"/>
+                                        origin="instance('mods-insert')/insert[@name =  'subject']/mods:subject/@authority"></xforms:insert>
                                     <fr:button bind="buttons-triggers">
                                         <xforms:label>
-                                            <img src="/forms/style/icons/plus.png" alt="Add"/>
+                                            <img src="/forms/style/icons/plus.png" alt="Add" />
                                             <span class="label">Authority</span>
                                         </xforms:label></fr:button>
                                 </xforms:group>
                             </div>
                             <div class="repeat-remove-section section-remove">
                                 <xforms:group ref=".">
-									<xforms:delete ev:event="DOMActivate" context="."
-									nodeset=".[position()]"/>
-									<xforms:trigger appearance="minimal" ref=".">
-										<xforms:label>
-											<img src="/forms/style/icons/remove.png"
-											alt="Remove Section"/>
-											<span class="label">Remove Section</span>
-										</xforms:label>
-									</xforms:trigger>
-								</xforms:group>
+                                    <xforms:delete ev:event="DOMActivate" context="."
+                                        nodeset=".[position()]"></xforms:delete>
+                                    <xforms:trigger appearance="minimal" ref=".">
+                                        <xforms:label>
+                                            <img src="/forms/style/icons/remove.png"
+                                                alt="Remove Section" />
+                                            <span class="label">Remove Section</span>
+                                        </xforms:label>
+                                    </xforms:trigger>
+                                </xforms:group>
                             </div>
                         </div>
                         <!-- END BUTTON -->
@@ -137,13 +140,13 @@
                             <div class="item-cell">
                                 <xforms:select1 ref="@authority" id="subject-authority-select"
                                     class="drop-down">
-                                    <xforms:label ref="$form-resources/detail/titles/authority"/>
-                                    <xforms:alert ref="$form-resources/detail/alerts/authority"/>
-                                    <xforms:help ref="$form-resources/detail/help/authority"/>
+                                    <xforms:label ref="$form-resources/detail/titles/authority"></xforms:label>
+                                    <xforms:alert ref="$form-resources/detail/alerts/authority"></xforms:alert>
+                                    <xforms:help ref="$form-resources/detail/help/authority"></xforms:help>
                                     <xforms:itemset
                                         nodeset="$form-resources/lists/authority/instance//(section|item)">
-                                        <xforms:label ref="label"/>
-                                        <xforms:value ref="value"/>
+                                        <xforms:label ref="label"></xforms:label>
+                                        <xforms:value ref="value"></xforms:value>
                                     </xforms:itemset>
                                 </xforms:select1>
                             </div>
@@ -158,14 +161,14 @@
                                             <div class="repeat-remove">
                                                 <xforms:group ref=".">
                                                   <xforms:delete ev:event="DOMActivate" context="."
-                                                  nodeset=".[position()]"/>
+                                                  nodeset=".[position()]"></xforms:delete>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
                                                   <img src="/forms/style/icons/remove_sm.png"
-                                                  alt="Remove Subject Temporal"/>
+                                                  alt="Remove Subject Temporal" />
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-subject-date"
-                                                  />
+                                                  ></xforms:output>
                                                   </xforms:label>
                                                   </xforms:trigger>
                                                 </xforms:group>
@@ -173,11 +176,12 @@
                                             <div class="item-cell">
                                                 <xforms:input incremental="true" ref=".">
                                                   <xforms:label
-                                                  ref="$form-resources/detail/titles/subjectDate"/>
+                                                  ref="$form-resources/detail/titles/subjectDate"></xforms:label>
                                                   <xforms:alert
-                                                  ref="$form-resources/detail/alerts/subjectDate"/>
+                                                  ref="$form-resources/detail/alerts/subjectDate"></xforms:alert>
                                                   <xforms:help
-                                                  ref="$form-resources/detail/help/subjectDate"/>
+                                                  ref="$form-resources/detail/help/subjectDate"
+                                                  ></xforms:help>
                                                 </xforms:input>
                                             </div>
                                             <div class="item-cell">
@@ -185,15 +189,15 @@
                                                 <xforms:select1 ref="@keyDate"
                                                   id="subject-keyDate-select" class="drop-down">
                                                   <xforms:label
-                                                  ref="$form-resources/detail/titles/keydate"/>
+                                                  ref="$form-resources/detail/titles/keydate"></xforms:label>
                                                   <xforms:alert
-                                                  ref="$form-resources/detail/alerts/date"/>
+                                                  ref="$form-resources/detail/alerts/date"></xforms:alert>
                                                   <xforms:help
-                                                  ref="$form-resources/detail/help/qualifier"/>
+                                                  ref="$form-resources/detail/help/qualifier"></xforms:help>
                                                   <xforms:itemset
                                                   nodeset="$form-resources/lists/yesno/instance//(section|item)">
-                                                  <xforms:label ref="label"/>
-                                                  <xforms:value ref="value"/>
+                                                  <xforms:label ref="label"></xforms:label>
+                                                  <xforms:value ref="value"></xforms:value>
                                                   </xforms:itemset>
                                                 </xforms:select1>
                                             </div>
@@ -202,19 +206,18 @@
                                                 <fr:optional-element ref="@point" id="subject-point"
                                                   nodeset="mods:dateCreated">
                                                   <xforms:output
-                                                  ref="$form-resources/detail/titles/point"/>
-                                                  <xforms:select1 ref="." 
-                                                  class="drop-down">
+                                                  ref="$form-resources/detail/titles/point"></xforms:output>
+                                                  <xforms:select1 ref="." class="drop-down">
                                                   <xforms:label
-                                                  ref="$form-resources/detail/titles/point"/>
+                                                  ref="$form-resources/detail/titles/point"></xforms:label>
                                                   <xforms:alert
-                                                  ref="$form-resources/detail/alerts/point"/>
+                                                  ref="$form-resources/detail/alerts/point"></xforms:alert>
                                                   <xforms:help
-                                                  ref="$form-resources/detail/help/point"/>
+                                                  ref="$form-resources/detail/help/point"></xforms:help>
                                                   <xforms:itemset
                                                   nodeset="$form-resources/lists/point/instance//(section|item)">
-                                                  <xforms:label ref="label"/>
-                                                  <xforms:value ref="value"/>
+                                                  <xforms:label ref="label"></xforms:label>
+                                                  <xforms:value ref="value"></xforms:value>
                                                   </xforms:itemset>
                                                   </xforms:select1>
                                                 </fr:optional-element>
@@ -234,30 +237,60 @@
                                     <div class="repeat-container-item">
                                         <div class="item-row">
                                             <div class="repeat-remove">
-                                                <xforms:group ref=".">
-                                                  <xforms:delete ev:event="DOMActivate" context="."
-                                                  nodeset=".[position()]"/>
+                                                <xforms:group ref=".">                                         
                                                   <xforms:trigger appearance="minimal" ref=".">
-                                                  <xforms:label>
-                                                  <img src="/forms/style/icons/remove_sm.png"
-                                                  alt="Remove Subject Topic"/>
-                                                  <xforms:output
-                                                  ref="$form-resources/detail/labels/remove-topic"/>
-                                                  </xforms:label>
+                                                      <xforms:label>
+                                                          <img src="/forms/style/icons/remove_sm.png"
+                                                          alt="Remove Subject Topic" />
+                                                        <xforms:output
+                                                         ref="$form-resources/detail/labels/remove-topic"></xforms:output>
+                                                      </xforms:label>
+                                                      <xforms:delete ev:event="DOMActivate" context="."
+                                                          nodeset=".[position()]"></xforms:delete>
                                                   </xforms:trigger>
                                                 </xforms:group>
                                             </div>
                                             <div class="item-cell">
                                                 
-                                                <eaditor:subject xmlns:eaditor="eaditor" ref=".">
-                                                  <xforms:label
-                                                  ref="$form-resources/detail/titles/subjectTopic"/>
+                                                <fr:autocomplete ref="." id="subject-autocomplete"
+                                                    resource="/vocabularies/SKOSOptions?topic={$fr-search-value}&amp;vocab=LCSH"
+                                                  > <xforms:label ref="$form-resources/detail/titles/subjectTopic"/> 
                                                   <xforms:alert
                                                   ref="$form-resources/detail/alerts/subjectTopic"/>
                                                   <xforms:help
                                                   ref="$form-resources/detail/help/subjectTopic"/>
-                                                </eaditor:subject>
-                                               
+                                                  <xforms:itemset nodeset="/section/item">
+                                                     <xforms:label ref="label"/>
+                                                     <xforms:value ref="value"/>
+                                                  </xforms:itemset>
+                                                </fr:autocomplete>
+                                                <span id="subjectUri"><xforms:output ref="."/></span>
+                                                <xforms:dispatch ev:event="xforms-ready" target="subject-autocomplete" name="fr-set-label">
+                                                    <xxforms:context name="label" select="."/>
+                                                </xforms:dispatch>
+                                                <!--
+                                                <xforms:trigger appearance="minimal">
+                                                    <xforms:label> 
+                                                        <img src="/forms/style/icons/glyphish/55-network.png" alt="Get advice" /> 
+                                                    </xforms:label> 
+                                                    <xxforms:show ev:event="DOMActivate" dialog="subject-browser"/>
+                                                </xforms:trigger>
+                                                <xxforms:dialog id="subject-browser" appearance="full" level="modal"
+                                                    close="true" draggable="true" visible="false">
+                                                    <div id="subjectGraph" style="width:600px;height:600px"/>
+                                                    -->
+                                                    <!-- load data for current subject and create graph-->
+                                                 <!--   <span>Position:<xforms:output ref="position()"/></span>
+                                                    <script>
+                                                        var subjectUri = document.getElementById("subjectUri·1-1").firstChild.innerHTML;
+                                                        var sUrl = "http://localhost:9080/orbeon/vocabularies/LCSHNode?uri=" + subjectUri;           
+                                                        var transaction = YAHOO.util.Connect.asyncRequest('GET', sUrl, {
+                                                          success: function(o) {subjectBrowser(eval("(" + o.responseText + ")"))} 
+                                                        }, null);
+ 
+                                                    </script>  
+                                                </xxforms:dialog>
+-->
                                             </div>
                                         </div>
                                     </div>
@@ -277,14 +310,14 @@
                                                 <xforms:group ref=".">
                                                   <xforms:delete ev:event="DOMActivate" context="."
                                                   nodeset=".[position()]"
-                                                  at="index('subject-genre')"/>
+                                                  at="index('subject-genre')"></xforms:delete>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
                                                   <img src="/forms/style/icons/remove_sm.png"
-                                                  alt="Remove dateOther Info"/>
+                                                  alt="Remove dateOther Info" />
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-subjectGenre"
-                                                  />
+                                                  ></xforms:output>
                                                   </xforms:label>
                                                   </xforms:trigger>
                                                 </xforms:group>
@@ -292,19 +325,19 @@
                                             <div class="item-cell">
                                                 <xforms:select1 ref="." class="drop-down">
                                                   <xforms:label
-                                                  ref="$form-resources/detail/titles/genre"/>
+                                                  ref="$form-resources/detail/titles/genre"></xforms:label>
                                                   <xforms:alert
-                                                  ref="$form-resources/detail/alerts/genre"/>
+                                                  ref="$form-resources/detail/alerts/genre"></xforms:alert>
                                                   <xforms:help
-                                                  ref="$form-resources/detail/help/genre"/>
+                                                  ref="$form-resources/detail/help/genre"></xforms:help>
                                                   <xforms:itemset
                                                   nodeset="$form-resources/lists/genre/instance//(section|item)">
-                                                  <xforms:label ref="label"/>
-                                                  <xforms:value ref="value"/>
+                                                  <xforms:label ref="label"></xforms:label>
+                                                  <xforms:value ref="value"></xforms:value>
                                                   </xforms:itemset>
                                                 </xforms:select1>
                                             </div>
-                                            <div class="item-cell"/>
+                                            <div class="item-cell"></div>
                                         </div>
                                     </div>
                                 </xforms:repeat>
@@ -322,14 +355,14 @@
                                             <div class="repeat-remove">
                                                 <xforms:group ref=".">
                                                   <xforms:delete ev:event="DOMActivate" context="."
-                                                  nodeset=".[position()]"/>
+                                                  nodeset=".[position()]"></xforms:delete>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
                                                   <img src="/forms/style/icons/remove_sm.png"
-                                                  alt="Remove Subject Name"/>
+                                                  alt="Remove Subject Name" />
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-subjectName"
-                                                  />
+                                                  ></xforms:output>
                                                   </xforms:label>
                                                   </xforms:trigger>
                                                 </xforms:group>
@@ -338,25 +371,26 @@
                                                 <xforms:input ref="mods:namePart" incremental="true"
                                                   id="additional-subject-name">
                                                   <xforms:label
-                                                  ref="$form-resources/detail/titles/subjectName"/>
+                                                  ref="$form-resources/detail/titles/subjectName"></xforms:label>
                                                   <xforms:alert
-                                                  ref="$form-resources/detail/alerts/name"/>
+                                                  ref="$form-resources/detail/alerts/name"></xforms:alert>
                                                   <xforms:help
-                                                  ref="$form-resources/detail/help/name"/>
+                                                  ref="$form-resources/detail/help/name"
+                                                  ></xforms:help>
                                                 </xforms:input>
                                             </div>
                                             <div class="item-cell">
                                                 <xforms:select1 ref="@type" class="drop-down">
                                                   <xforms:label
-                                                  ref="$form-resources/detail/titles/subjectNameType"/>
+                                                  ref="$form-resources/detail/titles/subjectNameType"></xforms:label>
                                                   <xforms:alert
-                                                  ref="$form-resources/detail/alerts/nametype"/>
+                                                  ref="$form-resources/detail/alerts/nametype"></xforms:alert>
                                                   <xforms:help
-                                                  ref="$form-resources/detail/help/nametype"/>
+                                                  ref="$form-resources/detail/help/nametype"></xforms:help>
                                                   <xforms:itemset
                                                   nodeset="$form-resources/lists/nametype/instance//(section|item)">
-                                                  <xforms:label ref="label"/>
-                                                  <xforms:value ref="value"/>
+                                                  <xforms:label ref="label"></xforms:label>
+                                                  <xforms:value ref="value"></xforms:value>
                                                   </xforms:itemset>
                                                 </xforms:select1>
                                             </div>
@@ -365,15 +399,15 @@
                                                 <xforms:select1 ref="mods:role/mods:roleTerm"
                                                   class="drop-down">
                                                   <xforms:label
-                                                  ref="$form-resources/detail/titles/namerole"/>
+                                                  ref="$form-resources/detail/titles/namerole"></xforms:label>
                                                   <xforms:alert
-                                                  ref="$form-resources/detail/alerts/namerole"/>
+                                                  ref="$form-resources/detail/alerts/namerole"></xforms:alert>
                                                   <xforms:help
-                                                  ref="$form-resources/detail/help/namerole"/>
+                                                  ref="$form-resources/detail/help/namerole"></xforms:help>
                                                   <xforms:itemset
                                                   nodeset="$form-resources/lists/roletype/instance//(section|item)">
-                                                  <xforms:label ref="label"/>
-                                                  <xforms:value ref="value"/>
+                                                  <xforms:label ref="label"></xforms:label>
+                                                  <xforms:value ref="value"></xforms:value>
                                                   </xforms:itemset>
                                                 </xforms:select1>
                                             </div>
@@ -395,14 +429,14 @@
                                             <div class="repeat-remove">
                                                 <xforms:group ref=".">
                                                   <xforms:delete ev:event="DOMActivate" context="."
-                                                  nodeset=".[position()]"/>
+                                                  nodeset=".[position()]"></xforms:delete>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
                                                   <img src="/forms/style/icons/remove_sm.png"
-                                                  alt="Remove Subject TitleInfo"/>
+                                                  alt="Remove Subject TitleInfo" />
                                                   <xforms:output
                                                   ref="$form-resources/detail/labels/remove-subjectTitleInfo"
-                                                  />
+                                                  ></xforms:output>
                                                   </xforms:label>
                                                   </xforms:trigger>
                                                 </xforms:group>
@@ -411,11 +445,12 @@
                                                 <xforms:input id="subject-titleinfo-title-control"
                                                   incremental="true" ref="mods:title">
                                                   <xforms:label
-                                                  ref="$form-resources/detail/titles/title"/>
+                                                  ref="$form-resources/detail/titles/title"></xforms:label>
                                                   <xforms:alert
-                                                  ref="$form-resources/detail/alerts/title"/>
+                                                  ref="$form-resources/detail/alerts/title"></xforms:alert>
                                                   <xforms:help
-                                                  ref="$form-resources/detail/help/title"/>
+                                                  ref="$form-resources/detail/help/title"
+                                                  ></xforms:help>
                                                 </xforms:input>
                                             </div>
                                             <div class="item-cell">
@@ -423,15 +458,16 @@
                                                   ref="mods:nonSort" nodeset="mods:titleInfo">
                                                   <xforms:output
                                                   ref="$form-resources/detail/titles/nonSort"
-                                                  class="forms-hidden"/>
+                                                  class="forms-hidden"></xforms:output>
                                                   <xforms:input incremental="true" ref=".">
                                                   <xforms:label
                                                   ref="$form-resources/detail/titles/nonSort"
-                                                  class="forms-hidden"/>
+                                                  class="forms-hidden"></xforms:label>
                                                   <xforms:help
-                                                  ref="$form-resources/detail/help/nonSort"/>
+                                                  ref="$form-resources/detail/help/nonSort"></xforms:help>
                                                   <xforms:alert
-                                                  ref="$form-resources/detail/alerts/nonSort"/>
+                                                  ref="$form-resources/detail/alerts/nonSort"
+                                                  ></xforms:alert>
                                                   </xforms:input>
                                                 </fr:optional-element>
                                             </div>
@@ -440,16 +476,17 @@
                                                   ref="mods:subTitle" nodeset="mods:titleInfo">
                                                   <xforms:output
                                                   ref="$form-resources/detail/titles/subtitle"
-                                                  class="forms-hidden"/>
-                                                  <div style="clear:both"/>
+                                                  class="forms-hidden"></xforms:output>
+                                                  <div style="clear:both"></div>
                                                   <xforms:input incremental="true" ref="."
                                                   appearance="xxforms:autosize">
                                                   <xforms:label
-                                                  ref="$form-resources/detail/titles/subtitle"/>
+                                                  ref="$form-resources/detail/titles/subtitle"></xforms:label>
                                                   <xforms:alert
-                                                  ref="$form-resources/detail/alerts/subtitle"/>
+                                                  ref="$form-resources/detail/alerts/subtitle"></xforms:alert>
                                                   <xforms:help
-                                                  ref="$form-resources/detail/help/subtitle"/>
+                                                  ref="$form-resources/detail/help/subtitle"
+                                                  ></xforms:help>
                                                   </xforms:input>
                                                 </fr:optional-element>
                                             </div>
@@ -468,11 +505,11 @@
                                             <div class="repeat-remove">
                                                 <xforms:group ref=".">
                                                   <xforms:delete ev:event="DOMActivate" context="."
-                                                  nodeset=".[position()]"/>
+                                                  nodeset=".[position()]"></xforms:delete>
                                                   <xforms:trigger appearance="minimal" ref=".">
                                                   <xforms:label>
                                                   <img src="/forms/style/icons/remove_sm.png"
-                                                  alt="Remove Subject Geographic"/>
+                                                  alt="Remove Subject Geographic" />
                                                   </xforms:label>
                                                   </xforms:trigger>
                                                 </xforms:group>
@@ -480,11 +517,12 @@
                                             <div class="item-cell">
                                                 <xforms:input incremental="true" ref=".">
                                                   <xforms:label
-                                                  ref="$form-resources/detail/titles/subjectGeographic"/>
+                                                  ref="$form-resources/detail/titles/subjectGeographic"></xforms:label>
                                                   <xforms:alert
-                                                  ref="$form-resources/detail/alerts/geographic"/>
+                                                  ref="$form-resources/detail/alerts/geographic"></xforms:alert>
                                                   <xforms:help
-                                                  ref="$form-resources/detail/help/geographic"/>
+                                                  ref="$form-resources/detail/help/geographic"
+                                                  ></xforms:help>
                                                 </xforms:input>
                                             </div>
                                         </div>
@@ -503,6 +541,7 @@
         </fr:repeat>
 
     </fr:section>
+    
     <!-- END SUBJECT -->
 
 

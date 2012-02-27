@@ -174,9 +174,20 @@
                                                   alt="Remove Role Term" />
                                                   </xforms:label>
                                                   </xforms:trigger>
+                                                      <fr:autocomplete ref="." resource="/vocabularies/SKOSOptions?topic={$fr-search-value}&amp;vocab=MARCrelators">
+                                                          
+                                                          <xforms:label ref="$form-resources/detail/titles/roleTerm"></xforms:label>
+                                                          <xforms:alert ref="$form-resources/detail/alerts/roleTerm"></xforms:alert>
+                                                          <xforms:help ref="$form-resources/detail/help/roleTerm"></xforms:help>
+                                                          <xforms:itemset
+                                                              nodeset="/section/item">
+                                                              <xforms:label ref="label"></xforms:label>
+                                                              <xforms:value ref="value"></xforms:value>
+                                                          </xforms:itemset>
+                                                      </fr:autocomplete>
+                                                      <span id="MARCrelatorValue"><xforms:output ref="."/></span>
                                                       
-                                                      
-                                                     
+                                                    <!-- 
                                                   <xforms:select1 ref="." class="drop-down">
                                                   <xforms:label
                                                   value="$form-resources/detail/titles/roleTerm"></xforms:label>
@@ -190,7 +201,9 @@
                                                   <xforms:value ref="value"></xforms:value>
                                                   </xforms:itemset>
                                                   </xforms:select1>
-                                                      <xforms:select1 ref="@type" class="drop-down">
+                                                  
+                                                  -->
+                                                      <!--   <xforms:select1 ref="@type" class="drop-down">
                                                           <xforms:label>Role term type:</xforms:label>
                                                           
                                                           <xforms:item>
@@ -203,6 +216,7 @@
                                                           </xforms:item>
                                                           
                                                       </xforms:select1>
+                                                    </xforms:select1>  -->
                                                   </xforms:group>
                                                     </div>  
                                                 </xforms:repeat>

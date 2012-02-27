@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.orbeon.com/oxf/controller"
+    xmlns:oxf="http://www.orbeon.com/oxf/processors">
+    
+    <page id="SKOStoXFormsOptions" path-info="/vocabularies/SKOSOptions" model="/vocabularies/SKOStoXFormsOptions.xpl"
+    />
+    
+    <page id="LCSHNodes" path-info="/vocabularies/LCSHNodes" model="/vocabularies/LCSHNodes.xpl"
+    />
+    
+</config>

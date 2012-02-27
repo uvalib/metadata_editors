@@ -70,5 +70,8 @@
         value="document model submission server server-body"/>
     <property as="xs:boolean" name="oxf.xforms.combine-resources" value="false"/>
     <property as="xs:boolean" name="oxf.xforms.minimal-resources" value="false"/>
+    
+    
+    <property as="xs:string" name="stanbol.url" value="http://localhost:10080"/>
 
 </properties>

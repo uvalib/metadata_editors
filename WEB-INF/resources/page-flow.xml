@@ -30,13 +30,16 @@
     <!-- Welcome application -->
     <page id="home" path-info="/home/" model="apps/home/page-flow.xml"/>
 
+    <page id="vocabularies" path-info="/vocabularies/*" model="/vocabularies/page-flow.xml"></page>
+
     <!-- Dispatch request to a specific application -->
     <page id="apps" path-info="/([^/]+)/.*" matcher="oxf:perl5-matcher" model="apps/${1}/page-flow.xml"/>
 
     <!-- "Not Found" page displayed when no page matches the request path -->
     <page id="not-found" path-info="/not-found" view="/config/not-found.xhtml"/>
-
-    <epilogue url="/config/epilogue.xpl"/>
+    
+    
+    <!-- <epilogue url="/config/epilogue.xpl"/> -->
     <not-found-handler page="not-found"/>
     
 </config>

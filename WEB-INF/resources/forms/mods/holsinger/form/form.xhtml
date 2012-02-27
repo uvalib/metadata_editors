@@ -13,14 +13,15 @@
  xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
  xmlns:xs="http://www.w3.org/2001/XMLSchema"
  xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
-xmlns:eaditor="eaditor">
+ xmlns:xxforms="http://orbeon.org/oxf/xml/xforms">
 	<head>
-
-	<!-- add in the widget for lexical autocomplete -->
- <xi:include href="oxf:/forms/mods/holsinger/xbl/subject.xbl" 
-xxi:omit-xml-base="true"/>
-
+		<!--
+		<link rel="stylesheet" type="text/css" href="/forms/style/Spacetree.css" />
+		<script type="text/javascript" src="http://thejit.org/static/v20/Jit/jit-yc.js"></script>
+		<script type="text/javascript" src="/forms/scripts/subject-browser.js"></script> 
+-->
+		<script src="/forms/scripts/main.js"><!-- custom script --></script>
+		
 		<title>Metadata Toolkit</title>
 
 		<xforms:model id="fr-form-model" xxforms:help-tooltip="false">
@@ -29,7 +30,7 @@ xxi:omit-xml-base="true"/>
 			<xi:include href="oxf:/forms/mods/schema.xsd" xxi:omit-xml-base="true"/>
 
 			<!-- MODS schema -->
-			<xi:include href="oxf:/forms/mods/mods-3-3.xsd" xxi:omit-xml-base="true"/>
+			<xi:include href="oxf:/forms/mods/mods-3-4.xsd" xxi:omit-xml-base="true"/>
 
 			<!-- This is the default basic skeleton for your form. Any nodes you want to be present, or
 				default values, add to this xml file. -->
@@ -37,10 +38,9 @@ xxi:omit-xml-base="true"/>
 				<xi:include href="oxf:/forms/mods/holsinger/template.xml" xxi:omit-xml-base="true"/>
 			</xforms:instance>
 
-
 			<!--  Insert Instance -->
 			<xforms:instance id="mods-insert" src="oxf:/forms/mods/holsinger/mods-insert.xml"/>
-
+			
 			<!--  Instance to control button triggers -->
 			<xforms:instance id="triggers-instance">
 				<control xmlns="">
@@ -73,12 +73,11 @@ xxi:omit-xml-base="true"/>
 				<xforms:bind id="identifier-bind" nodeset="mods:identifier" readonly="true()" required="true()"/>
 				<xforms:bind id="identifier-type-bind" nodeset="mods:identifier/@type" readonly="true()" required="true()"/>
 				
-				<xforms:bind id="titleInfo" nodeset="mods:titleInfo" required="true()"/>
+				<xforms:bind id="titleInfo-bind" nodeset="mods:titleInfo" required="count(/mods:mods/mods:titleInfo)=1"/>
 				<xforms:bind
 					nodeset="mods:titleInfo/child::*[position()=1 and contains(name(), 'title')]"
 					required="true()" type="xs:string"/>
 
-				<xforms:bind id="title-bind" nodeset="mods:titleInfo/mods:title" required="true()"/>
 				<xforms:bind id="titletype" nodeset="mods:titleInfo/@type" type="xs:string"/>
 				<xforms:bind id="name-bind" nodeset="mods:name"/>
 				<xforms:bind id="name-type-bind" nodeset="mods:name/@type"/>
@@ -109,7 +108,6 @@ xxi:omit-xml-base="true"/>
 					<author>Joe and Adam</author>
 					<logo mediatype="image/png" filename="banner.gif" size=""
 						>/apps/fr/style/banner.gif</logo>
-
 					<logo mediatype="" filename="" size=""/>
 				</metadata>
 			</xforms:instance>
@@ -144,44 +142,23 @@ xxi:omit-xml-base="true"/>
 			Replace the html tables with the fr:grid and add fr: prefix to your td's and tr's -->
 		<fr:view>
 			<xforms:label>Metadata Toolkit</xforms:label>
-		
-			<fr:body>
-
-				<!-- XFORMS Repeats have a hard-time showing up in the summary table. This section exposes values to be populated in the 
-				form's summary table -->
-				
-				<div style="display:none">
-					<xforms:input class="fr-summary fr-search fr-email-subject"
-						ref="mods:identifier[@displayLabel = 'Record Number']">
-						<xforms:label>Record Number</xforms:label>
-					</xforms:input>
-					<xforms:input class="fr-summary fr-search fr-email-subject"
-						ref="mods:titleInfo/mods:title">
-						<xforms:label>Title</xforms:label>
-					</xforms:input>
-					<xforms:input class="fr-summary fr-search fr-email-subject"
-						ref="mods:name/mods:namePart">
-						<xforms:label>Name</xforms:label>
-					</xforms:input>
-				</div>				
-			
-				<xi:include href="oxf:/forms/mods/partials/identifier_partial.xml" xxi:omit-xml-base="true"/> 				
-				<xi:include href="oxf:/forms/mods/partials/related_item_partial.xml" xxi:omit-xml-base="true"/>
+			<fr:body>		
+				<!-- These four are Aquifer required sections -->
+				<xi:include href="oxf:/forms/mods/partials/name_partial.xml" xxi:omit-xml-base="true"/>			
 				<xi:include href="oxf:/forms/mods/partials/title_info_partial.xml" xxi:omit-xml-base="true"/>
-				<xi:include href="oxf:/forms/mods/partials/name_partial.xml" xxi:omit-xml-base="true"/>
-				<xi:include href="oxf:/forms/mods/partials/resource_type_partial.xml" xxi:omit-xml-base="true"/>			
 				<xi:include href="oxf:/forms/mods/holsinger/form/partials/origin_info_partial.xml" xxi:omit-xml-base="true"/>
-				<xi:include href="oxf:/forms/mods/holsinger/form/partials/subject_partial.xml" xxi:omit-xml-base="true"/> 
+				<xi:include href="oxf:/forms/mods/partials/location_partial.xml" xxi:omit-xml-base="true"/>
+				
+				<xi:include href="oxf:/forms/mods/holsinger/form/partials/subject_partial.xml" xxi:omit-xml-base="true"/> 				
+				<xi:include href="oxf:/forms/mods/partials/related_item_partial.xml" xxi:omit-xml-base="true"/>
+				<xi:include href="oxf:/forms/mods/partials/resource_type_partial.xml" xxi:omit-xml-base="true"/>			
 				<xi:include href="oxf:/forms/mods/partials/genre_partial.xml" xxi:omit-xml-base="true"/>
 				<xi:include href="oxf:/forms/mods/partials/physical_description_partial.xml" xxi:omit-xml-base="true"/>
-				<xi:include href="oxf:/forms/mods/partials/location_partial.xml" xxi:omit-xml-base="true"/>
 				<xi:include href="oxf:/forms/mods/partials/note_partial.xml" xxi:omit-xml-base="true"/>
-				
+				<xi:include href="oxf:/forms/mods/partials/identifier_partial.xml" xxi:omit-xml-base="true"/> 							
 			</fr:body>
 		</fr:view>
 		<button id="toggle_debug" class="btn">Debug Tools</button>
 	</body>
 
-
- <script src="/forms/scripts/main.js"><!-- custom script --></script>
 </html>
