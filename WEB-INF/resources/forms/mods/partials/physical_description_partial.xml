@@ -97,6 +97,19 @@
                                                 </xforms:group>
                                             </div>
                                             <div class="item-cell">
+                                                <fr:autocomplete ref="." id="physDescription-form-autocomplete" resource="/vocabularies/SKOSOptions?topic={$fr-search-value}&amp;vocab=TGM">
+                                                    
+                                                    <xforms:label ref="$form-resources/detail/titles/form"></xforms:label>
+                                                    <xforms:alert ref="$form-resources/detail/alerts/form"></xforms:alert>
+                                                    <xforms:help ref="$form-resources/detail/help/form"></xforms:help>
+                                                    <xforms:itemset
+                                                        nodeset="/section/item">
+                                                        <xforms:label ref="label"></xforms:label>
+                                                        <xforms:value ref="value"></xforms:value>
+                                                    </xforms:itemset>
+                                                </fr:autocomplete>
+                                                <span id="physDescriptionformFormValue"><xforms:output ref="."/></span>
+                                                <!--
                                                 <xforms:select1 ref="." incremental="false"
                                                   class="drop-down" id="additional-form">
                                                   <xforms:label
@@ -106,11 +119,12 @@
                                                   <xforms:help
                                                   ref="$form-resources/detail/help/form"/>
                                                   <xforms:itemset
-                                                  nodeset="$form-resources/lists/form/instance//(section|item)">
+                                                  nodeset="$form-resources/lists/form/instance/section|item)">
                                                   <xforms:label ref="label"/>
                                                   <xforms:value ref="value"/>
                                                   </xforms:itemset>
                                                 </xforms:select1>
+                                                -->
                                             </div>
                                             <div class="item-cell">
                                                 Authority: <xforms:output ref="./@authority"/>
