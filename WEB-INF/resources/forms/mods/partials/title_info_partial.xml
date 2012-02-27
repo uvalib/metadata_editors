@@ -31,7 +31,7 @@
 										<span class="label">Remove Section</span>
 									</xforms:label>
 									<xforms:action ev:event="DOMActivate" if="count(/mods:mods/mods:titleInfo) > 1">
-										<xforms:toggle case="confirm" />
+										<xforms:toggle case="confirm-titleInfo-delete" />
 									</xforms:action>
 									<xforms:action ev:event="DOMActivate" if="count(/mods:mods/mods:titleInfo) = 1">
 										<xforms:message>DLF Aquifer compliance demands at least one titleInfo section.</xforms:message>
