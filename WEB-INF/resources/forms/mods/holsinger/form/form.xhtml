@@ -13,7 +13,8 @@
  xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
  xmlns:xs="http://www.w3.org/2001/XMLSchema"
  xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xxforms="http://orbeon.org/oxf/xml/xforms">
+ xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+ xmlns:uva="http://www.lib.virginia.edu">
 	<head>
 		<!--
 		<link rel="stylesheet" type="text/css" href="/forms/style/Spacetree.css" />
@@ -21,6 +22,11 @@
 		<script type="text/javascript" src="/forms/scripts/subject-browser.js"></script> 
 -->
 		<script src="/forms/scripts/main.js"><!-- custom script --></script>
+		<xi:include href="oxf:/xbl/uva/delete-confirm/delete-confirm.xbl" xxi:omit-xml-base="true"/>
+		<style type="text/css">
+			.xforms-case-deselected-subsequent {display:none;}
+		</style>
+		
 		
 		<title>Metadata Toolkit</title>
 
