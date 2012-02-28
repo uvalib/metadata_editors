@@ -66,26 +66,6 @@
 							</xforms:textarea>
 						</div>
 						<div class="item-row show-title">
-							<!-- 
-	                    	<div class="item-cell">
-	                        	
-	                            <fr:optional-element ref="mods:nonSort"
-	                                nodeset="mods:titleInfo">
-	                                <xforms:output
-	                                    ref="$form-resources/detail/titles/nonSort"
-	                                    class="forms-hidden"/>
-	                                <xforms:input incremental="true" ref=".">
-	                                    <xforms:label
-	                                        ref="$form-resources/detail/titles/nonSort"
-	                                        class="forms-hidden"/>
-	                                    <xforms:help
-	                                        ref="$form-resources/detail/help/nonSort"/>
-	                                    <xforms:alert
-	                                        ref="$form-resources/detail/alerts/nonSort"/>
-	                                </xforms:input>
-	                            </fr:optional-element>
-	                        </div>
-	                        -->
 							<div class="item-cell">
 								<!-- TitleInfo @type -->
 								<fr:optional-element ref="@type" nodeset="mods:titleInfo">
@@ -105,68 +85,9 @@
 								</fr:optional-element>
 							</div>
 						</div>
-						<!--
-	                    <div class="item-row show-title">
-	                    	
-	                        <fr:optional-element ref="mods:subTitle"
-	                            nodeset="mods:titleInfo">
-	                            <xforms:output
-	                                ref="$form-resources/detail/titles/subtitle"
-	                                class="forms-hidden"/>
-	                            <div style="clear:both"/>
-	                            <xforms:textarea incremental="true" ref="."
-	                                appearance="xxforms:autosize">
-	                                <xforms:label
-	                                    ref="$form-resources/detail/titles/subtitle"/>
-	                                <xforms:alert
-	                                    ref="$form-resources/detail/alerts/subtitle"/>
-	                                <xforms:help
-	                                    ref="$form-resources/detail/help/subtitle"/>
-	                            </xforms:textarea>
-	                        </fr:optional-element>
-	                    </div>
-	                    <div class="item-row show-title">
-	                        <div class="item-cell">
-	                            <fr:optional-element ref="mods:partNumber"
-	                                nodeset="mods:titleInfo">
-	                                <xforms:output
-	                                    ref="$form-resources/detail/titles/partnumber"
-										class="forms-hidden" />
-	                                <xforms:input incremental="true" ref=".">
-	                                    <xforms:label
-	                                        ref="$form-resources/detail/titles/partnumber"
-	                                        class="forms-hidden"/>
-	                                    <xforms:alert
-	                                        ref="$form-resources/detail/alerts/partnumber"/>
-	                                    <xforms:help
-	                                        ref="$form-resources/detail/help/partnumber"/>
-	                                </xforms:input>
-	                            </fr:optional-element>
-	                        </div>
-	                        <div class="item-cell">
-	                            <fr:optional-element ref="mods:partName"
-	                                nodeset="mods:titleInfo">
-	                                <xforms:output
-	                                    ref="$form-resources/detail/titles/partname"
-										class="forms-hidden" />
-	                                <xforms:input incremental="true" ref=".">
-	                                    <xforms:label
-	                                        ref="$form-resources/detail/titles/partname"
-	                                        class="forms-hidden"/>
-	                                    <xforms:alert
-	                                        ref="$form-resources/detail/alerts/partname"/>
-	                                    <xforms:help
-	                                        ref="$form-resources/detail/help/partname"/>
-	                                </xforms:input>
-	                            </fr:optional-element>
-	                        </div>
-	                        
-	                        
-	                        </div>-->
 						<div class="repeat-border"></div>
 					</fr:td>
 				</fr:tr>
-
 			</fr:body>
 		</fr:repeat>
 	</fr:section>
