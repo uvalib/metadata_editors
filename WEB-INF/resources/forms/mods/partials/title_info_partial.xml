@@ -24,32 +24,37 @@
 							<xforms:group ref=".">
 								<xforms:switch>
 									<xforms:case id="delete-titleInfo-delete">
-								<xforms:trigger appearance="minimal">
-									<xforms:label>
-										<img src="/forms/style/icons/remove.png"
-											alt="Remove Section" />
-										<span class="label">Remove Section</span>
-									</xforms:label>
-									<xforms:action ev:event="DOMActivate" if="count(/mods:mods/mods:titleInfo) > 1">
-										<xforms:toggle case="confirm-titleInfo-delete" />
-									</xforms:action>
-									<xforms:action ev:event="DOMActivate" if="count(/mods:mods/mods:titleInfo) = 1">
-										<xforms:message>DLF Aquifer compliance demands at least one titleInfo section.</xforms:message>
-									</xforms:action>
-								</xforms:trigger>
+										<xforms:trigger appearance="minimal">
+											<xforms:label>
+												<img src="/forms/style/icons/remove.png"
+												alt="Remove Section" />
+												<span class="label">Remove Section</span>
+											</xforms:label>
+											<xforms:action ev:event="DOMActivate"
+												if="count(/mods:mods/mods:titleInfo) > 1">
+												<xforms:toggle case="confirm-titleInfo-delete"
+												></xforms:toggle>
+											</xforms:action>
+											<xforms:action ev:event="DOMActivate"
+												if="count(/mods:mods/mods:titleInfo) = 1">
+												<xforms:message>DLF Aquifer compliance demands at
+												least one titleInfo section.</xforms:message>
+											</xforms:action>
+										</xforms:trigger>
 									</xforms:case>
-									<xforms:case id="confirm-titleInfo-delete">
-										Are you sure?
-										<xforms:trigger appearance="xxforms:link">
+									<xforms:case id="confirm-titleInfo-delete"> Are you sure?
+											<xforms:trigger appearance="xxforms:link">
 											<xforms:label>Delete</xforms:label>
-										<xforms:action ev:event="DOMActivate" if="count(/mods:mods/mods:titleInfo)>1">
-											<xforms:delete  context="."
-												nodeset=".[position()]"></xforms:delete>
-										</xforms:action>
+											<xforms:action ev:event="DOMActivate"
+												if="count(/mods:mods/mods:titleInfo)>1">
+												<xforms:delete context="." nodeset=".[position()]"
+												></xforms:delete>
+											</xforms:action>
 										</xforms:trigger>
 										<xforms:trigger appearance="xxforms:link">
 											<xforms:label>Cancel</xforms:label>
-											<xforms:toggle case="delete-titleInfo-delete" ev:event="DOMActivate"/>
+											<xforms:toggle case="delete-titleInfo-delete"
+												ev:event="DOMActivate"></xforms:toggle>
 										</xforms:trigger>
 									</xforms:case>
 								</xforms:switch>

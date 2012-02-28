@@ -19,15 +19,33 @@
                     <fr:td>
                         <div class="repeat-remove-section section-remove">
                             <xforms:group ref=".">
-                                <xforms:delete ev:event="DOMActivate" context="."
-                                    nodeset=".[position()]"></xforms:delete>
-                                <xforms:trigger appearance="minimal" ref=".">
-                                    <xforms:label>
-                                        <img src="/forms/style/icons/remove.png"
-                                            alt="Remove Section" />
-                                        <span class="label">Remove Section</span>
-                                    </xforms:label>
-                                </xforms:trigger>
+                                <xforms:switch>
+                                    <xforms:case id="delete-name-delete">
+                                        <xforms:trigger appearance="minimal" ref=".">
+                                            <xforms:label>
+                                                <img src="/forms/style/icons/remove.png"
+                                                  alt="Remove Section" />
+                                                <span class="label">Remove Section</span>
+                                            </xforms:label>
+                                            <xforms:toggle ev:event="DOMActivate" case="confirm-name-delete"
+                                            ></xforms:toggle>
+                                        </xforms:trigger>
+                                    </xforms:case>
+                                    <xforms:case id="confirm-name-delete"> Are you sure?
+                                            <xforms:trigger appearance="xxforms:link">
+                                            <xforms:label>Delete</xforms:label>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:delete context="." nodeset=".[position()]"
+                                                ></xforms:delete>
+                                            </xforms:action>
+                                        </xforms:trigger>
+                                        <xforms:trigger appearance="xxforms:link">
+                                            <xforms:label>Cancel</xforms:label>
+                                            <xforms:toggle case="delete-name-delete"
+                                                ev:event="DOMActivate"></xforms:toggle>
+                                        </xforms:trigger>
+                                    </xforms:case>
+                                </xforms:switch>
                             </xforms:group>
                         </div>
                         <div class="item-row show-title">
@@ -160,11 +178,10 @@
                                                 </xforms:trigger>
                                             </xforms:group>
                                         </div>
-                                        
-                                            <div class="repeat-container">
-                                                <xforms:repeat nodeset="mods:roleTerm"
-                                                  id="nameRoleTerm-repeat[position()]">
-                                                    <div class="item-cell">
+                                        <div class="repeat-container">
+                                            <xforms:repeat nodeset="mods:roleTerm"
+                                                id="nameRoleTerm-repeat[position()]">
+                                                <div class="item-cell">
                                                   <xforms:group ref=".">
                                                   <xforms:delete ev:event="DOMActivate" nodeset="."></xforms:delete>
                                                   <xforms:trigger appearance="minimal"
@@ -174,20 +191,22 @@
                                                   alt="Remove Role Term" />
                                                   </xforms:label>
                                                   </xforms:trigger>
-                                                      <fr:autocomplete ref="." resource="/vocabularies/SKOSOptions?topic={$fr-search-value}&amp;vocab=MARCrelators">
-                                                          
-                                                          <xforms:label ref="$form-resources/detail/titles/roleTerm"></xforms:label>
-                                                          <xforms:alert ref="$form-resources/detail/alerts/roleTerm"></xforms:alert>
-                                                          <xforms:help ref="$form-resources/detail/help/roleTerm"></xforms:help>
-                                                          <xforms:itemset
-                                                              nodeset="/section/item">
-                                                              <xforms:label ref="label"></xforms:label>
-                                                              <xforms:value ref="value"></xforms:value>
-                                                          </xforms:itemset>
-                                                      </fr:autocomplete>
-                                                      <span id="MARCrelatorValue"><xforms:output ref="."/></span>
-                                                      
-                                                    <!-- 
+                                                  <fr:autocomplete ref="."
+                                                  resource="/vocabularies/SKOSOptions?topic={$fr-search-value}&amp;vocab=MARCrelators">
+                                                  <xforms:label
+                                                  ref="$form-resources/detail/titles/roleTerm"></xforms:label>
+                                                  <xforms:alert
+                                                  ref="$form-resources/detail/alerts/roleTerm"></xforms:alert>
+                                                  <xforms:help
+                                                  ref="$form-resources/detail/help/roleTerm"></xforms:help>
+                                                  <xforms:itemset nodeset="/section/item">
+                                                  <xforms:label ref="label"></xforms:label>
+                                                  <xforms:value ref="value"></xforms:value>
+                                                  </xforms:itemset>
+                                                  </fr:autocomplete>
+                                                  <span id="MARCrelatorValue"><xforms:output ref="."
+                                                  ></xforms:output></span>
+                                                  <!-- 
                                                   <xforms:select1 ref="." class="drop-down">
                                                   <xforms:label
                                                   value="$form-resources/detail/titles/roleTerm"></xforms:label>
@@ -203,7 +222,7 @@
                                                   </xforms:select1>
                                                   
                                                   -->
-                                                      <!--   <xforms:select1 ref="@type" class="drop-down">
+                                                  <!--   <xforms:select1 ref="@type" class="drop-down">
                                                           <xforms:label>Role term type:</xforms:label>
                                                           
                                                           <xforms:item>
@@ -218,10 +237,9 @@
                                                       </xforms:select1>
                                                     </xforms:select1>  -->
                                                   </xforms:group>
-                                                    </div>  
-                                                </xforms:repeat>
-                                            </div>
-                                        
+                                                </div>
+                                            </xforms:repeat>
+                                        </div>
                                     </div>
                                 </div>
                             </xforms:repeat>
