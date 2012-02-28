@@ -5,9 +5,10 @@
     xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
     xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
     xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
-    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
 
-
+ 
     <!-- START GENRE -->
     <fr:section id="genre" bind="fr-form-binds">
         <xforms:label ref="$form-resources/detail/titles/genre"></xforms:label>
@@ -20,6 +21,8 @@
                 <fr:tr>
                     <fr:td>
                         <div class="repeat-remove-section section-remove">
+                            <uva:delete-confirm xmlns:uva="http://www.lib.virginia.edu" ref="."/>
+                            <!--
                             <xforms:group ref=".">
                                 <xforms:delete ev:event="DOMActivate" context="."
                                     nodeset=".[position()]"></xforms:delete>
@@ -31,6 +34,7 @@
                                     </xforms:label>
                                 </xforms:trigger>
                             </xforms:group>
+                            -->
                         </div>
                         <!--
                         <xforms:select1 ref="." class="drop-down">

@@ -5,7 +5,7 @@
     xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
     xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
     xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
-    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:uva="http://www.lib.virginia.edu">
 
     <!-- START NAME -->
     <fr:section id="name-section" bind="fr-form-binds">
@@ -18,35 +18,7 @@
                 <fr:tr>
                     <fr:td>
                         <div class="repeat-remove-section section-remove">
-                            <xforms:group ref=".">
-                                <xforms:switch>
-                                    <xforms:case id="delete-name-delete">
-                                        <xforms:trigger appearance="minimal" ref=".">
-                                            <xforms:label>
-                                                <img src="/forms/style/icons/remove.png"
-                                                  alt="Remove Section" />
-                                                <span class="label">Remove Section</span>
-                                            </xforms:label>
-                                            <xforms:toggle ev:event="DOMActivate" case="confirm-name-delete"
-                                            ></xforms:toggle>
-                                        </xforms:trigger>
-                                    </xforms:case>
-                                    <xforms:case id="confirm-name-delete"> Are you sure?
-                                            <xforms:trigger appearance="xxforms:link">
-                                            <xforms:label>Delete</xforms:label>
-                                            <xforms:action ev:event="DOMActivate">
-                                                <xforms:delete context="." nodeset=".[position()]"
-                                                ></xforms:delete>
-                                            </xforms:action>
-                                        </xforms:trigger>
-                                        <xforms:trigger appearance="xxforms:link">
-                                            <xforms:label>Cancel</xforms:label>
-                                            <xforms:toggle case="delete-name-delete"
-                                                ev:event="DOMActivate"></xforms:toggle>
-                                        </xforms:trigger>
-                                    </xforms:case>
-                                </xforms:switch>
-                            </xforms:group>
+                            <uva:delete-confirm ref="."/>
                         </div>
                         <div class="item-row show-title">
                             <div class="item-cell">

@@ -1,0 +1,54 @@
+<xbl:xbl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns="http://www.lib.virginia.edu"
+ xmlns:oxf="http://www.orbeon.com/oxf/processors"
+ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+ xmlns:xxbl="http://orbeon.org/oxf/xml/xbl"
+ xmlns:ev="http://www.w3.org/2001/xml-events"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xhtml="http://www.w3.org/1999/xhtml"
+ xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+ xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+ xmlns:xbl="http://www.w3.org/ns/xbl">
+
+
+	<xbl:binding id="uva-delete-confirm" element="uva|delete-confirm">
+		<xbl:template>
+			<xforms:group xbl:attr="model context ref bind" xxbl:scope="outer">
+				<xbl:content includes="xforms|label,xforms|help,xforms|hint,xforms|alert"/>
+				<xforms:group xxbl:scope="inner">
+					<xxforms:variable name="binding" as="node()?">
+						<xxforms:sequence select="." xxbl:scope="outer"/>
+					</xxforms:variable>
+					<xforms:switch>
+						<xforms:case id="delete-delete">
+							<fr:button appearance="minimal">
+								<xforms:label>
+									<img src="/forms/style/icons/remove.png" alt="Remove Section"/>
+									<span class="label">Remove Section</span>
+								</xforms:label>
+								<xforms:action ev:event="DOMActivate">
+									<xforms:toggle case="confirm-delete"/>
+								</xforms:action>
+							</fr:button>
+						</xforms:case>
+						<xforms:case id="confirm-delete"> Are you sure? <fr:button 
+							appearance="minimal">
+							<xforms:label>
+								<img src="/forms/style/icons/remove_sm.png" alt="Remove Section"/>
+								<span class="label">Delete</span>
+							</xforms:label>
+								<xforms:action ev:event="DOMActivate">
+									<xforms:delete context="$binding" nodeset="$binding[position()]"/>
+								</xforms:action>
+						</fr:button >
+							<fr:button  appearance="minimal">
+								<xforms:label><span class="label">Cancel</span></xforms:label>
+								<xforms:toggle case="delete-delete" ev:event="DOMActivate"/>
+							</fr:button >
+						</xforms:case>
+					</xforms:switch>
+				</xforms:group>
+			</xforms:group>
+		</xbl:template>
+	</xbl:binding>
+</xbl:xbl>
