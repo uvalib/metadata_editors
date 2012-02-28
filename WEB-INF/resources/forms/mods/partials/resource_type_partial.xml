@@ -5,7 +5,7 @@
     xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
     xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
     xmlns:mods="http://www.loc.gov/mods/v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
-    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink">
+    xmlns:dl="http://dl.lib.brown.edu/editor/mods/dl" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:uva="http://www.lib.virginia.edu">
 
     <!-- START RESOURCE -->
     <fr:section id="typeOfResource" bind="fr-form-binds">
@@ -19,17 +19,7 @@
                 <fr:tr>
                     <fr:td>
                         <div class="repeat-remove-section section-remove">
-                            <xforms:group ref=".">
-								<xforms:delete ev:event="DOMActivate" context="."
-								nodeset=".[position()]"/>
-								<xforms:trigger appearance="minimal" ref=".">
-									<xforms:label>
-										<img src="/forms/style/icons/remove.png"
-										alt="Remove Section"/>
-										<span class="label">Remove Section</span>
-									</xforms:label>
-								</xforms:trigger>
-							</xforms:group>
+                            <uva:delete-confirm ref="."/>
                         </div>
 						
                         <xforms:select1 ref="." class="drop-down">
