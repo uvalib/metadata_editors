@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms"
+    xmlns:ev="http://www.w3.org/2001/xml-events">
+
+    <xforms:group id="altLabel-section" bind="description-bind">
+
+        <xforms:label>
+            <h4>Alternate labels:</h4>
+        </xforms:label>
+
+        <xforms:repeat nodeset="skos:altLabel" id="altLabel-repeat">
+            <fr:body>
+                <fr:tr>
+                    <fr:td>
+                        <div class="item-row">
+                            <div class="item-cell">
+                                <xforms:input ref="." />
+                            </div>
+                            <div class="item-cell">
+                                <xforms:group ref=".">
+                                    <xforms:insert ev:event="DOMActivate" context=".."
+                                        position="after" at="index('altLabel-repeat')"
+                                        origin="instance('skos-insert')/insert[@name = 'altLabel']/*"/>
+                                    <fr:button bind="buttons-triggers">
+                                        <xforms:label>
+                                            <img src="/forms/style/icons/plus.png" alt="Add" />
+                                            <span class="label">Add alternate label</span>
+                                        </xforms:label></fr:button>
+                                </xforms:group>
+                                <fr:button appearance="minimal">
+                                    <xforms:label>
+                                        <img src="/forms/style/icons/remove_sm.png"
+                                            alt="Remove label" />
+                                        <span class="label">Delete</span>
+                                    </xforms:label>
+                                    <xforms:action ev:event="DOMActivate">
+                                        <xforms:delete context="." nodeset=".[position()]"
+                                        ></xforms:delete>
+                                    </xforms:action>
+                                </fr:button>
+                            </div>
+                        </div>
+
+                    </fr:td>
+                </fr:tr>
+            </fr:body>
+        </xforms:repeat>
+    </xforms:group>
+</html>

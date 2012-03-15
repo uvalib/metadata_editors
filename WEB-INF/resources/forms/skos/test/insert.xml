@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<instance xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <insert name="prefLabel">
+  <skos:prefLabel xml:lang="en"/>
+ </insert>
+ <insert name="altLabel">
+  <skos:altLabel xml:lang="en"/>
+ </insert>
+ <insert name="broader">
+  <skos:broader rdf:resource=""/>
+ </insert>
+ <insert name="narrower">
+  <skos:narrower rdf:resource=""/>
+ </insert>
+</instance>

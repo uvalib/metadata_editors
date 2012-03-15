@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd
+	http://www.w3.org/2002/xforms  http://www.w3.org/MarkUp/Forms/2002/XForms-Schema.xsd"
+	xmlns="http://www.w3.org/1999/xhtml" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude"
+	xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:fr="http://orbeon.org/oxf/xml/form-runner"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:uva="http://www.lib.virginia.edu">
+	<head>
+
+		<title>Metadata Toolkit</title>
+
+		<xforms:model id="fr-form-model" xxforms:help-tooltip="false">
+
+			<!-- This is the default basic skeleton for your form. Any nodes you want to be present, or
+				default values, add to this xml file. -->
+			<xforms:instance id="fr-form-instance" xxforms:validation="lax">
+				<xi:include href="oxf:/forms/skos/test/template.xml" xxi:omit-xml-base="true"
+				></xi:include>
+			</xforms:instance>
+
+			<!--  Insert Instance -->
+			<xforms:instance id="skos-insert" src="oxf:/forms/skos/test/insert.xml"></xforms:instance>
+
+			<!--  Instance to control button triggers -->
+			<xforms:instance id="triggers-instance">
+				<control xmlns="">
+					<buttons-triggers></buttons-triggers>
+				</control>
+			</xforms:instance>
+
+			<xforms:bind nodeset="instance('triggers-instance')">
+				<xforms:bind id="buttons-triggers"
+					readonly="xxforms:instance('fr-parameters-instance')/mode != 'new' and xxforms:instance('fr-parameters-instance')/mode != 'edit' "
+				></xforms:bind>
+			</xforms:bind>
+
+			<xforms:bind id="fr-form-binds" nodeset=".">
+				<xforms:bind id="description-bind" nodeset="rdf:Description">
+					<xforms:bind id="prefLabel-bind" nodeset="skos:prefLabel"/>
+				</xforms:bind>
+			</xforms:bind>
+
+			<!-- Be sure to put the following AFTER the fr-form-binds section. -->
+			<!-- Application Metadata -->
+			<xforms:instance id="fr-form-metadata" xxforms:readonly="true">
+				<metadata xmlns="">
+					<application-name>vocabularies</application-name>
+					<form-name>SKOS</form-name>
+					<title xml:lang="en">SKOS Term Editor</title>
+					<description xml:lang="en">SKOS Term Editor</description>
+					<author>Joe and Adam</author>
+					<logo mediatype="image/png" filename="banner.gif" size=""
+						>/apps/fr/style/banner.gif</logo>
+					<logo mediatype="" filename="" size=""></logo>
+				</metadata>
+			</xforms:instance>
+
+			<xforms:instance id="fr-form-attachments">
+				<attachments xmlns="">
+					<css mediatype="text/css" filename="" size=""></css>
+					<!-- Fix this once we have proper template -->
+					<!--<pdf mediatype="application/pdf" filename="template.pdf" size="8638">/fr/service/resource/crud/orbeon/bookcast/form/template.pdf</pdf>-->
+					<pdf mediatype="application/pdf" filename="" size=""></pdf>
+				</attachments>
+			</xforms:instance>
+
+			<!--
+			<xforms:instance id="fr-form-resources">
+				<xi:include href="oxf:/forms/skos/test/form/resources.xml" xxi:omit-xml-base="true"
+				></xi:include>
+			</xforms:instance>
+			-->
+
+		</xforms:model>
+
+	</head>
+	<!-- Now we start the "view" of the form -->
+	<body>
+		
+		<fr:view>
+			<xforms:label>Metadata Toolkit</xforms:label>
+			<fr:body>
+				<fr:label>
+					<h3>SKOS Term</h3></fr:label> 
+				
+					<xi:include href="oxf:/forms/skos/partials/prefLabel.xml"
+						xxi:omit-xml-base="true"/>
+				<xi:include href="oxf:/forms/skos/partials/altLabel.xml"
+					xxi:omit-xml-base="true"/>
+				<xi:include href="oxf:/forms/skos/partials/narrower.xml"
+					xxi:omit-xml-base="true"/>
+				<xi:include href="oxf:/forms/skos/partials/broader.xml"
+					xxi:omit-xml-base="true"/>
+
+			</fr:body>
+		</fr:view>
+		
+	</body>
+
+</html>

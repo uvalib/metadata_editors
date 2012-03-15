@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <rdf:Description rdf:about="idgoeshere">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:prefLabel xml:lang="en">Label</skos:prefLabel>
+        <skos:broader rdf:resource="Broadergoeshere"/>
+        <skos:narrower rdf:resource="Narrowergoeshere"/>   
+        <skos:inScheme rdf:resource="http://www.lib.virginia.edu/vocabularies/test"/>
+        <skos:altLabel xml:lang="en">Other Label</skos:altLabel>
+    </rdf:Description>
+</rdf:RDF>
