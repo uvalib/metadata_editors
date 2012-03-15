@@ -86,7 +86,9 @@
 			<fr:body>
 				<fr:label>
 					<h3>SKOS Term</h3></fr:label> 
-				
+				<xforms:input ref="/rdf:RDF/rdf:Description/@rdf:about">
+					<xforms:label><h4>URI:</h4></xforms:label>
+				</xforms:input>
 					<xi:include href="oxf:/forms/skos/partials/prefLabel.xml"
 						xxi:omit-xml-base="true"/>
 				<xi:include href="oxf:/forms/skos/partials/altLabel.xml"
